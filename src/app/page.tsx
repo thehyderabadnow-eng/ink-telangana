@@ -169,7 +169,7 @@ export default function App() {
             >
               <div className="relative h-16 md:h-20 w-[200px] flex items-center justify-center">
                 <img
-                  src="http://googleusercontent.com/image_generation_content/0"
+                  src="primary-logo.png"
                   alt="Ink Telangana Logo"
                   className="h-full w-full object-contain drop-shadow-sm"
                 />
