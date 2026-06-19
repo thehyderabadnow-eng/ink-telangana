@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { Search, PenTool, ArrowLeft, MessageSquare, Clock, Mail, Info, Phone } from 'lucide-react';
 
 // --- TYPESCRIPT INTERFACES ---
