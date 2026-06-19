@@ -2,7 +2,6 @@
 
 import React, { useState, useMemo } from 'react';
 import { Search, PenTool, ArrowLeft, MessageSquare, Clock, Mail, Info, Phone } from 'lucide-react';
-import Image from 'next/image';
 
 // --- TYPESCRIPT INTERFACES ---
 interface Article {
@@ -163,19 +162,16 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 py-3">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-3">
 
-            {/* Logo Area */}
+            {/* Logo Area (UPDATED WITH WHITE BACKGROUND & BETTER HEIGHT) */}
             <div
-              className="flex items-center gap-3 cursor-pointer group"
+              className="flex items-center gap-3 cursor-pointer group bg-white px-5 py-2 rounded-xl shadow-[0_4px_15px_rgba(0,0,0,0.5)] border-b-4 border-[#D4AF37] hover:bg-gray-50 transition-all"
               onClick={() => handleNavigate('home')}
             >
-              <div className="relative h-12 w-48 flex items-center">
-                <Image
-                  src="/primary-logo.png"
+              <div className="relative h-16 md:h-20 w-[200px] flex items-center justify-center">
+                <img
+                  src="http://googleusercontent.com/image_generation_content/0"
                   alt="Ink Telangana Logo"
-                  width={192} // Adjust this based on your actual logo's aspect ratio
-                  height={48}
-                  className="object-contain"
-                  priority // Tells Next.js to load this image instantly
+                  className="h-full w-full object-contain drop-shadow-sm"
                 />
               </div>
             </div>
