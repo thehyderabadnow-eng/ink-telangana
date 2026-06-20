@@ -49,7 +49,7 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
       {/* TOP STORIES SECTION */}
       {topStories.length > 0 && !searchQuery && categoryFilter === 'All' && (
         <section>
-          <h2 className={`text-2xl font-serif font-bold text-gray-900 mb-6 border-l-4 ${brandClasses.borderGold} pl-3`}>
+          <h2 className={`text-2xl font-serif font-bold text-white-900 mb-6 border-l-4 ${brandClasses.borderGold} pl-3`}>
             Top Stories
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -86,7 +86,7 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
       {/* LATEST STORIES SECTION */}
       {latestStories.length > 0 && (
         <section>
-          <h2 className={`text-2xl font-serif font-bold text-gray-900 mb-6 border-l-4 ${brandClasses.borderGold} pl-3`}>
+          <h2 className={`text-2xl font-serif font-bold text-white-900 mb-6 border-l-4 ${brandClasses.borderGold} pl-3`}>
             {searchQuery ? 'Search Results' : (categoryFilter === 'All' ? 'Latest Stories' : categoryFilter === 'Politics' ? 'Political Stories' : `${categoryFilter} Stories`)}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
