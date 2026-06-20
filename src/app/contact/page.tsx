@@ -11,11 +11,58 @@ export default function ContactPage() {
   const [contactForm, setContactForm] = useState<ContactFormState>({
     name: '', email: '', phone: '', areaName: '', purpose: '', message: ''
   });
+  
+  // State for validation errors and submission status
+  const [errors, setErrors] = useState<Partial<ContactFormState>>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const validateForm = () => {
+    const newErrors: Partial<ContactFormState> = {};
+    
+    if (contactForm.name.trim().length < 3) newErrors.name = "Name must be at least 3 characters.";
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contactForm.email)) newErrors.email = "Please enter a valid email address.";
+    if (!/^\d{10}$/.test(contactForm.phone.replace(/\D/g, ''))) newErrors.phone = "Phone number must be exactly 10 digits.";
+    if (contactForm.areaName.trim().length < 3) newErrors.areaName = "Please enter a valid area or city.";
+    if (!contactForm.purpose) newErrors.purpose = "Please select a purpose.";
+    if (contactForm.message.trim().length < 10) newErrors.message = "Message must be at least 10 characters long.";
+    
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setContactStatus('success');
-    setContactForm({ name: '', email: '', phone: '', areaName: '', purpose: '', message: '' });
+    
+    // 1. Run Validation
+    if (!validateForm()) return;
+    
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: "bb2b3337-c94b-4e1f-8552-d8a90742a10e",
+          subject: `New Contact Form Submission: ${contactForm.purpose}`,
+          from_name: "Ink Telangana Website",
+          ...contactForm
+        })
+      });
+
+      if (response.ok) {
+        setContactStatus('success');
+        setContactForm({ name: '', email: '', phone: '', areaName: '', purpose: '', message: '' });
+        setErrors({});
+      } else {
+        alert("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Network error. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -39,11 +86,13 @@ export default function ContactPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label className="block text-sm font-medium text-gray-400 mb-2">Full Name</label>
-                <input type="text" required value={contactForm.name} onChange={(e) => setContactForm({ ...contactForm, name: e.target.value })} className="w-full bg-black border border-gray-700 text-white rounded-lg p-3 focus:outline-none focus:border-[#D4AF37] transition-colors" placeholder="Enter your name" />
+                <input type="text" value={contactForm.name} onChange={(e) => setContactForm({ ...contactForm, name: e.target.value })} className={`w-full bg-black border ${errors.name ? 'border-red-500' : 'border-gray-700'} text-white rounded-lg p-3 focus:outline-none focus:border-[#D4AF37] transition-colors`} placeholder="Enter your name" />
+                {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-400 mb-2">Email Address</label>
-                <input type="email" required value={contactForm.email} onChange={(e) => setContactForm({ ...contactForm, email: e.target.value })} className="w-full bg-black border border-gray-700 text-white rounded-lg p-3 focus:outline-none focus:border-[#D4AF37] transition-colors" placeholder="name@example.com" />
+                <input type="email" value={contactForm.email} onChange={(e) => setContactForm({ ...contactForm, email: e.target.value })} className={`w-full bg-black border ${errors.email ? 'border-red-500' : 'border-gray-700'} text-white rounded-lg p-3 focus:outline-none focus:border-[#D4AF37] transition-colors`} placeholder="name@example.com" />
+                {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
               </div>
             </div>
 
@@ -52,18 +101,20 @@ export default function ContactPage() {
                 <label className="block text-sm font-medium text-gray-400 mb-2">Phone Number</label>
                 <div className="relative">
                   <Phone className="absolute left-3 top-3.5 h-4 w-4 text-gray-500" />
-                  <input type="tel" required value={contactForm.phone} onChange={(e) => setContactForm({ ...contactForm, phone: e.target.value })} className="w-full bg-black border border-gray-700 text-white rounded-lg p-3 pl-10 focus:outline-none focus:border-[#D4AF37] transition-colors" placeholder="Mobile Number" />
+                  <input type="tel" value={contactForm.phone} onChange={(e) => setContactForm({ ...contactForm, phone: e.target.value })} className={`w-full bg-black border ${errors.phone ? 'border-red-500' : 'border-gray-700'} text-white rounded-lg p-3 pl-10 focus:outline-none focus:border-[#D4AF37] transition-colors`} placeholder="10-digit Mobile Number" />
                 </div>
+                {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone}</p>}
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-400 mb-2">Area / Location</label>
-                <input type="text" required value={contactForm.areaName} onChange={(e) => setContactForm({ ...contactForm, areaName: e.target.value })} className="w-full bg-black border border-gray-700 text-white rounded-lg p-3 focus:outline-none focus:border-[#D4AF37] transition-colors" placeholder="Enter your area or city" />
+                <label className="block text-sm font-medium text-gray-400 mb-2">Location</label>
+                <input type="text" value={contactForm.areaName} onChange={(e) => setContactForm({ ...contactForm, areaName: e.target.value })} className={`w-full bg-black border ${errors.areaName ? 'border-red-500' : 'border-gray-700'} text-white rounded-lg p-3 focus:outline-none focus:border-[#D4AF37] transition-colors`} placeholder="Enter your area or city" />
+                {errors.areaName && <p className="text-red-500 text-xs mt-1">{errors.areaName}</p>}
               </div>
             </div>
 
             <div>
               <label className="block text-sm font-medium text-gray-400 mb-2">Purpose of Contact</label>
-              <select required value={contactForm.purpose} onChange={(e) => setContactForm({ ...contactForm, purpose: e.target.value })} className="w-full bg-black border border-gray-700 text-white rounded-lg p-3 focus:outline-none focus:border-[#D4AF37] transition-colors appearance-none">
+              <select value={contactForm.purpose} onChange={(e) => setContactForm({ ...contactForm, purpose: e.target.value })} className={`w-full bg-black border ${errors.purpose ? 'border-red-500' : 'border-gray-700'} text-white rounded-lg p-3 focus:outline-none focus:border-[#D4AF37] transition-colors appearance-none`}>
                 <option value="" disabled>Select Purpose</option>
                 <option value="Story Pitch / News Tip">Story Pitch / News Tip</option>
                 <option value="Join The Team">Join The Team</option>
@@ -71,15 +122,17 @@ export default function ContactPage() {
                 <option value="Feedback / Suggestion">Feedback / Suggestion</option>
                 <option value="Other">Other</option>
               </select>
+              {errors.purpose && <p className="text-red-500 text-xs mt-1">{errors.purpose}</p>}
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-400 mb-2">Detailed Message / Your Target</label>
-              <textarea required value={contactForm.message} onChange={(e) => setContactForm({ ...contactForm, message: e.target.value })} className="w-full bg-black border border-gray-700 text-white rounded-lg p-3 focus:outline-none focus:border-[#D4AF37] h-32 resize-none transition-colors" placeholder="Please provide details about your enquiry..."></textarea>
+              <label className="block text-sm font-medium text-gray-400 mb-2">Detailed Message</label>
+              <textarea value={contactForm.message} onChange={(e) => setContactForm({ ...contactForm, message: e.target.value })} className={`w-full bg-black border ${errors.message ? 'border-red-500' : 'border-gray-700'} text-white rounded-lg p-3 focus:outline-none focus:border-[#D4AF37] h-32 resize-none transition-colors`} placeholder="Please provide details about your enquiry..."></textarea>
+              {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message}</p>}
             </div>
 
-            <button type="submit" className={`w-full ${brandClasses.bgGold} ${brandClasses.textNavy} font-bold py-3.5 rounded-lg hover:bg-yellow-500 transition-all text-lg shadow-lg`}>
-              Submit Details
+            <button disabled={isSubmitting} type="submit" className={`w-full ${brandClasses.bgGold} ${brandClasses.textNavy} font-bold py-3.5 rounded-lg hover:bg-yellow-500 transition-all text-lg shadow-lg ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}>
+              {isSubmitting ? 'Sending...' : 'Submit Details'}
             </button>
           </form>
         )}
