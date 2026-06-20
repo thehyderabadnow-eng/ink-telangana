@@ -1,6 +1,6 @@
 import { politicsArticles } from './politics';
 import { businessArticles } from './business';
-import { quickThoughts } from './thoughts';
+import { shortNews } from './shortnewscomments';
 
 export const getAllArticles = () => {
   // Combine all articles and sort them by ID (or you can sort by date)
@@ -11,6 +11,6 @@ export const getArticleById = (id: number) => {
   return getAllArticles().find(article => article.id === id);
 };
 
-export const getAllThoughts = () => {
-  return quickThoughts;
+export const getAllNews = () => {
+  return shortNews;
 };

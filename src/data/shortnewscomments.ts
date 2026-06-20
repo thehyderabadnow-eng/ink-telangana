@@ -1,10 +1,14 @@
-import { Thought } from '@/types';
+import { Thought } from '@/types'; // Make sure this path matches your setup
 
-export const quickThoughts: Thought[] = [
+// ---------------------------------------------------------
+// 1. SHORT NEWS (For the shareable, Way2News-style graphic cards)
+// ---------------------------------------------------------
+export const shortNews: Thought[] = [
   {
     id: 1,
     text: "టైర్-2 నగరాల్లో పట్టణ అభివృద్ధి గురించి జరుగుతున్న చర్చల్లో ఒక ముఖ్యమైన అంశం మిస్సవుతోంది: వారసత్వ పరిరక్షణ. కాంక్రీట్ జంగిల్స్ కోసం మన చారిత్రక గుర్తింపును వదులుకోలేం. నిజమైన పురోగతి అనేది భవిష్యత్తుతో గతాన్ని అనుసంధానించడం ద్వారా వస్తుంది.",
-    date: "June 18, 2026"
+    date: "June 18, 2026",
+    // imageUrl: "/images/news-1.jpg" // You can add this property later if you want specific images!
   },
   {
     id: 2,
@@ -17,3 +21,24 @@ export const quickThoughts: Thought[] = [
     date: "June 5, 2026"
   }
 ];
+
+// ---------------------------------------------------------
+// 2. MY COMMENTS (For the casual, text-only feed)
+// ---------------------------------------------------------
+export const myComments: Thought[] = [
+  {
+    id: 1,
+    text: "ఈ రోజు స్థానిక నాయకులతో జరిగిన సమావేశంలో ఒక విషయం స్పష్టమైంది. క్షేత్రస్థాయిలో ప్రజల అవసరాలకు, పైన తీసుకునే నిర్ణయాలకు మధ్య ఇంకా గ్యాప్ ఉంది. దీనిపై మరింత లోతైన విశ్లేషణ అవసరం.",
+    date: "June 20, 2026"
+  },
+  {
+    id: 2,
+    text: "హైదరాబాద్ ఐటీ కారిడార్ అభివృద్ధి అద్భుతమే, కానీ అదే సమయంలో మన గ్రామీణ ప్రాంతాల్లోని చిన్న తరహా పరిశ్రమలకు కూడా తగిన ప్రోత్సాహం దక్కాలి. అప్పుడే సమగ్ర అభివృద్ధి సాధ్యమవుతుంది.",
+    date: "June 16, 2026"
+  }
+];
+
+// HELPER FUNCTIONS (To make importing easier in your pages)
+// ---------------------------------------------------------
+export const getShortNews = () => shortNews;
+export const getMyComments = () => myComments;

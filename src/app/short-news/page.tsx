@@ -2,11 +2,11 @@
 
 import React, { useState } from 'react';
 import { MessageSquare, PenTool, Clock, Download, Loader2, Share2, ImageIcon } from 'lucide-react';
-import { getAllThoughts } from '@/data';
+import { getAllNews } from '@/data';
 import { brandClasses } from '@/utils/theme';
 
-export default function QuickThoughtsPage() {
-  const thoughts = getAllThoughts();
+export default function ShortNewsPage() {
+  const shortNews = getAllNews();
   const [isGenerating, setIsGenerating] = useState<number | null>(null);
   const [showShareToast, setShowShareToast] = useState<boolean>(false);
 
@@ -62,7 +62,7 @@ const handleNativeShare = async (id: number, text: string) => {
       const file = new File([blob], `ink-telangana-${id}.png`, { type: 'image/png' });
 
       // Combine text and link for the share message
-      const shareText = `${text}\n\nRead more at: ${window.location.origin}/quick-thoughts`;
+      const shareText = `${text}\n\nRead more at: ${window.location.origin}/short-news`;
 
       if (navigator.share && navigator.canShare && navigator.canShare({ files: [file] })) {
         await navigator.share({ 
@@ -94,13 +94,13 @@ const handleNativeShare = async (id: number, text: string) => {
         <div className="flex items-center gap-3 mb-10 border-b border-gray-800 pb-4">
           <MessageSquare className={`w-8 h-8 ${brandClasses.textGold}`} />
           <div>
-            <h2 className="text-3xl font-serif font-bold text-white">Short News & Thoughts</h2>
+            <h2 className="text-3xl font-serif font-bold text-white">Short News & shortNews</h2>
             <p className="text-gray-400 text-sm mt-1">Quick, shareable updates and political commentary.</p>
           </div>
         </div>
 
         <div className="space-y-12">
-          {thoughts.map((thought) => (
+          {shortNews.map((thought) => (
             <div key={thought.id} className="flex flex-col gap-3">
 
               {/* Action Bar (OUTSIDE the capture area) */}

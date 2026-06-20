@@ -10,21 +10,21 @@ export default function Navbar() {
   const pathname = usePathname();
   const router = useRouter();
   const searchParams = useSearchParams();
-  
+
   const currentCategory = searchParams.get('category') || 'All';
   const initialSearch = searchParams.get('search') || '';
-  
+
   const [searchQuery, setSearchQuery] = useState(initialSearch);
 
   // Update URL parameters without reloading the page
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setSearchQuery(value);
-    
+
     const params = new URLSearchParams(searchParams.toString());
     if (value) params.set('search', value);
     else params.delete('search');
-    
+
     router.replace(`/?${params.toString()}`);
   };
 
@@ -32,7 +32,7 @@ export default function Navbar() {
     <nav className="bg-white sticky top-0 z-50 shadow-2xl border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 py-4 md:py-5">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-4">
-          
+
           {/* Logo Area */}
           <Link href="/" className="flex items-center gap-3 cursor-pointer group">
             <div className="flex flex-col justify-center border-l-4 border-[#D4AF37] pl-3 py-1">
@@ -66,7 +66,11 @@ export default function Navbar() {
           <Link href="/about" className={`hover:${brandClasses.textGold} ${pathname === '/about' ? brandClasses.textGold : 'text-gray-800'} transition-colors`}>About</Link>
           <Link href="/?category=Politics" className={`hover:${brandClasses.textGold} ${pathname === '/' && currentCategory === 'Politics' ? brandClasses.textGold : 'text-gray-800'} transition-colors`}>Politics</Link>
           <Link href="/?category=Business" className={`hover:${brandClasses.textGold} ${pathname === '/' && currentCategory === 'Business' ? brandClasses.textGold : 'text-gray-800'} transition-colors`}>Business</Link>
-          <Link href="/quick-thoughts" className={`hover:${brandClasses.textGold} ${pathname === '/quick-thoughts' ? brandClasses.textGold : 'text-gray-800'} transition-colors`}>Quick Thoughts</Link>
+          {/* Renamed to Short News */}
+          <Link href="/short-news" className="hover:text-[#D4AF37] text-gray-300 transition-colors">Short News</Link>
+
+          {/* New 'My Comments' Link */}
+          <Link href="/my-comments" className="hover:text-[#D4AF37] text-gray-300 transition-colors">My Comments</Link>
           <Link href="/contact" className={`${brandClasses.bgGold} ${brandClasses.textNavy} px-5 py-2.5 rounded-full hover:bg-yellow-500 transition-all ml-auto shadow-md font-bold text-xs uppercase tracking-wider`}>Contact Us</Link>
         </div>
       </div>
