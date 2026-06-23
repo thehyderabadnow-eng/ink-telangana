@@ -1,11 +1,18 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { ArrowLeft, Clock, MessageCircle, Share2, PenTool } from 'lucide-react';
 
 export default function FreeLaptopArticle() {
   const [showShareToast, setShowShareToast] = useState(false);
+
+  const [currentUrl, setCurrentUrl] = useState('');
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setCurrentUrl(window.location.href);
+    }
+  }, []);
 
   const brandClasses = {
     bgNavy: "bg-[#0B1B35]",
@@ -21,11 +28,12 @@ export default function FreeLaptopArticle() {
     url: typeof window !== 'undefined' ? window.location.href : 'https://inktelangana.in'
   };
 
+  // 3. Update your handleShare function to use the state variable
   const handleShare = async () => {
     const shareData = {
       title: articleDetails.title,
       text: articleDetails.excerpt,
-      url: articleDetails.url
+      url: currentUrl || 'https://inktelangana.in' // Falls back to domain if state isn't ready yet
     };
 
     if (navigator.share) {
@@ -35,7 +43,8 @@ export default function FreeLaptopArticle() {
         console.error('Error sharing:', err);
       }
     } else {
-      navigator.clipboard.writeText(`${articleDetails.title}\n\n${articleDetails.url}`);
+      // Fallback copy to clipboard
+      navigator.clipboard.writeText(`${articleDetails.title}\n\n${shareData.url}`);
       setShowShareToast(true);
       setTimeout(() => setShowShareToast(false), 3000);
     }
@@ -45,15 +54,15 @@ export default function FreeLaptopArticle() {
     <div className="min-h-screen bg-[#f8f9fa] font-sans text-gray-900 pb-12">
       <div className="max-w-7xl mx-auto px-4 py-8">
         <article className="max-w-3xl mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden mt-4">
-          
+
           {/* Header Section */}
           <div className="p-6 md:p-10 border-b border-gray-100">
             <div className="flex items-center justify-between mb-8">
               <Link href="/" className="flex items-center gap-2 text-sm text-gray-500 hover:text-[#0B1B35] transition-colors group font-semibold">
                 <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Back
               </Link>
-              
-              <button 
+
+              <button
                 onClick={handleShare}
                 className={`flex items-center gap-2 text-sm font-bold ${brandClasses.bgGold} ${brandClasses.textNavy} px-4 py-2 rounded-full hover:bg-yellow-500 transition-all shadow-md`}
               >
@@ -68,7 +77,7 @@ export default function FreeLaptopArticle() {
               <h1 className={`text-3xl md:text-5xl font-serif font-bold ${brandClasses.textNavy} leading-tight mb-6`}>
                 {articleDetails.title}
               </h1>
-              
+
               <div className="flex flex-wrap items-center gap-6 text-gray-600 text-sm border-t border-gray-100 pt-6">
                 {/* <div className="flex items-center gap-2 font-semibold">
                   <PenTool className="w-4 h-4 text-[#D4AF37]" />
@@ -84,17 +93,17 @@ export default function FreeLaptopArticle() {
 
           {/* Featured Image */}
           <div className="w-full h-72 md:h-[28rem] relative">
-            <img 
-              src="/articles/free-laptop-scheme.png" 
-              alt="Free laptops to Telangana Students" 
-              className="w-full h-full object-cover" 
+            <img
+              src="/articles/free-laptop-scheme.png"
+              alt="Free laptops to Telangana Students"
+              className="w-full h-full object-cover"
             />
           </div>
 
           {/* Article Content Section */}
           <div className="p-6 md:p-10">
             <div className="text-lg text-gray-800 leading-loose">
-              
+
               <p className="text-xl text-gray-600 font-medium italic mb-10 border-l-4 border-[#D4AF37] pl-5 bg-gray-50 py-4 pr-4 rounded-r-lg">
                 {articleDetails.excerpt}
               </p>
@@ -113,7 +122,7 @@ export default function FreeLaptopArticle() {
                 ఇతర రాష్ట్రాలు ఎలా అమలు చేస్తున్నాయి? (Case Studies)
               </h3>
               <p className="mb-4">భారతదేశంలోని పలు రాష్ట్రాలు డిజిటల్ విద్యా విప్లవంలో భాగంగా విద్యార్థులకు ల్యాప్‌టాప్‌లు/టాబ్లెట్‌లను విజయవంతంగా అందిస్తున్నాయి:</p>
-              
+
               <ul className="space-y-4 mb-8">
                 <li className="flex items-start gap-3">
                   <div className={`mt-1.5 w-2 h-2 rounded-full ${brandClasses.bgGold} flex-shrink-0`}></div>
@@ -131,10 +140,10 @@ export default function FreeLaptopArticle() {
 
               {/* Secondary Image */}
               <div className="my-10 rounded-xl overflow-hidden shadow-lg border border-gray-100">
-                <img 
-                  src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80" 
-                  alt="Students collaborating" 
-                  className="w-full h-auto object-cover" 
+                <img
+                  src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80"
+                  alt="Students collaborating"
+                  className="w-full h-auto object-cover"
                 />
               </div>
 
@@ -144,7 +153,7 @@ export default function FreeLaptopArticle() {
                 ల్యాప్‌టాప్ లేక విద్యార్థులు పడుతున్న ఇబ్బందులు
               </h3>
               <p className="mb-4">ఫీజు రీఇంబర్స్మెంట్‌కు అర్హులైన పేద, మధ్యతరగతి కుటుంబాల విద్యార్థులు ల్యాప్‌టాప్ కొనలేక రోజువారీ విద్యా జీవితంలో అనేక సవాళ్లను ఎదుర్కొంటున్నారు:</p>
-              
+
               <ul className="space-y-4 mb-8 bg-red-50/50 p-6 rounded-xl border border-red-100">
                 <li className="flex items-start gap-3">
                   <span className="text-red-500 font-bold mt-0.5">✗</span>
@@ -169,22 +178,22 @@ export default function FreeLaptopArticle() {
 
               <h4 className="text-xl font-bold text-gray-800 mt-8 mb-4">ల్యాప్‌టాప్ ద్వారా లభించే ఆధునిక ఉద్యోగాలు:</h4>
               <p className="mb-4">నేటి డిజిటల్ మార్కెట్లో డిగ్రీ సర్టిఫికేట్ కంటే "స్కిల్" (నైపుణ్యం) కే ప్రాధాన్యత ఉంది. సొంతంగా ల్యాప్‌టాప్ ఉన్న విద్యార్థి ఇంట్లో కూర్చునే కింద పేర్కొన్న రంగాలలో నైపుణ్యం సాధించి ఉద్యోగాలు పొందవచ్చు:</p>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                 <div className="bg-white border border-gray-200 p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                  <strong className={`${brandClasses.textNavy} block mb-1`}>సాఫ్ట్‌వేర్ డెవలప్‌మెంట్ & కోడింగ్:</strong> 
+                  <strong className={`${brandClasses.textNavy} block mb-1`}>సాఫ్ట్‌వేర్ డెవలప్‌మెంట్ & కోడింగ్:</strong>
                   <span className="text-sm">Angular, React, Python, Java వంటి ప్రోగ్రామింగ్ లాంగ్వేజెస్ నేర్చుకుని ఐటీ రంగంలో స్థిరపడవచ్చు.</span>
                 </div>
                 <div className="bg-white border border-gray-200 p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                  <strong className={`${brandClasses.textNavy} block mb-1`}>డిజిటల్ మార్కెటింగ్ & ఎస్ఈఓ (SEO):</strong> 
+                  <strong className={`${brandClasses.textNavy} block mb-1`}>డిజిటల్ మార్కెటింగ్ & ఎస్ఈఓ (SEO):</strong>
                   <span className="text-sm">గ్లోబల్ వ్యాపారాలకు ఆన్‌లైన్ ప్రమోషన్ చేయడం ద్వారా నెలకు వేలల్లో సంపాదించవచ్చు.</span>
                 </div>
                 <div className="bg-white border border-gray-200 p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                  <strong className={`${brandClasses.textNavy} block mb-1`}>గ్రాఫిక్ డిజైనింగ్ & వీడియో ఎడిటింగ్:</strong> 
+                  <strong className={`${brandClasses.textNavy} block mb-1`}>గ్రాఫిక్ డిజైనింగ్ & వీడియో ఎడిటింగ్:</strong>
                   <span className="text-sm">యూట్యూబ్ ఛానెల్స్, అడ్верటైజింగ్ ఏజెన్సీలకు కంటెంట్ క్రియేట్ చేయడం ద్వారా తక్షణ ఉపాధి లభిస్తుంది.</span>
                 </div>
                 <div className="bg-white border border-gray-200 p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                  <strong className={`${brandClasses.textNavy} block mb-1`}>డేటా ఎంట్రీ & వర్చువల్ అసిస్టెంట్:</strong> 
+                  <strong className={`${brandClasses.textNavy} block mb-1`}>డేటా ఎంట్రీ & వర్చువల్ అసిస్టెంట్:</strong>
                   <span className="text-sm">చదువుకుంటూనే పార్ట్-టైమ్ ఆదాయాన్ని ఆర్జించవచ్చు.</span>
                 </div>
               </div>
@@ -219,13 +228,13 @@ export default function FreeLaptopArticle() {
                 తెలంగాణ ప్రభుత్వానికి విజ్ఞప్తి
               </h3>
               <p className="mb-6">ఐటీ కారిడార్‌కు కేరాఫ్ అడ్రస్‌గా ఉన్న హైదరాబాద్ లాంటి గ్లోబల్ సిటీ మనకు ఉన్నప్పుడు, మన ప్రభుత్వ కాలేజీల విద్యార్థులు ల్యాప్‌టాప్ లేక వెనుకబడిపోవడం సరైంది కాదు. గౌరవనీయులైన తెలంగాణ ముఖ్యమంత్రి గారికి మరియు విద్యాశాఖ అధికారులకు ప్రజల పక్షాన మా విజ్ఞప్తి ఏమిటంటే:</p>
-              
+
               <blockquote className="relative p-8 bg-[#f5f7fa] rounded-xl border-l-4 border-[#0B1B35] mb-8 font-serif text-xl italic text-gray-700 shadow-sm">
                 <span className="absolute top-2 left-4 text-5xl text-gray-300 opacity-50">"</span>
                 రాష్ట్రంలో విద్యా విప్లవాన్ని మరింత ముందుకు తీసుకెళ్లడానికి ఈ 'స్టూడెంట్ ల్యాప్‌టాప్ పథకం' మైలురాయిగా నిలుస్తుంది. ఇది కేవలం ఉచిత పథకం కాదు... తెలంగాణ యువత భవిష్యత్తుపై చేసే ఒక గొప్ప పెట్టుబడి (Investment for Future). ఫీజు రీఇంబర్స్మెంట్ పరిధిలోకి వచ్చే విద్యార్థులకు డిజిటల్ సాధనాలను కూడా అందిస్తే, వారు ప్రపంచస్థాయి ఐటీ నిపుణులుగా ఎదిగి, నిరుద్యోగాన్ని రూపుమాపి, తిరిగి మన రాష్ట్ర అభివృద్ధి భాగస్వాములు అవుతారు.
                 <span className="absolute bottom-[-10px] right-4 text-5xl text-gray-300 opacity-50">"</span>
               </blockquote>
-              
+
               <p className="mb-10 font-bold text-[#0B1B35] text-xl">
                 తెలంగాణను కేవలం ఐటీ హబ్‌గానే కాకుండా... డిజిటల్ అక్షరాస్యత కలిగిన నైపుణ్యం గల యువత గనిగా (Skilled Youth Hub) మార్చడానికి ఈ పథకాన్ని త్వరితగతిన పరిశీలించి, అమలు చేయాలని కోరుకుంటున్నాం.
               </p>
@@ -243,13 +252,13 @@ export default function FreeLaptopArticle() {
                     ప్రియమైన పాఠకులకు: తెలంగాణలో విద్యార్థులకు ఉచిత ల్యాప్‌టాప్ పథకం అవసరమని మీరు భావిస్తున్నారా? ల్యాప్‌టాప్ లేకపోవడం వల్ల మీరు లేదా మీకు తెలిసిన విద్యార్థులు ఎప్పుడైనా ఇబ్బంది పడ్డారా? ఈ ఆర్టికల్‌ను మీ సోషల్ మీడియా అకౌంట్లలో షేర్ చేయడం ద్వారా ప్రభుత్వం దృష్టికి వెళ్లేలా మద్దతు తెలపండి. కింద కామెంట్ సెక్షన్‌లో మీ అభిప్రాయాలను పంచుకోండి.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4">
-                    <button 
+                    <button
                       onClick={handleShare}
                       className="inline-flex justify-center items-center gap-2 px-8 py-3.5 bg-[#D4AF37] text-[#0B1B35] font-bold rounded-full hover:bg-yellow-500 transition-colors shadow-lg"
                     >
                       <Share2 className="w-5 h-5" /> ఆర్టికల్ షేర్ చేయండి
                     </button>
-                    <Link 
+                    <Link
                       href="/contact"
                       className="inline-flex justify-center items-center px-8 py-3.5 bg-transparent border-2 border-[#D4AF37] text-[#D4AF37] font-bold rounded-full hover:bg-[#D4AF37]/10 transition-colors"
                     >

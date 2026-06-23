@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { Search } from 'lucide-react';
@@ -29,15 +29,23 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-white sticky top-0 z-50 shadow-2xl border-b border-gray-200">
-      <div className="max-w-7xl mx-auto px-4 py-4 md:py-5">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-4">
+    <>
+      {/* CSS override to hide horizontal scrollbars gracefully across mobile browsers */}
+      <style dangerouslySetInnerHTML={{
+        __html: `
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      `}} />
+
+      {/* TOP HEADER: Scrolls out of view normally, not sticky */}
+      <header className="bg-white border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 py-4 md:py-6 flex flex-col md:flex-row justify-between items-center gap-4">
 
           {/* Logo Area */}
           <Link href="/" className="flex items-center gap-3 cursor-pointer group">
             <div className="flex flex-col justify-center border-l-4 border-[#D4AF37] pl-3 py-1">
-              <span className={`text-2xl md:text-3xl font-serif font-bold tracking-wider ${brandClasses.textNavy} leading-none mb-1 group-hover:${brandClasses.textGold} transition-colors`}>
-                INK <span className={brandClasses.textGold}>TELANGANA</span>
+              <span className={`text-2xl md:text-3xl font-serif font-bold tracking-wider ${brandClasses.textNavy} leading-none mb-1 group-hover:text-[#D4AF37] transition-colors`}>
+                INK <span className="text-[#D4AF37]">TELANGANA</span>
               </span>
               <span className="text-[0.6rem] md:text-[0.7rem] font-bold tracking-[0.15em] text-gray-500 uppercase">
                 Your Voice | Your Story | Our Telangana
@@ -53,24 +61,72 @@ export default function Navbar() {
                 placeholder="Search articles, analysis..."
                 value={searchQuery}
                 onChange={handleSearch}
-                className="w-full bg-gray-100 text-gray-900 placeholder-gray-500 rounded-full py-2.5 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-[#D4AF37] border border-gray-200 transition-all"
+                className="w-full bg-gray-100 text-gray-900 placeholder-gray-500 rounded-full py-2.5 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-[#D4AF37] border border-gray-200 transition-all text-sm"
               />
-              <Search className="absolute left-3 top-3 h-5 w-5 text-gray-500" />
+              <Search className="absolute left-3 top-3 h-4 w-4 text-gray-500" />
             </div>
           )}
         </div>
+      </header>
 
-        {/* Navigation Links */}
-        <div className="flex flex-wrap items-center gap-6 text-sm font-semibold border-t border-gray-200 pt-4">
-          <Link href="/" className={`hover:${brandClasses.textGold} ${pathname === '/' && currentCategory === 'All' ? brandClasses.textGold : 'text-gray-800'} transition-colors`}>Home</Link>
-          <Link href="/about" className={`hover:${brandClasses.textGold} ${pathname === '/about' ? brandClasses.textGold : 'text-gray-800'} transition-colors`}>About</Link>
-          <Link href="/?category=Politics" className={`hover:${brandClasses.textGold} ${pathname === '/' && currentCategory === 'Politics' ? brandClasses.textGold : 'text-gray-800'} transition-colors`}>Politics</Link>
-          <Link href="/?category=Business" className={`hover:${brandClasses.textGold} ${pathname === '/' && currentCategory === 'Business' ? brandClasses.textGold : 'text-gray-800'} transition-colors`}>Business</Link>
-          {/* <Link href="/short-news" className={`hover:${brandClasses.textGold} ${pathname === '/short-news' ? brandClasses.textGold : 'text-gray-800'} transition-colors`}>Short News</Link> */}
-          {/* <Link href="/my-comments" className={`hover:${brandClasses.textGold} ${pathname === '/my-comments' ? brandClasses.textGold : 'text-gray-800'} transition-colors`}>My Comments</Link> */}
-          <Link href="/contact" className={`${brandClasses.bgGold} ${brandClasses.textNavy} px-5 py-2.5 rounded-full hover:bg-yellow-500 transition-all ml-auto shadow-md font-bold text-xs uppercase tracking-wider`}>Contact Us</Link>
+      {/* STICKY SUB-NAVBAR: Only this bar remains fixed at the top */}
+      <nav className="bg-white sticky top-0 z-50 shadow-md border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex items-center justify-between w-full h-14">
+
+            {/* Scrollable Navigation links container */}
+            <div className="flex items-center gap-6 overflow-x-auto no-scrollbar flex-nowrap py-2 pr-4 h-full select-none">
+              <Link
+                href="/"
+                className={`hover:text-[#D4AF37] ${pathname === '/' && currentCategory === 'All' ? 'text-[#D4AF37] border-b-2 border-[#D4AF37]' : 'text-gray-800'} transition-colors font-semibold text-sm shrink-0 h-full flex items-center px-1`}
+              >
+                Home
+              </Link>
+              <Link
+                href="/about"
+                className={`hover:text-[#D4AF37] ${pathname === '/about' ? 'text-[#D4AF37] border-b-2 border-[#D4AF37]' : 'text-gray-800'} transition-colors font-semibold text-sm shrink-0 h-full flex items-center px-1`}
+              >
+                About
+              </Link>
+              <Link
+                href="/?category=Politics"
+                className={`hover:text-[#D4AF37] ${pathname === '/' && currentCategory === 'Politics' ? 'text-[#D4AF37] border-b-2 border-[#D4AF37]' : 'text-gray-800'} transition-colors font-semibold text-sm shrink-0 h-full flex items-center px-1`}
+              >
+                Politics
+              </Link>
+              <Link
+                href="/?category=Business"
+                className={`hover:text-[#D4AF37] ${pathname === '/' && currentCategory === 'Business' ? 'text-[#D4AF37] border-b-2 border-[#D4AF37]' : 'text-gray-800'} transition-colors font-semibold text-sm shrink-0 h-full flex items-center px-1`}
+              >
+                Business
+              </Link>
+              <Link
+                href="/short-news"
+                className={`hover:text-[#D4AF37] ${pathname === '/short-news' ? 'text-[#D4AF37] border-b-2 border-[#D4AF37]' : 'text-gray-800'} transition-colors font-semibold text-sm shrink-0 h-full flex items-center px-1`}
+              >
+                Short News
+              </Link>
+              <Link
+                href="/my-comments"
+                className={`hover:text-[#D4AF37] ${pathname === '/my-comments' ? 'text-[#D4AF37] border-b-2 border-[#D4AF37]' : 'text-gray-800'} transition-colors font-semibold text-sm shrink-0 h-full flex items-center px-1`}
+              >
+                My Comments
+              </Link>
+            </div>
+
+            {/* Sticky "Contact Us" CTA pinned to the right edge */}
+            <div className="flex-shrink-0 pl-4 bg-gradient-to-l from-white via-white/95 to-transparent h-full flex items-center">
+              <Link
+                href="/contact"
+                className="bg-[#D4AF37] text-[#0B1B35] px-4 py-2 rounded-full hover:bg-yellow-500 transition-all shadow-sm font-bold text-[11px] uppercase tracking-wider whitespace-nowrap"
+              >
+                Contact Us
+              </Link>
+            </div>
+
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </>
   );
 }
