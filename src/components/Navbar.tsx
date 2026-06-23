@@ -66,11 +66,8 @@ export default function Navbar() {
           <Link href="/about" className={`hover:${brandClasses.textGold} ${pathname === '/about' ? brandClasses.textGold : 'text-gray-800'} transition-colors`}>About</Link>
           <Link href="/?category=Politics" className={`hover:${brandClasses.textGold} ${pathname === '/' && currentCategory === 'Politics' ? brandClasses.textGold : 'text-gray-800'} transition-colors`}>Politics</Link>
           <Link href="/?category=Business" className={`hover:${brandClasses.textGold} ${pathname === '/' && currentCategory === 'Business' ? brandClasses.textGold : 'text-gray-800'} transition-colors`}>Business</Link>
-          {/* Renamed to Short News */}
-          <Link href="/short-news" className="hover:text-[#D4AF37] text-gray-300 transition-colors">Short News</Link>
-
-          {/* New 'My Comments' Link */}
-          <Link href="/my-comments" className="hover:text-[#D4AF37] text-gray-300 transition-colors">My Comments</Link>
+          {/* <Link href="/short-news" className={`hover:${brandClasses.textGold} ${pathname === '/short-news' ? brandClasses.textGold : 'text-gray-800'} transition-colors`}>Short News</Link> */}
+          {/* <Link href="/my-comments" className={`hover:${brandClasses.textGold} ${pathname === '/my-comments' ? brandClasses.textGold : 'text-gray-800'} transition-colors`}>My Comments</Link> */}
           <Link href="/contact" className={`${brandClasses.bgGold} ${brandClasses.textNavy} px-5 py-2.5 rounded-full hover:bg-yellow-500 transition-all ml-auto shadow-md font-bold text-xs uppercase tracking-wider`}>Contact Us</Link>
         </div>
       </div>
