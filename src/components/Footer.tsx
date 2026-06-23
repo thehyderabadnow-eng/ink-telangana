@@ -24,7 +24,7 @@ export default function Footer() {
           <Link href="/about" className="hover:text-[#D4AF37] transition-colors">About</Link>
           <Link href="/?category=Politics" className="hover:text-[#D4AF37] transition-colors">Politics</Link>
           <Link href="/?category=Business" className="hover:text-[#D4AF37] transition-colors">Business</Link>
-          <Link href="/short-news" className="hover:text-[#D4AF37] transition-colors">Short News</Link>
+          {/* <Link href="/short-news" className="hover:text-[#D4AF37] transition-colors">Short News</Link> */}
           <Link href="/contact" className="hover:text-[#D4AF37] transition-colors">Contact Us</Link>
         </div>
       </div>

@@ -91,7 +91,7 @@ export default function FreeLaptopArticle() {
           {/* Featured Image */}
           <div className="w-full h-72 md:h-[28rem] relative">
             <img
-              src="/articles/laptop.png" /* You can use laptop.png or free-laptop-scheme.png here */
+              src="/articles/free-laptop-scheme.png" /* You can use laptop.png or free-laptop-scheme.png here */
               alt="Free laptops to Telangana Students"
               className="w-full h-full object-cover"
             />
@@ -139,7 +139,7 @@ export default function FreeLaptopArticle() {
               {/* Secondary Image */}
               <div className="my-10 rounded-xl overflow-hidden shadow-lg border border-gray-100">
                 <img
-                  src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80"
+                  src="/articles/computer-lab.jpg"
                   alt="Students collaborating"
                   className="w-full h-auto object-cover"
                 />
@@ -247,8 +247,8 @@ export default function FreeLaptopArticle() {
                     Ink Telangana కథనం పై మీ అభిప్రాయాన్ని మాకు తెలియజేయండి!
                   </h3>
                   <p className="text-gray-300 mb-8 leading-relaxed text-lg">
-                    తెలంగాణలో విద్యార్థులకు ఉచిత ల్యాప్‌టాప్ పథకం అవసరమని మీరు భావిస్తున్నారా? ల్యాప్‌టాప్ లేకపోవడం వల్ల మీరు లేదా మీకు తెలిసిన విద్యార్థులు ఎప్పుడైనా ఇబ్బంది పడ్డారా? <br/><br/>
-                    ఈ ఆర్టికల్‌ను మీ సోషల్ మీడియా అకౌంట్లలో షేర్ చేయడం ద్వారా ప్రభుత్వం దృష్టికి వెళ్లేలా మద్దతు తెలపండి. 
+                    తెలంగాణలో విద్యార్థులకు ఉచిత ల్యాప్‌టాప్ పథకం అవసరమని మీరు భావిస్తున్నారా? ల్యాప్‌టాప్ లేకపోవడం వల్ల మీరు లేదా మీకు తెలిసిన విద్యార్థులు ఎప్పుడైనా ఇబ్బంది పడ్డారా? <br /><br />
+                    ఈ ఆర్టికల్‌ను మీ సోషల్ మీడియా అకౌంట్లలో షేర్ చేయడం ద్వారా ప్రభుత్వం దృష్టికి వెళ్లేలా మద్దతు తెలపండి.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4">
                     <button

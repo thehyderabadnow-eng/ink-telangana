@@ -5,7 +5,7 @@ import { SuggestionsArticles } from './suggestions';
 
 export const getAllArticles = () => {
   // Combine all articles and sort them by ID (or you can sort by date)
-  return [...politicsArticles, ...businessArticles, ...SuggestionsArticles].sort((a, b) => a.id - b.id);
+  return [...SuggestionsArticles, ...politicsArticles, ...businessArticles ].sort((a, b) => a.id - b.id);
 };
 
 export const getArticleById = (id: number) => {
