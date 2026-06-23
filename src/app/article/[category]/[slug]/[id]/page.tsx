@@ -1,48 +1,57 @@
-import Link from 'next/link';
-import { notFound } from 'next/navigation';
+import React from 'react';
 import { ArrowLeft, Clock } from 'lucide-react';
-import { getArticleById } from '@/data';
-import ShareButton from '@/components/ShareButton';
-import { brandClasses } from '@/utils/theme';
+import { getArticleById } from '../../../../../data';
+import ShareButton from '../../../../../components/ShareButton';
+import { brandClasses } from '../../../../../utils/theme';
+
+// Import your custom hardcoded articles here
+import FreeLaptopArticle from '../../../../../components/custom-articles/FreeLaptopArticle';
 
 export default async function ArticlePage({ params }: { params: Promise<{ category: string, slug: string, id: string }> }) {
   const resolvedParams = await params;
-  
-  const article = getArticleById(parseInt(resolvedParams.id));
+  const { id, category, slug } = resolvedParams;
 
-  // --- DEBUGGING CHECKS ---
+  // --- 1. CUSTOM ARTICLE REGISTER ---
+  // Map your custom article IDs to their respective custom page components.
+  // This completely eliminates the need to create folders!
+  if (id === "10000101") {
+    return <FreeLaptopArticle />;
+  }
+
+  // --- 2. COMMON DYNAMIC FALLBACK ---
+  // If the article isn't a custom component, fall back to the normal dynamic behavior.
+  const article = getArticleById(parseInt(id));
+
   if (!article) {
     return (
       <div className="max-w-7xl mx-auto px-4 py-20 text-center">
         <h1 className="text-3xl font-bold text-white mb-4">Error: Article Not Found</h1>
-        <p className="text-gray-400 mb-8">We could not find an article with ID: {resolvedParams.id}</p>
-        <Link href="/" className="text-[#D4AF37] hover:underline">&larr; Return to Home</Link>
+        <p className="text-gray-400 mb-8">We could not find an article with ID: {id}</p>
+        <a href="/" className="text-[#D4AF37] hover:underline">&larr; Return to Home</a>
       </div>
     );
   }
 
   const expectedCategory = article.category.toLowerCase().replace(/\s+/g, '-');
-  if (expectedCategory !== resolvedParams.category.toLowerCase() || article.slug !== resolvedParams.slug) {
+  if (expectedCategory !== category.toLowerCase() || article.slug !== slug) {
     return (
       <div className="max-w-7xl mx-auto px-4 py-20 text-center">
         <h1 className="text-3xl font-bold text-white mb-4">Error: URL Mismatch</h1>
         <p className="text-gray-400 mb-2">Expected URL: /article/{expectedCategory}/{article.slug}/{article.id}</p>
-        <p className="text-gray-400 mb-8">Current URL: /article/{resolvedParams.category}/{resolvedParams.slug}/{resolvedParams.id}</p>
-        <Link href="/" className="text-[#D4AF37] hover:underline">&larr; Return to Home</Link>
+        <p className="text-gray-400 mb-8">Current URL: /article/{category}/{slug}/{id}</p>
+        <a href="/" className="text-[#D4AF37] hover:underline">&larr; Return to Home</a>
       </div>
     );
   }
-  // ------------------------
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-8">
       <article className="max-w-3xl mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden text-gray-900 animate-in fade-in duration-500 mt-4 mb-10">
         <div className="p-6 md:p-10 border-b border-gray-100">
           <div className="flex items-center justify-between mb-8">
-            <Link href="/" className="flex items-center gap-2 text-sm text-gray-500 hover:text-[#0B1B35] transition-colors group">
+            <a href="/" className="flex items-center gap-2 text-sm text-gray-500 hover:text-[#0B1B35] transition-colors group">
               <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Back
-            </Link>
-            
+            </a>
             <ShareButton title={article.title} excerpt={article.excerpt} />
           </div>
 
@@ -71,7 +80,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ catego
             <p className="text-xl text-gray-600 font-medium italic mb-10 border-l-4 border-[#D4AF37] pl-5">
               {article.excerpt}
             </p>
-            {article.content}
+            <div dangerouslySetInnerHTML={{ __html: article.content }} />
           </div>
         </div>
       </article>

@@ -1,10 +1,11 @@
 import { politicsArticles } from './politics';
 import { businessArticles } from './business';
 import { shortNews } from './shortnewscomments';
+import { SuggestionsArticles } from './suggestions';
 
 export const getAllArticles = () => {
   // Combine all articles and sort them by ID (or you can sort by date)
-  return [...politicsArticles, ...businessArticles].sort((a, b) => a.id - b.id);
+  return [...politicsArticles, ...businessArticles, ...SuggestionsArticles].sort((a, b) => a.id - b.id);
 };
 
 export const getArticleById = (id: number) => {
