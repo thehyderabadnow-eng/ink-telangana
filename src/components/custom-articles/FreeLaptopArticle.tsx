@@ -23,9 +23,9 @@ export default function FreeLaptopArticle() {
   };
 
   const articleDetails = {
-    title: "ఉచిత ల్యాప్‌టాప్ పథకం అమలు చేస్తే.. తెలంగాణ యువత ప్రపంచంతో పోటీ పడతారు",
+    title: "ఉచిత ల్యాప్‌టాప్ పథకం అమలు చేస్తే.. తెలంగాణ యువత ప్రపంచంతో పోటీ పడతారు.",
     excerpt: "ఏ.ఐ. (Artificial Intelligence) తో పోటీ పడే యువతకు ఇది గొప్ప అవకాశంగా మారుతుంది.",
-    url: currentUrl || 'https://inktelangana.in'
+    url: currentUrl || 'https://inktelangana.com'
   };
 
   const handleShare = async () => {
@@ -70,7 +70,7 @@ export default function FreeLaptopArticle() {
 
             <div className="mb-4">
               <span className={`${brandClasses.bgGold} ${brandClasses.textNavy} text-xs font-bold px-3 py-1 rounded shadow-sm uppercase tracking-wider inline-block mb-5`}>
-                SUGGESTIONS
+                INK THOUGHTS
               </span>
               <h1 className={`text-3xl md:text-5xl font-serif font-bold ${brandClasses.textNavy} leading-tight mb-6`}>
                 {articleDetails.title}
@@ -92,7 +92,7 @@ export default function FreeLaptopArticle() {
           {/* Featured Image */}
           <div className="w-full h-72 md:h-[28rem] relative">
             <img
-              src="/articles/laptop.png"
+              src="/articles/free-laptop-scheme.png"
               alt="Free laptops to Telangana Students"
               className="w-full h-full object-cover"
             />
@@ -277,13 +277,13 @@ export default function FreeLaptopArticle() {
                       onClick={handleShare}
                       className="inline-flex justify-center items-center gap-2 px-8 py-3.5 bg-[#D4AF37] text-[#0B1B35] font-bold rounded-full hover:bg-yellow-500 transition-colors shadow-lg"
                     >
-                      <Share2 className="w-5 h-5" /> ఆర్టికల్ షేర్ చేయండి
+                      <Share2 className="w-5 h-5" /> Share
                     </button>
                     <Link
                       href="/contact"
                       className="inline-flex justify-center items-center px-8 py-3.5 bg-transparent border-2 border-[#D4AF37] text-[#D4AF37] font-bold rounded-full hover:bg-[#D4AF37]/10 transition-colors"
                     >
-                      మమ్మల్ని సంప్రదించండి
+                      Contact Us
                     </Link>
                   </div>
                 </div>

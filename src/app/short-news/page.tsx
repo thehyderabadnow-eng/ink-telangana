@@ -185,7 +185,7 @@ const handleNativeShare = async (id: number, text: string) => {
                   </span>
                   <div className={`flex items-center gap-2 ${brandClasses.bgNavy} ${brandClasses.textGold} px-4 py-1.5 rounded-full text-xs font-bold shadow-md`}>
                     <Share2 className="w-3.5 h-3.5" />
-                    inktelangana.in
+                    inktelangana.com
                   </div>
                 </div>
               </div>

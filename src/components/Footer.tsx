@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <footer className={`${brandClasses.bgNavy} text-gray-300 py-12 mt-12 border-t border-[#D4AF37]/20`}>
       <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
-        
+
         {/* Brand Info */}
         <div className="flex items-center gap-3">
           <PenTool className="w-8 h-8 text-[#D4AF37]" />
@@ -24,6 +24,7 @@ export default function Footer() {
           <Link href="/about" className="hover:text-[#D4AF37] transition-colors">About</Link>
           <Link href="/?category=Politics" className="hover:text-[#D4AF37] transition-colors">Politics</Link>
           <Link href="/?category=Business" className="hover:text-[#D4AF37] transition-colors">Business</Link>
+          <Link href="/?category=InkThoughts" className="hover:text-[#D4AF37] transition-colors">INK Thoughts</Link>
           {/* <Link href="/short-news" className="hover:text-[#D4AF37] transition-colors">Short News</Link> */}
           <Link href="/contact" className="hover:text-[#D4AF37] transition-colors">Contact Us</Link>
         </div>

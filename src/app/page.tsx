@@ -15,7 +15,8 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
   let filteredArticles = getAllArticles();
 
   if (categoryFilter !== 'All') {
-    filteredArticles = filteredArticles.filter(a => a.category === categoryFilter);
+    // FIX: Match category safely using lowercase to prevent spelling/case errors
+    filteredArticles = filteredArticles.filter(a => a.category.toLowerCase() === categoryFilter.toLowerCase());
   }
 
   if (searchQuery) {
@@ -31,8 +32,14 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
 
   // 3. Helper to format the long SEO-friendly URL securely
   const getUrlPath = (article: Article) => {
-    const categoryPath = article.category.toLowerCase().replace(/\s+/g, '-');
-    return `/article/${categoryPath}/${article.slug}/${article.id}`;
+    // Safely fallback just in case category is missing
+    const categoryString = article.category || 'general';
+    const categoryPath = categoryString.toLowerCase().replace(/\s+/g, '-');
+    
+    // Safely handle slug
+    const articleSlug = article.slug || 'story';
+    
+    return `/article/${categoryPath}/${articleSlug}/${article.id}`;
   };
 
   return (
@@ -47,10 +54,11 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
       )}
 
       {/* TOP STORIES SECTION */}
-      {topStories.length > 0 && !searchQuery && categoryFilter === 'All' && (
+      {/* FIX: Removed 'categoryFilter === All' so Top Stories show inside categories too! */}
+      {topStories.length > 0 && !searchQuery && (
         <section>
           <h2 className={`text-2xl font-serif font-bold text-white-900 mb-6 border-l-4 ${brandClasses.borderGold} pl-3`}>
-            Top Stories
+            {categoryFilter === 'All' ? 'Top Stories' : `Top ${categoryFilter} Stories`}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {topStories.map((article) => (
@@ -87,7 +95,7 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
       {latestStories.length > 0 && (
         <section>
           <h2 className={`text-2xl font-serif font-bold text-white-900 mb-6 border-l-4 ${brandClasses.borderGold} pl-3`}>
-            {searchQuery ? 'Search Results' : (categoryFilter === 'All' ? 'Latest Stories' : categoryFilter === 'Politics' ? 'Political Stories' : `${categoryFilter} Stories`)}
+            {searchQuery ? 'Search Results' : (categoryFilter === 'All' ? 'Latest Stories' : `Latest ${categoryFilter} Stories`)}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {latestStories.map((article) => (

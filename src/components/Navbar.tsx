@@ -101,17 +101,23 @@ export default function Navbar() {
                 Business
               </Link>
               <Link
+                href="/?category=InkThoughts"
+                className={`hover:text-[#D4AF37] ${pathname === '/' && currentCategory === 'InkThoughts' ? 'text-[#D4AF37] border-b-2 border-[#D4AF37]' : 'text-gray-800'} transition-colors font-semibold text-sm shrink-0 h-full flex items-center px-1`}
+              >
+                INK Thoughts
+              </Link>
+              {/* <Link
                 href="/short-news"
                 className={`hover:text-[#D4AF37] ${pathname === '/short-news' ? 'text-[#D4AF37] border-b-2 border-[#D4AF37]' : 'text-gray-800'} transition-colors font-semibold text-sm shrink-0 h-full flex items-center px-1`}
               >
                 Short News
-              </Link>
-              <Link
+              </Link> */}
+              {/* <Link
                 href="/my-comments"
                 className={`hover:text-[#D4AF37] ${pathname === '/my-comments' ? 'text-[#D4AF37] border-b-2 border-[#D4AF37]' : 'text-gray-800'} transition-colors font-semibold text-sm shrink-0 h-full flex items-center px-1`}
               >
                 My Comments
-              </Link>
+              </Link> */}
             </div>
 
             {/* Sticky "Contact Us" CTA pinned to the right edge */}
