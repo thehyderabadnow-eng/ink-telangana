@@ -23,7 +23,7 @@ export default function FreeLaptopArticle() {
   };
 
   const articleDetails = {
-    title: "ఉచిత ల్యాప్‌టాప్ పథకం అమలు చేస్తే.. తెలంగాణ యువత ప్రపంచంతో పోటీ పడతారు.",
+    title: "తెలంగాణ రాష్ట్రం ప్రపంచంతో పోటీ పడాలంటే, విద్యార్థులకు ఉచితంగా ల్యాప్‌టాప్ లు అందించాలి.",
     excerpt: "ఏ.ఐ. (Artificial Intelligence) తో పోటీ పడే యువతకు ఇది గొప్ప అవకాశంగా మారుతుంది.",
     url: currentUrl || 'https://inktelangana.com'
   };
@@ -92,7 +92,7 @@ export default function FreeLaptopArticle() {
           {/* Featured Image */}
           <div className="w-full h-72 md:h-[28rem] relative">
             <img
-              src="/articles/free-laptop-scheme.png"
+              src="/articles/laptop.png"
               alt="Free laptops to Telangana Students"
               className="w-full h-full object-cover"
             />

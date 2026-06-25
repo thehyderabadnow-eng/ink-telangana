@@ -4,10 +4,12 @@ export interface Article {
   title: string;
   date: string;
   category: string;
+  categoryName: string;
   imageUrl: string;
   excerpt: string;
   content: string;
   isTopStory: boolean;
+  isLatestStory: boolean;
 }
 
 export interface Thought {
