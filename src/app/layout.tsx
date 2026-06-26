@@ -16,7 +16,7 @@ export const metadata: Metadata = {
       {
         // CRITICAL: WhatsApp kosam idhi tappanisari ga 'https://' tho modalavvali (Absolute URL)
         // Mee main banner leda logo image link ikkada ivvandi
-        url: 'https://www.inktelangana.com/primary-logo.png', 
+        url: 'https://www.inktelangana.com/ink-logo-compressed.png', 
         width: 1200,
         height: 630,
         alt: 'Ink Telangana',
