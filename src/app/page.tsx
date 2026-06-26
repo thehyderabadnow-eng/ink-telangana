@@ -73,15 +73,24 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
 
                   <div className="absolute bottom-0 left-0 p-8 w-full z-10 flex flex-col justify-end h-full">
                     <span className={`${brandClasses.bgGold} ${brandClasses.textNavy} text-xs font-bold px-2 py-1 rounded shadow-sm uppercase tracking-wider self-start mb-4`}>
-                      {article.category}
+                      {article.categoryName}
                     </span>
                     <h3 className="text-3xl font-bold font-serif text-white leading-snug group-hover:text-[#D4AF37] transition-colors line-clamp-3">
                       {article.title}
                     </h3>
-                    <p className="text-gray-300 mt-3 line-clamp-2">{article.excerpt}</p>
-                    <div className="flex items-center gap-2 text-sm text-gray-400 mt-5 font-medium opacity-80 group-hover:opacity-100 transition-opacity">
+                    {/* <p className="text-gray-300 font-bold mt-3 line-clamp-2 [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.8)]">
+                      {article.excerpt}
+                    </p>
+                    <div className="flex items-center gap-2 text-sm text-gray-400 mt-5 font-medium opacity-80 group-hover:opacity-100 transition-opacity [text-shadow:_0_1px_3px_rgb(0_0_0_/_1)]">
+                      <Clock className="w-4 h-4 drop-shadow-md" />
+                      <span className="font-bold">{article.date}</span>
+                    </div> */}
+                    <p className="text-gray-200 font-bold mt-3 line-clamp-2 backdrop-blur-md bg-black/30 p-2 rounded-lg">
+                      {article.excerpt}
+                    </p>
+                    <div className="flex items-center gap-2 text-sm text-gray-200 mt-5 font-medium opacity-80 group-hover:opacity-100 transition-opacity backdrop-blur-md bg-black/30 p-2 rounded-lg w-fit">
                       <Clock className="w-4 h-4" />
-                      <span>{article.date}</span>
+                      <span className="font-bold">{article.date}</span>
                     </div>
                   </div>
                 </article>

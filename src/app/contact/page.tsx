@@ -43,7 +43,7 @@ export default function ContactPage() {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
-          access_key: "bb2b3337-c94b-4e1f-8552-d8a90742a10e",
+          access_key: "674c26eb-bea6-48c1-8404-2b196287c116",
           subject: `New Contact Form Submission: ${contactForm.purpose}`,
           from_name: "Ink Telangana Website",
           ...contactForm

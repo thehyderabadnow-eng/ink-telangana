@@ -88,23 +88,23 @@ export default function Navbar() {
               >
                 About
               </Link>
-              <Link
+              {/* <Link
                 href="/?category=Politics"
                 className={`hover:text-[#D4AF37] ${pathname === '/' && currentCategory === 'Politics' ? 'text-[#D4AF37] border-b-2 border-[#D4AF37]' : 'text-gray-800'} transition-colors font-semibold text-sm shrink-0 h-full flex items-center px-1`}
               >
                 Politics
-              </Link>
-              <Link
+              </Link> */}
+              {/* <Link
                 href="/?category=Business"
                 className={`hover:text-[#D4AF37] ${pathname === '/' && currentCategory === 'Business' ? 'text-[#D4AF37] border-b-2 border-[#D4AF37]' : 'text-gray-800'} transition-colors font-semibold text-sm shrink-0 h-full flex items-center px-1`}
               >
                 Business
-              </Link>
+              </Link> */}
               <Link
                 href="/?category=InkThoughts"
                 className={`hover:text-[#D4AF37] ${pathname === '/' && currentCategory === 'InkThoughts' ? 'text-[#D4AF37] border-b-2 border-[#D4AF37]' : 'text-gray-800'} transition-colors font-semibold text-sm shrink-0 h-full flex items-center px-1`}
               >
-                INK Thoughts
+                Ink Thoughts
               </Link>
               {/* <Link
                 href="/short-news"

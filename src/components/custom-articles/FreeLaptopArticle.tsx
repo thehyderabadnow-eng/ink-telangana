@@ -23,8 +23,8 @@ export default function FreeLaptopArticle() {
   };
 
   const articleDetails = {
-    title: "తెలంగాణ రాష్ట్రం ప్రపంచంతో పోటీ పడాలంటే, విద్యార్థులకు ఉచితంగా ల్యాప్‌టాప్ లు అందించాలి.",
-    excerpt: "ఏ.ఐ. (Artificial Intelligence) తో పోటీ పడే యువతకు ఇది గొప్ప అవకాశంగా మారుతుంది.",
+    title: "విద్యార్థులకు ఉచిత లాప్ టాప్..",
+    excerpt: "ఏ.ఐ. (Artificial Intelligence) తో పోటీ పడే యువతకు ఇది గొప్ప అవకాశం.",
     url: currentUrl || 'https://inktelangana.com'
   };
 
@@ -90,9 +90,9 @@ export default function FreeLaptopArticle() {
           </div>
 
           {/* Featured Image */}
-          <div className="w-full h-72 md:h-[28rem] relative">
+          <div className="w-full h-72 md:h-[30rem] relative">
             <img
-              src="/articles/laptop.png"
+              src="https://blogger.googleusercontent.com/img/a/AVvXsEg2l2jCnxH5FVQVEFVQsFbtD4-3petke3gsLAZwY2AManvEjZ6-UxVeoTD-diPV9Ht6DbKYrHMlSgMKmTifeMMEpvhqlFOY71K6hlvy2b9x-Sj14Iq0KRrduXV0AaJDbLp9tSSBOTB3iFYKOkUv2er878APQ1pqXAarch9nl2zdGntPoAooo7t_CBiyNmnL"
               alt="Free laptops to Telangana Students"
               className="w-full h-full object-cover"
             />
@@ -103,28 +103,24 @@ export default function FreeLaptopArticle() {
             <div className="text-lg text-gray-800 leading-loose">
 
               {/* Excerpt Highlight Box */}
-              <p className="text-xl text-gray-600 font-medium italic mb-10 border-l-4 border-[#D4AF37] pl-5 bg-gray-50 py-4 pr-4 rounded-r-lg">
+              {/* <p className="text-xl text-gray-600 font-medium italic mb-10 border-l-4 border-[#D4AF37] pl-5 bg-gray-50 py-4 pr-4 rounded-r-lg">
                 {articleDetails.excerpt}
-              </p>
+              </p> */}
 
               <h3 className={`text-2xl font-bold ${brandClasses.textNavy} mb-4`}>
-                ఇది డిజిటల్ యుగం..
+                ఈ డిజిటల్ యుగంలో..
               </h3>
               <p className="mb-6">
-                ఈ రోజుల్లో కొత్త స్కిల్స్ నేర్చుకోవడానికీ మరియు వర్క్ ఫ్రమ్ హోమ్ ఉద్యోగాలు సాధించడానికీ ల్యాప్‌టాప్ తప్పనిసరి. నేటి ఆధునిక ప్రపంచంలో విద్య కేవలం పుస్తకాలు, పెన్నులకే పరిమితం కాలేదు. ప్రపంచ స్థాయిలో రాణించాలన్నా, ఐటీ, కోడింగ్, ఆర్టిఫిషియల్ ఇంటెలిజెన్స్ (AI) వంటి రంగాల్లో అడుగుపెట్టాలన్నా విద్యార్థులకు "డిజిటల్ అక్షరాస్యత" అత్యంత కీలకంగా మారింది.
+                కొత్త స్కిల్స్ నేర్చుకోవడానికీ మరియు వర్క్ ఫ్రమ్ హోమ్ ఉద్యోగాలు సాధించడానికీ ల్యాప్‌టాప్ తప్పనిసరి. నేటి ఆధునిక ప్రపంచంలో విద్య కేవలం పుస్తకాలు, పెన్నులకే పరిమితం కాలేదు. ప్రపంచ స్థాయిలో రాణించాలన్నా, ఐటీ, కోడింగ్, ఆర్టిఫిషియల్ ఇంటెలిజెన్స్ (AI) వంటి రంగాల్లో అడుగుపెట్టాలన్నా విద్యార్థులకు "డిజిటల్ అక్షరాస్యత" అత్యంత కీలకంగా మారింది.
               </p>
 
-              <p className="mb-6">
+              <blockquote className="border-l-4 border-[#0B1B35] bg-[#f5f7fa] p-6 italic text-gray-800 rounded-r-xl mb-10 shadow-sm text-xl font-serif">
                 ఒకప్పుడు ల్యాప్‌టాప్ అనేది విలాసవంతమైన వస్తువు. కానీ ఇప్పుడు అది విద్యార్థి ప్రాథమిక అవసరంగా, వారి భవిష్యత్తును మార్చే ఒక శక్తివంతమైన ఆయుధంగా మారింది.
-              </p>
+              </blockquote>
 
               <p className="mb-8">
                 తెలంగాణ రాష్ట్రంలో 'ఫీజు రీఇంబర్స్మెంట్' (TS ePASS) ద్వారా పేద విద్యార్థుల ట్యూషన్ ఫీజులను అందిస్తూ ప్రభుత్వం అద్భుతమైన ప్రోత్సాహాన్ని ఇస్తోంది. అయితే, ఫీజులు కట్టినప్పటికీ ప్రొఫెషనల్ కోర్సులు (Engineering, Pharmacy, MBA, MCA, Degree) చదివే విద్యార్థులు ల్యాప్‌టాప్ లేక తీవ్ర ఇబ్బందులు పడుతున్నారు. ఈ నేపథ్యంలో, దేశంలోని ఇతర రాష్ట్రాల స్ఫూర్తితో మన తెలంగాణలోనూ 'ఉచిత ల్యాప్‌టాప్ పథకాన్ని' ప్రవేశపెట్టాల్సిన అవసరం ఎంతైనా ఉంది.
               </p>
-
-              <blockquote className="border-l-4 border-[#0B1B35] bg-[#f5f7fa] p-6 italic text-gray-800 rounded-r-xl mb-10 shadow-sm text-xl font-serif">
-                "రక్షణ రంగంలో ఆయుధాలు ఎంత అవసరమో.. ప్రస్తుతం డిజిటల్ యుగంలో విద్యార్థులకు ల్యాప్‌టాప్ అంతే అవసరం."
-              </blockquote>
 
               {/* Subheading 1 */}
               <h3 className={`text-2xl font-bold ${brandClasses.textNavy} mt-12 mb-6 flex items-center gap-2`}>
@@ -136,7 +132,7 @@ export default function FreeLaptopArticle() {
               <ul className="space-y-4 mb-8">
                 <li className="flex items-start gap-3">
                   <div className={`mt-1.5 w-2 h-2 rounded-full ${brandClasses.bgGold} flex-shrink-0`}></div>
-                  <p><strong>మధ్యప్రదేశ్ (Direct Benefit Transfer విధానం):</strong> ఇక్కడ 12వ తరగతి బోర్డు పరీక్షల్లో 75% అంతకంటే ఎక్కువ మార్కులు సాధించిన విద్యార్థులకు ల్యాప్‌టాప్ కొనుగోలు కోసం ప్రభుత్వం ₹25,000 లను నేరుగా విద్యార్థి బ్యాంక్ ఖాతాలో జమ చేస్తుంది. దీనివల్ల మధ్యవర్తుల ప్రమేయం లేకుండా పారదర్శకత పెరుగుతోంది. అవినీతికి ఆస్కారం ఉండదు.</p>
+                  <p><strong>మధ్యప్రదేశ్ (Direct Benefit Transfer విధానం):</strong> ఇక్కడ 12వ తరగతి బోర్డు పరీక్షల్లో 75% అంతకంటే ఎక్కువ మార్కులు సాధించిన విద్యార్థులకు ల్యాప్‌టాప్ కొనుగోలు కోసం ప్రభుత్వం రూ.25,000 లను నేరుగా విద్యార్థి బ్యాంక్ ఖాతాలో జమ చేస్తుంది. దీనివల్ల మధ్యవర్తుల ప్రమేయం లేకుండా పారదర్శకత పెరుగుతోంది. అవినీతికి ఆస్కారం ఉండదు.</p>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className={`mt-1.5 w-2 h-2 rounded-full ${brandClasses.bgGold} flex-shrink-0`}></div>
@@ -144,14 +140,18 @@ export default function FreeLaptopArticle() {
                 </li>
                 <li className="flex items-start gap-3">
                   <div className={`mt-1.5 w-2 h-2 rounded-full ${brandClasses.bgGold} flex-shrink-0`}></div>
-                  <p><strong>ఒడిశా:</strong> మెరిట్ పొందిన విద్యార్థులకు ల్యాప్‌టాప్ సహాయం కింద సుమారు ₹30,000 ఏటా అందిస్తూ వారి ఉన్నత విద్యకు అండగా నిలుస్తున్నారు.</p>
+                  <p><strong>ఒడిశా:</strong> మెరిట్ పొందిన విద్యార్థులకు ల్యాప్‌టాప్ సహాయం కింద సుమారు రూ.30,000 లను ఏటా అందిస్తూ వారి ఉన్నత విద్యకు అండగా నిలుస్తున్నారు.</p>
                 </li>
               </ul>
+
+              <blockquote className="border-l-4 border-[#0B1B35] bg-[#f5f7fa] p-6 italic text-gray-800 rounded-r-xl mb-10 shadow-sm text-xl font-serif">
+                "రక్షణ రంగంలో ఆయుధాలు ఎంత అవసరమో.. డిజిటల్ యుగంలో విద్యార్థులకు ల్యాప్‌టాప్ అంతే అవసరం."
+              </blockquote>
 
               {/* Secondary Image */}
               <div className="my-10 rounded-xl overflow-hidden shadow-lg border border-gray-100">
                 <img
-                  src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80"
+                  src="https://blogger.googleusercontent.com/img/a/AVvXsEikZpsz3ENxId42k9J5k_Nmq_yvKiiGBYb8Rh1k69O9BBDgB-P516Ew8DE9e0lmoqdzWgjXAXbt_rB_RnsdOOYLUQ_Z7UdIT0SbKSCJ9J8rR-6J02Q27HWFLHLYUAu4N7nqdDb4FsGbE67MM8lhTcT56ys9y0JRNsmaLt5J5gaG0jLAVCOmZR8iacuatmAP"
                   alt="Students collaborating digitally"
                   className="w-full h-auto object-cover"
                 />
@@ -214,7 +214,7 @@ export default function FreeLaptopArticle() {
                 </div>
                 <div className="bg-white border border-gray-200 p-5 rounded-xl shadow-sm hover:shadow-md transition-shadow md:col-span-2">
                   <strong className={`${brandClasses.textNavy} block mb-1 text-lg`}>ఫ్రంట్ ఆఫీస్ & డేటా ఎంట్రీ:</strong>
-                  <span className="text-sm text-gray-600">చాలా ఆఫీసులలో ఇప్పుడు కంప్యూటర్/ఆన్‌లైన్ డేటా నిర్వహణ తప్పనిసరి అయింది. Excel, Word, PPT, తెలుగు టైపింగ్, గూగుల్ ఫామ్స్ వంటి అప్లికేషన్లు నేర్చుకుని ఉద్యోగాలు పొందవచ్చు.</span>
+                  <span className="text-sm text-gray-600">ప్రతీ ఆఫీసులలో ఇప్పుడు కంప్యూటర్/ఆన్‌లైన్ డేటా నిర్వహణ తప్పనిసరి అయింది. Excel, Word, PPT, తెలుగు టైపింగ్, గూగుల్ ఫామ్స్ వంటి అప్లికేషన్లు నేర్చుకుని ఉద్యోగాలు పొందవచ్చు.</span>
                 </div>
               </div>
 
@@ -247,7 +247,7 @@ export default function FreeLaptopArticle() {
                 <div className={`w-2 h-8 ${brandClasses.bgGold} rounded-sm`}></div>
                 తెలంగాణ ప్రభుత్వానికి విజ్ఞప్తి
               </h3>
-              <p className="mb-6">ఐటీ ఎగుమతులకు కేరాఫ్ అడ్రస్‌గా ఉన్న హైదరాబాద్ లాంటి గ్లోబల్ సిటీ మన తెలంగాణలో ఉంది. అలాంటి మన రాష్ట్రంలో విద్యార్థులు ల్యాప్‌టాప్ లేక ఉద్యోగ/ఉపాధి అవకాశాలు పొందడంలో వెనుకబడిపోవడం నిజంగా బాధాకరం. గౌరవనీయులైన తెలంగాణ ముఖ్యమంత్రి గారికి మరియు విద్యాశాఖ అధికారులకు ప్రజల పక్షాన మా విజ్ఞప్తి:</p>
+              <p className="mb-6">ఐటీ ఎగుమతులకు కేరాఫ్ అడ్రస్‌గా ఉన్న హైదరాబాద్ లాంటి గ్లోబల్ సిటీ తెలంగాణలో ఉంది. అలాంటి మన రాష్ట్రంలో విద్యార్థులు ల్యాప్‌టాప్ లేక ఉద్యోగ/ఉపాధి అవకాశాలు పొందడంలో వెనుకబడిపోవడం నిజంగా బాధాకరం. గౌరవనీయులైన తెలంగాణ ముఖ్యమంత్రి గారికి మరియు విద్యాశాఖ అధికారులకు ప్రజల పక్షాన మా విజ్ఞప్తి:</p>
 
               <blockquote className="relative p-8 bg-[#f5f7fa] rounded-xl border-l-4 border-[#0B1B35] mb-8 font-serif text-xl italic text-gray-700 shadow-sm">
                 <span className="absolute top-2 left-4 text-5xl text-gray-300 opacity-50">"</span>
