@@ -27,6 +27,10 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
     );
   }
 
+  const displayCategoryName = categoryFilter !== 'All' && filteredArticles.length > 0
+    ? (filteredArticles[0].categoryName || categoryFilter)
+    : categoryFilter;
+
   // Updated logic: Using isLatestStory directly here
   const topStories = filteredArticles.filter(a => a.isTopStory);
   const latestStories = filteredArticles.filter(a => a.isLatestStory);
@@ -58,7 +62,7 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
       {topStories.length > 0 && !searchQuery && (
         <section>
           <h2 className={`text-xl md:text-2xl font-serif font-bold text-white mb-4 md:mb-6 border-l-4 ${brandClasses.borderGold} pl-3`}>
-            {categoryFilter === 'All' ? 'Top Stories' : `Top ${categoryFilter} Stories`}
+            {categoryFilter === 'All' ? 'Top Stories' : `Top ${displayCategoryName} Stories`}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
             {topStories.map((article) => (
@@ -109,8 +113,8 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
       {/* LATEST STORIES SECTION */}
       {latestStories.length > 0 && (
         <section>
-          <h2 className={`text-2xl font-serif font-bold text-white mb-6 border-l-4 ${brandClasses.borderGold} pl-3`}>
-            {searchQuery ? 'Search Results' : (categoryFilter === 'All' ? 'Latest Stories' : `Latest ${categoryFilter} Stories`)}
+          <h2 className={`text-xl md:text-2xl font-serif font-bold text-white mb-4 md:mb-6 border-l-4 ${brandClasses.borderGold} pl-3`}>
+            {searchQuery ? 'Search Results' : (categoryFilter === 'All' ? 'Latest Stories' : `Latest ${displayCategoryName} Stories`)}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {latestStories.map((article) => (

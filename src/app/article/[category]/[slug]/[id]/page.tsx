@@ -46,7 +46,7 @@ export async function generateMetadata(
 
   // 2. Dynamic Articles Metadata
   const article = getArticleById(parseInt(id));
-  
+
   if (!article) {
     return { title: 'Article Not Found | Ink Telangana' };
   }
@@ -146,7 +146,11 @@ export default async function ArticlePage({ params }: Props) {
           <img src={article.imageUrl} alt={article.title} className="w-full h-full object-cover" />
         </div>
 
-        <div className="p-6 md:p-10">
+        <div
+          className="p-6 md:p-10 select-none"
+          onCopy={(e) => e.preventDefault()}
+          onContextMenu={(e) => e.preventDefault()}
+        >
           <div className="prose prose-lg max-w-none text-gray-800 whitespace-pre-wrap leading-relaxed">
             <p className="text-xl text-gray-600 font-medium italic mb-10 border-l-4 border-[#D4AF37] pl-5">
               {article.excerpt}

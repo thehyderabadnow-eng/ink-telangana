@@ -51,8 +51,11 @@ export default function FreeLaptopArticle() {
   return (
     <div className="min-h-screen bg-[#f8f9fa] font-sans text-gray-900 pb-12">
       <div className="max-w-7xl mx-auto px-4 py-8">
-        <article className="max-w-3xl mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden mt-4">
-
+        <article
+          className="max-w-3xl mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden mt-4 select-none"
+          onCopy={(e) => e.preventDefault()}
+          onContextMenu={(e) => e.preventDefault()}
+        >
           {/* Header Section */}
           <div className="p-6 md:p-5 border-b border-gray-100">
             <div className="flex items-center justify-between mb-8">
@@ -80,7 +83,7 @@ export default function FreeLaptopArticle() {
               <div className="flex flex-wrap items-center gap-6 text-gray-600 text-sm border-t border-gray-100 pt-6">
                 <div className="flex items-center gap-1.5 font-medium">
                   <Clock className="w-4 h-4 text-[#D4AF37]" />
-                  <span>June 25, 2026</span>
+                  <span>June 26, 2026</span>
                 </div>
               </div>
             </div>
