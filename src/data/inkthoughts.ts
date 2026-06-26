@@ -4,7 +4,7 @@ export const InkThoughtsArticles: Article[] = [
     {
         id: 10000101,
         slug: "free-laptop-scheme-to-telangana-students",
-        title: "విద్యార్థులకు ఉచిత లాప్ టాప్..",
+        title: "విద్యార్థులకు ఉచిత ల్యాప్‌టాప్..",
         date: "June 23, 2026",
         category: "InkThoughts",
         categoryName: "INK THOUGHTS",

@@ -23,7 +23,7 @@ export default function FreeLaptopArticle() {
   };
 
   const articleDetails = {
-    title: "విద్యార్థులకు ఉచిత లాప్ టాప్..",
+    title: "విద్యార్థులకు ఉచిత ల్యాప్‌టాప్..",
     excerpt: "ఏ.ఐ. (Artificial Intelligence) తో పోటీ పడే యువతకు ఇది గొప్ప అవకాశం.",
     url: currentUrl || 'https://inktelangana.com'
   };
