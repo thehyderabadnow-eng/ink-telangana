@@ -76,11 +76,8 @@ export default function FreeLaptopArticle() {
                 {articleDetails.title}
               </h1>
 
+              {/* కేవలం తేదీ మాత్రమే ఉంచబడింది */}
               <div className="flex flex-wrap items-center gap-6 text-gray-600 text-sm border-t border-gray-100 pt-6">
-                <div className="flex items-center gap-2 font-semibold">
-                  <PenTool className="w-4 h-4 text-[#D4AF37]" />
-                  <span>రచన: వంశీ బీటెక్ (Vamshi BTech)</span>
-                </div>
                 <div className="flex items-center gap-1.5 font-medium">
                   <Clock className="w-4 h-4 text-[#D4AF37]" />
                   <span>June 25, 2026</span>
@@ -258,6 +255,18 @@ export default function FreeLaptopArticle() {
               <p className="mb-10 font-bold text-[#0B1B35] text-xl">
                 తెలంగాణను కేవలం ఐటీ హబ్‌గానే కాకుండా... డిజిటల్ అక్షరాస్యత కలిగిన, నైపుణ్యం గల యువ శక్తి కేంద్రంగా (Skilled Youth Hub) మార్చడానికి ఈ పథకాన్ని త్వరితగతిన పరిశీలించి, అమలు చేయాలని కోరుతున్నాము.
               </p>
+
+              {/* --- AUTHOR SIGN OFF BOX (కొత్తగా యాడ్ చేసిన భాగం) --- */}
+              <div className="mt-12 flex justify-end border-t border-gray-100 pt-8">
+                <div className="inline-flex items-center gap-4 bg-gray-50 border border-gray-200 px-6 py-4 rounded-xl shadow-sm">
+                  <div className={`p-3 rounded-full ${brandClasses.bgNavy}`}>
+                    <PenTool className="w-5 h-5 text-[#D4AF37]" />
+                  </div>
+                  <div className="text-left">
+                    <p className={`font-bold ${brandClasses.textNavy} text-lg`}>Vamshi BTech</p>
+                  </div>
+                </div>
+              </div>
 
               {/* --- INTERACTIVE CALL TO ACTION BOX --- */}
               <div className={`mt-16 bg-gradient-to-br from-[#0B1B35] to-[#12161E] rounded-2xl p-8 md:p-10 text-white shadow-xl relative overflow-hidden`}>

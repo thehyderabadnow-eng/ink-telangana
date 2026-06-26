@@ -27,7 +27,7 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
     );
   }
 
-  // అప్‌డేట్ చేయబడిన లాజిక్: ఇక్కడ డైరెక్ట్ గా isLatestStory ని వాడుతున్నాము
+  // Updated logic: Using isLatestStory directly here
   const topStories = filteredArticles.filter(a => a.isTopStory);
   const latestStories = filteredArticles.filter(a => a.isLatestStory);
 
@@ -57,13 +57,14 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
       {/* TOP STORIES SECTION */}
       {topStories.length > 0 && !searchQuery && (
         <section>
-          <h2 className={`text-2xl font-serif font-bold text-white mb-6 border-l-4 ${brandClasses.borderGold} pl-3`}>
+          <h2 className={`text-xl md:text-2xl font-serif font-bold text-white mb-4 md:mb-6 border-l-4 ${brandClasses.borderGold} pl-3`}>
             {categoryFilter === 'All' ? 'Top Stories' : `Top ${categoryFilter} Stories`}
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
             {topStories.map((article) => (
               <Link key={article.id} href={getUrlPath(article)}>
-                <article className="relative rounded-xl overflow-hidden cursor-pointer group h-[30rem] shadow-xl shadow-black/50 bg-slate-900">
+                {/* Responsive Height: 24rem (Mobile) -> 26rem (Tablet) -> 30rem (Desktop) */}
+                <article className="relative rounded-xl overflow-hidden cursor-pointer group h-[24rem] sm:h-[26rem] md:h-[30rem] shadow-xl shadow-black/50 bg-slate-900">
                   <img
                     src={article.imageUrl}
                     alt={article.title}
@@ -71,27 +72,32 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0B1B35] via-[#0B1B35]/70 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-                  <div className="absolute bottom-0 left-0 p-8 w-full z-10 flex flex-col justify-end h-full">
-                    <span className={`${brandClasses.bgGold} ${brandClasses.textNavy} text-xs font-bold px-2 py-1 rounded shadow-sm uppercase tracking-wider self-start mb-4`}>
-                      {article.categoryName}
+                  {/* Responsive Padding: p-5 (Mobile) -> p-8 (Desktop) */}
+                  <div className="absolute bottom-0 left-0 p-5 md:p-8 w-full z-10 flex flex-col justify-end h-full">
+
+                    {/* Category Badge */}
+                    <span className={`${brandClasses.bgGold} ${brandClasses.textNavy} text-[10px] md:text-xs font-bold px-2 py-1 rounded shadow-sm uppercase tracking-wider self-start mb-3 md:mb-4`}>
+                      {article.categoryName || article.category}
                     </span>
-                    <h3 className="text-3xl font-bold font-serif text-white leading-snug group-hover:text-[#D4AF37] transition-colors line-clamp-3">
+
+                    {/* Responsive Title: text-xl (Mobile) -> text-3xl (Desktop) */}
+                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold font-serif text-white leading-snug group-hover:text-[#D4AF37] transition-colors line-clamp-3">
                       {article.title}
                     </h3>
-                    {/* <p className="text-gray-300 font-bold mt-3 line-clamp-2 [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.8)]">
-                      {article.excerpt}
-                    </p>
-                    <div className="flex items-center gap-2 text-sm text-gray-400 mt-5 font-medium opacity-80 group-hover:opacity-100 transition-opacity [text-shadow:_0_1px_3px_rgb(0_0_0_/_1)]">
-                      <Clock className="w-4 h-4 drop-shadow-md" />
-                      <span className="font-bold">{article.date}</span>
-                    </div> */}
-                    <p className="text-gray-200 font-bold mt-3 line-clamp-2 backdrop-blur-md bg-black/30 p-2 rounded-lg">
-                      {article.excerpt}
-                    </p>
-                    <div className="flex items-center gap-2 text-sm text-gray-200 mt-5 font-medium opacity-80 group-hover:opacity-100 transition-opacity backdrop-blur-md bg-black/30 p-2 rounded-lg w-fit">
-                      <Clock className="w-4 h-4" />
+
+                    {/* Responsive Excerpt Text Size */}
+                    <div className="mt-2 md:mt-3 backdrop-blur-md bg-black/30 p-2.5 rounded-lg border border-white/10">
+                      <p className="text-sm md:text-base text-gray-200 font-bold line-clamp-2 leading-snug">
+                        {article.excerpt}
+                      </p>
+                    </div>
+
+                    {/* Responsive Clock Icon and Date Size */}
+                    <div className="flex items-center gap-2 text-xs md:text-sm text-gray-200 mt-4 md:mt-5 font-medium opacity-80 group-hover:opacity-100 transition-opacity backdrop-blur-md bg-black/30 p-2 rounded-lg w-fit border border-white/10">
+                      <Clock className="w-3.5 h-3.5 md:w-4 md:h-4" />
                       <span className="font-bold">{article.date}</span>
                     </div>
+
                   </div>
                 </article>
               </Link>
