@@ -24,11 +24,11 @@ export async function generateMetadata(
   // 1. Custom Article Metadata (Free Laptop)
   if (id === "10000101") {
     return {
-      title: "విద్యార్థులకు ఉచిత లాప్ టాప్.. | Ink Telangana",
-      description: "ఏ.ఐ. (Artificial Intelligence) తో పోటీ పడే యువతకు ఇది గొప్ప అవకాశం.",
+      title: "విద్యార్థులకు ఉచిత ల్యాప్‌టాప్.. | Ink Telangana",
+      description: "Engineering, Pharmacy, MBA, MCA, Degree చదివే విద్యార్థులు ల్యాప్‌టాప్ లేక తీవ్ర ఇబ్బందులు పడుతున్న ఈ నేపథ్యంలో..",
       openGraph: {
-        title: "విద్యార్థులకు ఉచిత లాప్ టాప్..",
-        description: "ఏ.ఐ. (Artificial Intelligence) తో పోటీ పడే యువతకు ఇది గొప్ప అవకాశం.",
+        title: "విద్యార్థులకు ఉచిత ల్యాప్‌టాప్..",
+        description: "Engineering, Pharmacy, MBA, MCA, Degree చదివే విద్యార్థులు ల్యాప్‌టాప్ లేక తీవ్ర ఇబ్బందులు పడుతున్న ఈ నేపథ్యంలో..",
         url: `${baseUrl}/article/${category}/${slug}/${id}`,
         images: [
           {
