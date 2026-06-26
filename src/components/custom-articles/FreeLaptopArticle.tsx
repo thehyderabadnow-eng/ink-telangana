@@ -54,7 +54,7 @@ export default function FreeLaptopArticle() {
         <article className="max-w-3xl mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden mt-4">
 
           {/* Header Section */}
-          <div className="p-6 md:p-10 border-b border-gray-100">
+          <div className="p-6 md:p-5 border-b border-gray-100">
             <div className="flex items-center justify-between mb-8">
               <Link href="/" className="flex items-center gap-2 text-sm text-gray-500 hover:text-[#0B1B35] transition-colors group font-semibold">
                 <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Back
@@ -92,7 +92,7 @@ export default function FreeLaptopArticle() {
           {/* Featured Image */}
           <div className="w-full h-72 md:h-[30rem] relative">
             <img
-              src="https://blogger.googleusercontent.com/img/a/AVvXsEg2l2jCnxH5FVQVEFVQsFbtD4-3petke3gsLAZwY2AManvEjZ6-UxVeoTD-diPV9Ht6DbKYrHMlSgMKmTifeMMEpvhqlFOY71K6hlvy2b9x-Sj14Iq0KRrduXV0AaJDbLp9tSSBOTB3iFYKOkUv2er878APQ1pqXAarch9nl2zdGntPoAooo7t_CBiyNmnL"
+              src="https://blogger.googleusercontent.com/img/a/AVvXsEikZpsz3ENxId42k9J5k_Nmq_yvKiiGBYb8Rh1k69O9BBDgB-P516Ew8DE9e0lmoqdzWgjXAXbt_rB_RnsdOOYLUQ_Z7UdIT0SbKSCJ9J8rR-6J02Q27HWFLHLYUAu4N7nqdDb4FsGbE67MM8lhTcT56ys9y0JRNsmaLt5J5gaG0jLAVCOmZR8iacuatmAP"
               alt="Free laptops to Telangana Students"
               className="w-full h-full object-cover"
             />
@@ -148,15 +148,6 @@ export default function FreeLaptopArticle() {
                 "రక్షణ రంగంలో ఆయుధాలు ఎంత అవసరమో.. డిజిటల్ యుగంలో విద్యార్థులకు ల్యాప్‌టాప్ అంతే అవసరం."
               </blockquote>
 
-              {/* Secondary Image */}
-              <div className="my-10 rounded-xl overflow-hidden shadow-lg border border-gray-100">
-                <img
-                  src="https://blogger.googleusercontent.com/img/a/AVvXsEikZpsz3ENxId42k9J5k_Nmq_yvKiiGBYb8Rh1k69O9BBDgB-P516Ew8DE9e0lmoqdzWgjXAXbt_rB_RnsdOOYLUQ_Z7UdIT0SbKSCJ9J8rR-6J02Q27HWFLHLYUAu4N7nqdDb4FsGbE67MM8lhTcT56ys9y0JRNsmaLt5J5gaG0jLAVCOmZR8iacuatmAP"
-                  alt="Students collaborating digitally"
-                  className="w-full h-auto object-cover"
-                />
-              </div>
-
               {/* Subheading 2 */}
               <h3 className={`text-2xl font-bold ${brandClasses.textNavy} mt-12 mb-6 flex items-center gap-2`}>
                 <div className={`w-2 h-8 ${brandClasses.bgGold} rounded-sm`}></div>
@@ -178,6 +169,15 @@ export default function FreeLaptopArticle() {
                   <p><strong>ప్రాక్టికల్ నాలెడ్జ్ లేకుండానే పట్టా పొందుతున్నారు:</strong> వారి పక్కన ఉన్న ధనిక విద్యార్థులకు ల్యాప్‌టాప్‌లు ఉండి, తమకు లేకపోవడం వల్ల పేద, మధ్యతరగతి విద్యార్థుల్లో ప్రాక్టికల్ నాలెడ్జ్‌లో వెనుకబడిపోతున్నామనే ఆందోళన, ఆత్మన్యూనతా భావం (Inferiority Complex) పెరుగుతోంది.</p>
                 </li>
               </ul>
+
+              {/* Secondary Image */}
+              <div className="my-10 rounded-xl overflow-hidden shadow-lg border border-gray-100">
+                <img
+                  src="https://blogger.googleusercontent.com/img/a/AVvXsEgCAb8eiKESq4Eht8GEo-a9HMYq9NRxuKxX88AqzPDBnhq1vaOaXIUopAlvUsR_dQMlDsvAisFuzIsCiesGV-jBrTAUbMLOthzmgy1ySyb5ox9oCyTamoh4zkCs44fwEw-CzDx2Sand6LZ_Ah7v7b_56zkHvEU87e0WWIVT4UUng-bMT7DqAOK31TJCjiEJ"
+                  alt="Students collaborating digitally"
+                  className="w-full h-auto object-cover"
+                />
+              </div>
 
               {/* Subheading 3 */}
               <h3 className={`text-2xl font-bold ${brandClasses.textNavy} mt-12 mb-6 flex items-center gap-2`}>

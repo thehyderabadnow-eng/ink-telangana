@@ -9,7 +9,7 @@ export const InkThoughtsArticles: Article[] = [
         category: "InkThoughts",
         categoryName: "INK THOUGHTS",
         // Temporary high-quality placeholder image. You can replace this later with your local path.
-        imageUrl: "https://blogger.googleusercontent.com/img/a/AVvXsEg2l2jCnxH5FVQVEFVQsFbtD4-3petke3gsLAZwY2AManvEjZ6-UxVeoTD-diPV9Ht6DbKYrHMlSgMKmTifeMMEpvhqlFOY71K6hlvy2b9x-Sj14Iq0KRrduXV0AaJDbLp9tSSBOTB3iFYKOkUv2er878APQ1pqXAarch9nl2zdGntPoAooo7t_CBiyNmnL",
+        imageUrl: "https://blogger.googleusercontent.com/img/a/AVvXsEikZpsz3ENxId42k9J5k_Nmq_yvKiiGBYb8Rh1k69O9BBDgB-P516Ew8DE9e0lmoqdzWgjXAXbt_rB_RnsdOOYLUQ_Z7UdIT0SbKSCJ9J8rR-6J02Q27HWFLHLYUAu4N7nqdDb4FsGbE67MM8lhTcT56ys9y0JRNsmaLt5J5gaG0jLAVCOmZR8iacuatmAP",
         excerpt: "Engineering, Pharmacy, MBA, MCA, Degree చదివే విద్యార్థులు ల్యాప్‌టాప్ లేక తీవ్ర ఇబ్బందులు పడుతున్న ఈ నేపథ్యంలో..",
         content: ``,
         isTopStory: true,
