@@ -166,7 +166,7 @@ export default function FreeLaptopArticle() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-red-500 font-bold mt-0.5">✗</span>
-                  <p><strong>ప్రాక్టికల్ నాలెడ్జ్ లేకుండానే పట్టా పొందుతున్నారు:</strong> వారి పక్కన ఉన్న ధనిక విద్యార్థులకు ల్యాప్‌టాప్‌లు ఉండి, తమకు లేకపోవడం వల్ల పేద, మధ్యతరగతి విద్యార్థుల్లో ప్రాక్టికల్ నాలెడ్జ్‌లో వెనుకబడిపోతున్నామనే ఆందోళన, ఆత్మన్యూనతా భావం (Inferiority Complex) పెరుగుతోంది.</p>
+                  <p><strong>ప్రాక్టికల్ నాలెడ్జ్ లేకుండానే పట్టా పొందుతున్నారు:</strong> ధనిక విద్యార్థులకు ల్యాప్‌టాప్‌లు ఉండి, తమకు లేకపోవడం వల్ల పేద, మధ్యతరగతి విద్యార్థుల్లో ప్రాక్టికల్ నాలెడ్జ్‌లో వెనుకబడిపోతున్నామనే ఆందోళన, ఆత్మన్యూనతా భావం (Inferiority Complex) పెరుగుతోంది.</p>
                 </li>
               </ul>
 
@@ -295,7 +295,7 @@ export default function FreeLaptopArticle() {
                       href="/contact"
                       className="inline-flex justify-center items-center px-8 py-3.5 bg-transparent border-2 border-[#D4AF37] text-[#D4AF37] font-bold rounded-full hover:bg-[#D4AF37]/10 transition-colors"
                     >
-                      Contact Us
+                      Feedback
                     </Link>
                   </div>
                 </div>
