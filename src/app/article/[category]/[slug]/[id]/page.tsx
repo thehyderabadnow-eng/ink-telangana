@@ -7,6 +7,9 @@ import { brandClasses } from '../../../../../utils/theme';
 
 // Import your custom hardcoded articles here
 import FreeLaptopArticle from '../../../../../components/custom-articles/FreeLaptopArticle';
+import FootOverBridgeArticle from '@/components/custom-articles/FootOverBridgeArticle';
+import ReadOnlyWrapper from '@/components/custom-articles/ReadOnlyWrapper';
+
 
 type Props = {
   params: Promise<{ category: string, slug: string, id: string }>
@@ -36,6 +39,28 @@ export async function generateMetadata(
             width: 1200,
             height: 630,
             alt: 'Free Laptop to Telangana Students',
+          },
+        ],
+        locale: 'te_IN',
+        type: 'article',
+      },
+    };
+  }
+
+  if (id === "10000201") {
+    return {
+      title: "హైదరాబాద్‌లో ఫుట్ ఓవర్ బ్రిడ్జిలు: ప్రజల భద్రత కోసం నిర్మిస్తున్నారా? లేక శిక్షించడానికా? | Ink Telangana",
+      description: "నగరంలో కోట్లు ఖర్చుపెట్టి నిర్మిస్తున్న ఫుట్ ఓవర్ బ్రిడ్జిలను వృద్ధులు, గర్భిణీలు, దివ్యాంగులు ఎందుకు వాడుకోలేకపోతున్నారు?",
+      openGraph: {
+        title: "హైదరాబాద్‌లో ఫుట్ ఓవర్ బ్రిడ్జిలు...",
+        description: "నగరంలో కోట్లు ఖర్చుపెట్టి నిర్మిస్తున్న ఫుట్ ఓవర్ బ్రిడ్జిలను వృద్ధులు, గర్భిణీలు, దివ్యాంగులు ఎందుకు వాడుకోలేకపోతున్నారు?",
+        url: `https://www.inktelangana.com/article/${category}/${slug}/${id}`,
+        images: [
+          {
+            url: 'https://images.unsplash.com/photo-1599839619722-39751411ea63?q=80&w=1200&auto=format&fit=crop', 
+            width: 1200,
+            height: 630,
+            alt: 'Foot Over Bridges in Hyderabad',
           },
         ],
         locale: 'te_IN',
@@ -83,14 +108,14 @@ export default async function ArticlePage({ params }: Props) {
   const { id, category, slug } = resolvedParams;
 
   // --- 1. CUSTOM ARTICLE REGISTER ---
-  // Map your custom article IDs to their respective custom page components.
-  // This completely eliminates the need to create folders!
   if (id === "10000101") {
     return <FreeLaptopArticle />;
   }
+  if (id === "10000201") {
+    return <FootOverBridgeArticle />;
+  }
 
   // --- 2. COMMON DYNAMIC FALLBACK ---
-  // If the article isn't a custom component, fall back to the normal dynamic behavior.
   const article = getArticleById(parseInt(id));
 
   if (!article) {
@@ -146,18 +171,14 @@ export default async function ArticlePage({ params }: Props) {
           <img src={article.imageUrl} alt={article.title} className="w-full h-full object-cover" />
         </div>
 
-        <div
-          className="p-6 md:p-10 select-none"
-          onCopy={(e) => e.preventDefault()}
-          onContextMenu={(e) => e.preventDefault()}
-        >
+        <ReadOnlyWrapper className="p-6 md:p-10">
           <div className="prose prose-lg max-w-none text-gray-800 whitespace-pre-wrap leading-relaxed">
             <p className="text-xl text-gray-600 font-medium italic mb-10 border-l-4 border-[#D4AF37] pl-5">
               {article.excerpt}
             </p>
             <div dangerouslySetInnerHTML={{ __html: article.content }} />
           </div>
-        </div>
+        </ReadOnlyWrapper>
       </article>
     </div>
   );

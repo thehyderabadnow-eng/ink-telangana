@@ -289,7 +289,7 @@ export default function FreeLaptopArticle() {
                       onClick={handleShare}
                       className="inline-flex justify-center items-center gap-2 px-8 py-3.5 bg-[#D4AF37] text-[#0B1B35] font-bold rounded-full hover:bg-yellow-500 transition-colors shadow-lg"
                     >
-                      <Share2 className="w-5 h-5" /> Share
+                      <Share2 className="w-5 h-5" /> Share Article
                     </button>
                     <Link
                       href="/contact"

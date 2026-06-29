@@ -83,10 +83,16 @@ export default function Navbar() {
                 Home
               </Link>
               <Link
-                href="/about"
-                className={`hover:text-[#D4AF37] ${pathname === '/about' ? 'text-[#D4AF37] border-b-2 border-[#D4AF37]' : 'text-gray-800'} transition-colors font-semibold text-sm shrink-0 h-full flex items-center px-1`}
+                href="/?category=InkThoughts"
+                className={`hover:text-[#D4AF37] ${pathname === '/' && currentCategory === 'InkThoughts' ? 'text-[#D4AF37] border-b-2 border-[#D4AF37]' : 'text-gray-800'} transition-colors font-semibold text-sm shrink-0 h-full flex items-center px-1`}
               >
-                About
+                Ink Thoughts
+              </Link>
+              <Link
+                href="/?category=PublicIssues"
+                className={`hover:text-[#D4AF37] ${pathname === '/' && currentCategory === 'PublicIssues' ? 'text-[#D4AF37] border-b-2 border-[#D4AF37]' : 'text-gray-800'} transition-colors font-semibold text-sm shrink-0 h-full flex items-center px-1`}
+              >
+                Public Issues
               </Link>
               {/* <Link
                 href="/?category=Politics"
@@ -100,12 +106,6 @@ export default function Navbar() {
               >
                 Business
               </Link> */}
-              <Link
-                href="/?category=InkThoughts"
-                className={`hover:text-[#D4AF37] ${pathname === '/' && currentCategory === 'InkThoughts' ? 'text-[#D4AF37] border-b-2 border-[#D4AF37]' : 'text-gray-800'} transition-colors font-semibold text-sm shrink-0 h-full flex items-center px-1`}
-              >
-                Ink Thoughts
-              </Link>
               {/* <Link
                 href="/short-news"
                 className={`hover:text-[#D4AF37] ${pathname === '/short-news' ? 'text-[#D4AF37] border-b-2 border-[#D4AF37]' : 'text-gray-800'} transition-colors font-semibold text-sm shrink-0 h-full flex items-center px-1`}
@@ -118,6 +118,12 @@ export default function Navbar() {
               >
                 My Comments
               </Link> */}
+              <Link
+                href="/about"
+                className={`hover:text-[#D4AF37] ${pathname === '/about' ? 'text-[#D4AF37] border-b-2 border-[#D4AF37]' : 'text-gray-800'} transition-colors font-semibold text-sm shrink-0 h-full flex items-center px-1`}
+              >
+                About
+              </Link>
             </div>
 
             {/* Sticky "Contact Us" CTA pinned to the right edge */}
