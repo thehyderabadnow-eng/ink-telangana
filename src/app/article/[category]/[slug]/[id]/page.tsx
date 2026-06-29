@@ -57,7 +57,7 @@ export async function generateMetadata(
         url: `https://www.inktelangana.com/article/${category}/${slug}/${id}`,
         images: [
           {
-            url: 'https://images.unsplash.com/photo-1599839619722-39751411ea63?q=80&w=1200&auto=format&fit=crop', 
+            url: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhbjyw6Zs-JusYBOHgCy3MSDOpSPIR52Gb_ng5iZOHRRQlCDGRBI9zVfHWqKrawAMy8ZYdin2tfQ3QhzP4wGJODTmqNYdm8WcZTVjqCAL79zFNVfmmZb8jd1FioQrL9vyBNDrdgkRiYkQF3EkPwmX-bYqoK_YtleuESguNj1gwyjr7KdGkhakYJWKih-SXN/s320/hyderabad-footover-bridges-02.jpg', 
             width: 1200,
             height: 630,
             alt: 'Foot Over Bridges in Hyderabad',
