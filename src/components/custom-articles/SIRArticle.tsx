@@ -92,7 +92,7 @@ export default function SIRArticle() {
           {/* Featured Image */}
           <div className="w-full h-64 sm:h-72 md:h-[28rem] relative bg-gray-200">
             <img
-              src="https://blogger.googleusercontent.com/img/a/AVvXsEiJ6lvPsZKqpSMDxZ96qqG0CC3CjDklNgNhFO_dGvfWEWD9Jl7H3aN5g_EJzet_JiMIQ0i7NJgYMtMCV3eKEEaRkSNt3WPDARtlmN-fZuvP0xmwT6p_Eo6k4Rf79VbcfrV0J3tTZrYXaDuFumgEZh4nw6J5_9mFNMQxc-VGotWVUtKxpAyxGcBUIBksRDHS"
+              src="https://blogger.googleusercontent.com/img/a/AVvXsEjWLtO4OL3HHjwKp-cbljdl7IicsFU124wl26962gTXShx7KmrNb0p9Of3I_RnZ71SgmqXlfVTXgS2O9qXv60EUGWUXuw7wRwQyShqf4l76nc5U5kDoc1US9gwf7r6DUuQP07zpBcgzBW-Poeb7tlkwlIbcmsM6ldMk8rye7Y6botX8IFr8NMiHNnQ9MRf0"
               alt="Elections and Voting Concept"
               className="w-full h-full object-cover"
             />
