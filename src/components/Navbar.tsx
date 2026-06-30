@@ -89,6 +89,12 @@ export default function Navbar() {
                 Ink Thoughts
               </Link>
               <Link
+                href="/?category=InkSpecial"
+                className={`hover:text-[#D4AF37] ${pathname === '/' && currentCategory === 'InkSpecial' ? 'text-[#D4AF37] border-b-2 border-[#D4AF37]' : 'text-gray-800'} transition-colors font-semibold text-sm shrink-0 h-full flex items-center px-1`}
+              >
+                Ink Special
+              </Link>
+              <Link
                 href="/?category=PublicIssues"
                 className={`hover:text-[#D4AF37] ${pathname === '/' && currentCategory === 'PublicIssues' ? 'text-[#D4AF37] border-b-2 border-[#D4AF37]' : 'text-gray-800'} transition-colors font-semibold text-sm shrink-0 h-full flex items-center px-1`}
               >

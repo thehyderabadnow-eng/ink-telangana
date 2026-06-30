@@ -58,6 +58,42 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
         </div>
       )}
 
+      {/* LATEST STORIES SECTION */}
+      {latestStories.length > 0 && (
+        <section>
+          <h2 className={`text-xl md:text-2xl font-serif font-bold text-white mb-4 md:mb-6 border-l-4 ${brandClasses.borderGold} pl-3`}>
+            {searchQuery ? 'Search Results' : (categoryFilter === 'All' ? 'Latest Stories' : `Latest ${displayCategoryName} Stories`)}
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {latestStories.map((article) => (
+              <Link key={article.id} href={getUrlPath(article)}>
+                <article className="relative rounded-xl overflow-hidden cursor-pointer group h-[22rem] shadow-xl shadow-black/50 bg-slate-900">
+                  <img
+                    src={article.imageUrl}
+                    alt={article.title}
+                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B1B35] via-[#0B1B35]/60 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                  <div className="absolute bottom-0 left-0 p-5 w-full z-10 flex flex-col justify-end h-full">
+                    <span className={`${brandClasses.bgGold} ${brandClasses.textNavy} text-[10px] font-bold px-2 py-1 rounded shadow-sm uppercase tracking-wider self-start mb-3`}>
+                      {article.categoryName || article.category}
+                    </span>
+                    <h3 className="text-xl font-bold font-serif text-white leading-snug group-hover:text-[#D4AF37] transition-colors line-clamp-3">
+                      {article.title}
+                    </h3>
+                    <div className="flex items-center gap-2 text-xs text-gray-300 mt-4 font-medium opacity-80 group-hover:opacity-100 transition-opacity">
+                      <Clock className="w-3.5 h-3.5" />
+                      <span>{article.date}</span>
+                    </div>
+                  </div>
+                </article>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* TOP STORIES SECTION */}
       {topStories.length > 0 && !searchQuery && (
         <section>
@@ -102,42 +138,6 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
                       <span className="font-bold">{article.date}</span>
                     </div>
 
-                  </div>
-                </article>
-              </Link>
-            ))}
-          </div>
-        </section>
-      )}
-
-      {/* LATEST STORIES SECTION */}
-      {latestStories.length > 0 && (
-        <section>
-          <h2 className={`text-xl md:text-2xl font-serif font-bold text-white mb-4 md:mb-6 border-l-4 ${brandClasses.borderGold} pl-3`}>
-            {searchQuery ? 'Search Results' : (categoryFilter === 'All' ? 'Latest Stories' : `Latest ${displayCategoryName} Stories`)}
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {latestStories.map((article) => (
-              <Link key={article.id} href={getUrlPath(article)}>
-                <article className="relative rounded-xl overflow-hidden cursor-pointer group h-[22rem] shadow-xl shadow-black/50 bg-slate-900">
-                  <img
-                    src={article.imageUrl}
-                    alt={article.title}
-                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B1B35] via-[#0B1B35]/60 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300"></div>
-
-                  <div className="absolute bottom-0 left-0 p-5 w-full z-10 flex flex-col justify-end h-full">
-                    <span className={`${brandClasses.bgGold} ${brandClasses.textNavy} text-[10px] font-bold px-2 py-1 rounded shadow-sm uppercase tracking-wider self-start mb-3`}>
-                      {article.categoryName || article.category}
-                    </span>
-                    <h3 className="text-xl font-bold font-serif text-white leading-snug group-hover:text-[#D4AF37] transition-colors line-clamp-3">
-                      {article.title}
-                    </h3>
-                    <div className="flex items-center gap-2 text-xs text-gray-300 mt-4 font-medium opacity-80 group-hover:opacity-100 transition-opacity">
-                      <Clock className="w-3.5 h-3.5" />
-                      <span>{article.date}</span>
-                    </div>
                   </div>
                 </article>
               </Link>

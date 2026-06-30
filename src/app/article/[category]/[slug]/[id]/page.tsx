@@ -8,6 +8,7 @@ import { brandClasses } from '../../../../../utils/theme';
 // Import your custom hardcoded articles here
 import FreeLaptopArticle from '../../../../../components/custom-articles/FreeLaptopArticle';
 import FootOverBridgeArticle from '@/components/custom-articles/FootOverBridgeArticle';
+import SIRArticle from '@/components/custom-articles/SIRArticle';
 import ReadOnlyWrapper from '@/components/custom-articles/ReadOnlyWrapper';
 
 
@@ -69,6 +70,28 @@ export async function generateMetadata(
     };
   }
 
+  if (id === "10000301") {
+    return {
+      title: "స్పెషల్ ఇంటెన్సివ్ రివిజన్ (S.I.R - 2026): ఓటరు జాబితా ప్రక్షాళన | Ink Telangana",
+      description: "తెలంగాణలో 22 ఏళ్ల తర్వాత జరుగుతున్న ఇంటింటి సర్వే. మీ ఓటును కాపాడుకునేందుకు ఫారాలు, యాప్స్, ఆన్‌లైన్ విధానం గురించి పూర్తి వివరాలు.",
+      openGraph: {
+        title: "స్పెషల్ ఇంటెన్సివ్ రివిజన్ (S.I.R - 2026)...",
+        description: "తెలంగాణలో 22 ఏళ్ల తర్వాత జరుగుతున్న ఇంటింటి సర్వే. మీ ఓటును కాపాడుకునేందుకు ఫారాలు, యాప్స్, ఆన్‌లైన్ విధానం గురించి పూర్తి వివరాలు.",
+        url: `${baseUrl}/article/${category}/${slug}/${id}`,
+        images: [
+          {
+            url: 'https://blogger.googleusercontent.com/img/a/AVvXsEjWLtO4OL3HHjwKp-cbljdl7IicsFU124wl26962gTXShx7KmrNb0p9Of3I_RnZ71SgmqXlfVTXgS2O9qXv60EUGWUXuw7wRwQyShqf4l76nc5U5kDoc1US9gwf7r6DUuQP07zpBcgzBW-Poeb7tlkwlIbcmsM6ldMk8rye7Y6botX8IFr8NMiHNnQ9MRf0', 
+            width: 1200,
+            height: 630,
+            alt: 'Elections in Telangana',
+          },
+        ],
+        locale: 'te_IN',
+        type: 'article',
+      },
+    };
+  }
+
   // 2. Dynamic Articles Metadata
   const article = getArticleById(parseInt(id));
 
@@ -113,6 +136,9 @@ export default async function ArticlePage({ params }: Props) {
   }
   if (id === "10000201") {
     return <FootOverBridgeArticle />;
+  }
+  if (id === "10000301") {
+    return <SIRArticle />; 
   }
 
   // --- 2. COMMON DYNAMIC FALLBACK ---
