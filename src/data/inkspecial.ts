@@ -8,7 +8,7 @@ export const InkSpecialArticles: Article[] = [
         date: "June 30, 2026",
         category: "InkSpecial",
         categoryName: "Ink Special",
-        imageUrl: "https://blogger.googleusercontent.com/img/a/AVvXsEjWLtO4OL3HHjwKp-cbljdl7IicsFU124wl26962gTXShx7KmrNb0p9Of3I_RnZ71SgmqXlfVTXgS2O9qXv60EUGWUXuw7wRwQyShqf4l76nc5U5kDoc1US9gwf7r6DUuQP07zpBcgzBW-Poeb7tlkwlIbcmsM6ldMk8rye7Y6botX8IFr8NMiHNnQ9MRf0",
+        imageUrl: "https://blogger.googleusercontent.com/img/a/AVvXsEiE-gEobpP9eWZSj0g8FzKCIJmPQECrRjhQXVR1x-5lOi6nnlw3yO3uJYna1yzErbFAU6NKNwPzfwvoxoFJnGDJSQ3r7xozWcagNzvaP86MRR3nD1d3ELoLA95045CyQgJ7B8Ap96c0L0QAJ4MFBfb57U-MnNjVfHkkOaToxYn_AM5ARa579UZcH9smlR3_",
         excerpt: "తెలంగాణలో 22 ఏళ్ల తర్వాత జరుగుతున్న ఇంటింటి సర్వే. మీ ఓటును కాపాడుకునేందుకు ఫారాలు, యాప్స్, ఆన్‌లైన్ విధానం గురించి పూర్తి వివరాలు.",
         content: ``, 
         isTopStory: false,
