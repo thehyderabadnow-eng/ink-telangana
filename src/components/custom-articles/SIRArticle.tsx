@@ -92,7 +92,7 @@ export default function SIRArticle() {
           {/* Featured Image */}
           <div className="w-full h-64 sm:h-72 md:h-[28rem] relative bg-gray-200">
             <img
-              src="https://blogger.googleusercontent.com/img/a/AVvXsEjWLtO4OL3HHjwKp-cbljdl7IicsFU124wl26962gTXShx7KmrNb0p9Of3I_RnZ71SgmqXlfVTXgS2O9qXv60EUGWUXuw7wRwQyShqf4l76nc5U5kDoc1US9gwf7r6DUuQP07zpBcgzBW-Poeb7tlkwlIbcmsM6ldMk8rye7Y6botX8IFr8NMiHNnQ9MRf0"
+              src="https://blogger.googleusercontent.com/img/a/AVvXsEiJ6lvPsZKqpSMDxZ96qqG0CC3CjDklNgNhFO_dGvfWEWD9Jl7H3aN5g_EJzet_JiMIQ0i7NJgYMtMCV3eKEEaRkSNt3WPDARtlmN-fZuvP0xmwT6p_Eo6k4Rf79VbcfrV0J3tTZrYXaDuFumgEZh4nw6J5_9mFNMQxc-VGotWVUtKxpAyxGcBUIBksRDHS"
               alt="Elections and Voting Concept"
               className="w-full h-full object-cover"
             />
@@ -109,6 +109,19 @@ export default function SIRArticle() {
               <p className="mb-8">
                 ఓటర్లు ఎలాంటి గందరగోళానికి గురికాకుండా, తమ ఓటును కాపాడుకునేందుకు అవసరమైన పూర్తి నిబంధనలు, డాక్యుమెంట్లు, ఆన్‌లైన్/ఆఫ్‌లైన్ ప్రక్రియలు, యాప్స్ మరియు మీ అన్ని సందేహాలకు (FAQs) సమాధానాలతో కూడిన సమగ్ర మార్గదర్శక ఆర్టికల్ ఇది.
               </p>
+
+              {/* --- YOUTUBE VIDEO EMBED SECTION --- */}
+              <div className="my-10 w-full aspect-video rounded-xl overflow-hidden shadow-xl border border-gray-200 bg-black">
+                <iframe 
+                  className="w-full h-full"
+                  src="https://www.youtube.com/embed/LHBV9jw3NHE?si=HtPseP7HEGZQBJbC" 
+                  title="YouTube video player" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  referrerPolicy="strict-origin-when-cross-origin" 
+                  allowFullScreen
+                ></iframe>
+              </div>
+              {/* --- END VIDEO EMBED --- */}
 
               {/* Section 1 */}
               <h3 className={`text-xl md:text-2xl font-bold ${brandClasses.textNavy} mt-12 mb-6 flex items-center gap-2 border-b pb-2`}>
@@ -349,12 +362,7 @@ export default function SIRArticle() {
                 <strong>ముగింపు:</strong> ఓటు హక్కు అనేది ప్రజాస్వామ్యంలో మనకు ఉన్న అత్యంత బలమైన ఆయుధం. మన ఓటును సురక్షితంగా ఉంచుకోవడం మన బాధ్యత. నిర్లక్ష్యం చేయకుండా, నిబంధనలు పాటించి పారదర్శకమైన ఓటరు జాబితా రూపకల్పనలో ప్రతి ఒక్కరూ భాగస్వాములవుదాం.
               </blockquote>
 
-              {/* Conclusion Box (ఇది మీ కోడ్‌లో ఇప్పటికే ఉంది) */}
-              <blockquote className="relative p-6 md:p-8 bg-gray-50 rounded-xl border-l-4 border-[#0B1B35] mb-8 font-serif text-lg md:text-xl text-gray-800 shadow-sm">
-                <strong>ముగింపు:</strong> ఓటు హక్కు అనేది ప్రజాస్వామ్యంలో మనకు ఉన్న అత్యంత బలమైన ఆయుధం. మన ఓటును సురక్షితంగా ఉంచుకోవడం మన బాధ్యత. నిర్లక్ష్యం చేయకుండా, నిబంధనలు పాటించి పారదర్శకమైన ఓటరు జాబితా రూపకల్పనలో ప్రతి ఒక్కరూ భాగస్వాములవుదాం.
-              </blockquote>
-
-              {/* --- క్రొత్తగా యాడ్ చేయాల్సిన DISCLAIMER SECTION ఇక్కడే --- */}
+              {/* Disclaimer Section */}
               <div className="mt-10 p-5 md:p-6 bg-gray-100 border border-gray-200 rounded-xl text-sm md:text-base text-gray-600 shadow-sm">
                 <h4 className="font-bold text-gray-800 mb-2 flex items-center gap-2">
                   <AlertCircle className="w-5 h-5 text-gray-500" />
@@ -367,7 +375,6 @@ export default function SIRArticle() {
                   * మీరు చేపట్టే S.I.R ఆన్‌లైన్ లేదా ఆఫ్‌లైన్ దరఖాస్తు ప్రక్రియలో ఏవైనా సాంకేతిక లోపాలు, జాప్యాలు లేదా తప్పులు దొర్లితే దానికి 'ఇంక్ తెలంగాణ (Ink Telangana)' యాజమాన్యానికి ఎటువంటి సంబంధం మరియు చట్టపరమైన బాధ్యత లేదు.
                 </p>
               </div>
-              {/* --- DISCLAIMER SECTION END --- */}
 
               {/* Author Section */}
               <div className="mt-12 flex justify-end border-t border-gray-100 pt-8">
@@ -376,12 +383,13 @@ export default function SIRArticle() {
                     <PenTool className="w-5 h-5 text-[#D4AF37]" />
                   </div>
                   <div className="text-left">
+                    {/* <p className="text-xs text-gray-500 font-bold uppercase tracking-wider mb-1">రచన (Author)</p> */}
                     <p className={`font-bold ${brandClasses.textNavy} text-base md:text-lg`}>Vamshi BTech</p>
                   </div>
                 </div>
               </div>
 
-              {/* Call to Action */}
+              {/* Call to Action with Share & Feedback Buttons */}
               <div className={`mt-12 bg-gradient-to-br from-[#0B1B35] to-[#12161E] rounded-2xl p-6 md:p-10 text-white shadow-xl relative overflow-hidden`}>
                 <div className="absolute top-0 right-0 p-6 opacity-5">
                   <MessageCircle className="w-32 h-32 md:w-40 md:h-40 text-[#D4AF37]" />
