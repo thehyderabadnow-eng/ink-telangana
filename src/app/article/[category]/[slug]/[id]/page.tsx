@@ -10,7 +10,7 @@ import FreeLaptopArticle from '../../../../../components/custom-articles/FreeLap
 import FootOverBridgeArticle from '@/components/custom-articles/FootOverBridgeArticle';
 import SIRArticle from '@/components/custom-articles/SIRArticle';
 import ReadOnlyWrapper from '@/components/custom-articles/ReadOnlyWrapper';
-
+import GurukulArticle from '@/components/custom-articles/GurukulArticle';
 
 type Props = {
   params: Promise<{ category: string, slug: string, id: string }>
@@ -48,6 +48,28 @@ export async function generateMetadata(
     };
   }
 
+  if (id === "10000102") {
+    return {
+      title: "బడుగు, బలహీన వర్గాల అభ్యున్నతికి విద్యే ఆయుధం - తెలంగాణలో గురుకులాల విప్లవం | Ink Telangana",
+      description: "ఒకప్పుడు వివక్షకు గురైన వర్గాలకు నేడు గురుకులాలు ఎలా ఆత్మగౌరవాన్ని పంచుతున్నాయి? అడ్మిషన్లు, వసతులు, మరియు చట్టాల గురించి పూర్తి వివరాలు.",
+      openGraph: {
+        title: "తెలంగాణలో గురుకులాల విప్లవం...",
+        description: "ఒకప్పుడు వివక్షకు గురైన వర్గాలకు నేడు గురుకులాలు ఎలా ఆత్మగౌరవాన్ని పంచుతున్నాయి? అడ్మిషన్లు, వసతులు, మరియు చట్టాల గురించి పూర్తి వివరాలు.",
+        url: `${baseUrl}/article/${category}/${slug}/${id}`,
+        images: [
+          {
+            url: 'https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=1200&auto=format&fit=crop',
+            width: 1200,
+            height: 630,
+            alt: 'Gurukul Schools in Telangana',
+          },
+        ],
+        locale: 'te_IN',
+        type: 'article',
+      },
+    };
+  }
+
   if (id === "10000201") {
     return {
       title: "హైదరాబాద్‌లో ఫుట్ ఓవర్ బ్రిడ్జిలు: ప్రజల భద్రత కోసం నిర్మిస్తున్నారా? లేక శిక్షించడానికా? | Ink Telangana",
@@ -58,7 +80,7 @@ export async function generateMetadata(
         url: `https://www.inktelangana.com/article/${category}/${slug}/${id}`,
         images: [
           {
-            url: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhbjyw6Zs-JusYBOHgCy3MSDOpSPIR52Gb_ng5iZOHRRQlCDGRBI9zVfHWqKrawAMy8ZYdin2tfQ3QhzP4wGJODTmqNYdm8WcZTVjqCAL79zFNVfmmZb8jd1FioQrL9vyBNDrdgkRiYkQF3EkPwmX-bYqoK_YtleuESguNj1gwyjr7KdGkhakYJWKih-SXN/s320/hyderabad-footover-bridges-02.jpg', 
+            url: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhbjyw6Zs-JusYBOHgCy3MSDOpSPIR52Gb_ng5iZOHRRQlCDGRBI9zVfHWqKrawAMy8ZYdin2tfQ3QhzP4wGJODTmqNYdm8WcZTVjqCAL79zFNVfmmZb8jd1FioQrL9vyBNDrdgkRiYkQF3EkPwmX-bYqoK_YtleuESguNj1gwyjr7KdGkhakYJWKih-SXN/s320/hyderabad-footover-bridges-02.jpg',
             width: 1200,
             height: 630,
             alt: 'Foot Over Bridges in Hyderabad',
@@ -80,7 +102,7 @@ export async function generateMetadata(
         url: `${baseUrl}/article/${category}/${slug}/${id}`,
         images: [
           {
-            url: 'httpshttps://blogger.googleusercontent.com/img/a/AVvXsEiE-gEobpP9eWZSj0g8FzKCIJmPQECrRjhQXVR1x-5lOi6nnlw3yO3uJYna1yzErbFAU6NKNwPzfwvoxoFJnGDJSQ3r7xozWcagNzvaP86MRR3nD1d3ELoLA95045CyQgJ7B8Ap96c0L0QAJ4MFBfb57U-MnNjVfHkkOaToxYn_AM5ARa579UZcH9smlR3_', 
+            url: 'httpshttps://blogger.googleusercontent.com/img/a/AVvXsEiE-gEobpP9eWZSj0g8FzKCIJmPQECrRjhQXVR1x-5lOi6nnlw3yO3uJYna1yzErbFAU6NKNwPzfwvoxoFJnGDJSQ3r7xozWcagNzvaP86MRR3nD1d3ELoLA95045CyQgJ7B8Ap96c0L0QAJ4MFBfb57U-MnNjVfHkkOaToxYn_AM5ARa579UZcH9smlR3_',
             width: 1200,
             height: 630,
             alt: 'Elections in Telangana',
@@ -134,11 +156,14 @@ export default async function ArticlePage({ params }: Props) {
   if (id === "10000101") {
     return <FreeLaptopArticle />;
   }
+  if (id === "10000102") {
+    return <GurukulArticle />;
+  }
   if (id === "10000201") {
     return <FootOverBridgeArticle />;
   }
   if (id === "10000301") {
-    return <SIRArticle />; 
+    return <SIRArticle />;
   }
 
   // --- 2. COMMON DYNAMIC FALLBACK ---
