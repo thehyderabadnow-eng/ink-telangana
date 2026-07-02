@@ -58,7 +58,7 @@ export async function generateMetadata(
         url: `${baseUrl}/article/${category}/${slug}/${id}`,
         images: [
           {
-            url: 'https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=1200&auto=format&fit=crop',
+            url: 'https://blogger.googleusercontent.com/img/a/AVvXsEgVU18iIVzPoCKT69tyg0RJJ4Q0pooeHahvUmCkl7B2If6_fPUSu_3Y7NiU5JYdOYkDdVs8BXwjw52E1ghyFWW0nUbU-rUNPklBY3a5gOfzPihqykqIkzHcDlRd4XhjO3R4Vjnv26E-DPAcc1FO6gqZqC3sITNSoR7FHBbSGnHwm5B-OzUQMzbph8czfr_u',
             width: 1200,
             height: 630,
             alt: 'Gurukul Schools in Telangana',

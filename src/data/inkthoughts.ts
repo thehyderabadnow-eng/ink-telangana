@@ -15,18 +15,4 @@ export const InkThoughtsArticles: Article[] = [
         isTopStory: true,
         isLatestStory: false
     }
-    //,
-    // {
-    //     id: 10000102,
-    //     slug: "telangana-gurukul-schools-education-revolution",
-    //     title: "బడుగు, బలహీన వర్గాల అభ్యున్నతికి విద్యే ఆయుధం.",
-    //     date: "July 1, 2026",
-    //     category: "InkThoughts",
-    //     categoryName: "Ink Thoughts",
-    //     imageUrl: "https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=1200&auto=format&fit=crop", 
-    //     excerpt: "ఒకప్పుడు వివక్షకు గురైన వర్గాలకు నేడు గురుకులాలు ఎలా ఆత్మగౌరవాన్ని పంచుతున్నాయి? అడ్మిషన్లు, వసతులు, మరియు చట్టాల గురించి పూర్తి వివరాలు.",
-    //     content: ``, 
-    //     isTopStory: true,
-    //     isLatestStory: true
-    // }
 ];

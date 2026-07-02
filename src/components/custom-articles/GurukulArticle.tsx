@@ -2,13 +2,13 @@
 
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { 
-  ArrowLeft, Clock, MessageCircle, Share2, PenTool, 
-  BookOpen, Users, HelpCircle, ShieldCheck, 
+import {
+  ArrowLeft, Clock, MessageCircle, Share2, PenTool,
+  BookOpen, Users, HelpCircle, ShieldCheck,
   Landmark, CheckCircle, AlertCircle, School, Phone, GraduationCap, Laptop,
-  Smartphone
+  Smartphone, Target, Building
 } from 'lucide-react';
-import ReadOnlyWrapper from './ReadOnlyWrapper'; 
+import ReadOnlyWrapper from './ReadOnlyWrapper';
 
 export default function TelanganaEducationArticle() {
   const [showShareToast, setShowShareToast] = useState(false);
@@ -28,8 +28,8 @@ export default function TelanganaEducationArticle() {
   };
 
   const articleDetails = {
-    title: "తెలంగాణలో విద్యా విప్లవం: సామాజిక సమానత్వం దిశగా గురుకులాలు, మోడల్ స్కూల్స్",
-    excerpt: "సమాజంలో సామాజిక దూరాన్ని చెరిపేసి ఉచితంగా ప్రపంచస్థాయి విద్యను అందిస్తున్న గురుకులాలు, మోడల్ స్కూల్స్ చరిత్ర మరియు ప్రవేశాల వివరాలు.",
+    title: "కులాల వారిగా స్కూళ్లు, కాలేజీలకు.. ఆనాటి వివక్షే కారణం.",
+    excerpt: "బలహీన వర్గాల బిడ్డల భవిష్యత్ కు బంగారు బాట వేసింది.. ఆనాటి కులాల గురుకులాలే.",
     url: currentUrl || 'https://inktelangana.com'
   };
 
@@ -56,9 +56,9 @@ export default function TelanganaEducationArticle() {
   return (
     <div className="min-h-screen bg-[#f8f9fa] font-sans text-gray-900 pb-12">
       <div className="max-w-7xl mx-auto px-4 py-8">
-        
+
         <article className="max-w-4xl mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden mt-4">
-          
+
           {/* Header Section */}
           <div className="p-6 md:p-8 border-b border-gray-100">
             <div className="flex items-center justify-between mb-8">
@@ -84,16 +84,16 @@ export default function TelanganaEducationArticle() {
               <div className="flex flex-wrap items-center gap-6 text-gray-600 text-sm border-t border-gray-100 pt-6">
                 <div className="flex items-center gap-1.5 font-medium">
                   <Clock className="w-4 h-4 text-[#D4AF37]" />
-                  <span>July 2, 2026</span>
+                  <span>July 3, 2026</span>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Featured Image */}
-          <div className="w-full h-64 sm:h-72 md:h-[28rem] relative bg-gray-200">
+          <div className="w-full h-64 sm:h-72 md:h-[37rem] relative bg-gray-200">
             <img
-              src="https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=1200&auto=format&fit=crop"
+              src="https://blogger.googleusercontent.com/img/a/AVvXsEgVU18iIVzPoCKT69tyg0RJJ4Q0pooeHahvUmCkl7B2If6_fPUSu_3Y7NiU5JYdOYkDdVs8BXwjw52E1ghyFWW0nUbU-rUNPklBY3a5gOfzPihqykqIkzHcDlRd4XhjO3R4Vjnv26E-DPAcc1FO6gqZqC3sITNSoR7FHBbSGnHwm5B-OzUQMzbph8czfr_u"
               alt="Indian Students in Classroom"
               className="w-full h-full object-cover"
             />
@@ -110,7 +110,7 @@ export default function TelanganaEducationArticle() {
               </blockquote>
 
               <p className="mb-6">
-                వందేమాతరం శ్రీనివాస్ గారు రచించిన ఈ పాట సుమారు 3 దశాబ్దాల క్రితం అంటే 1997 లో దాసరి నారాయణరావు దర్శకత్వం వహించి నటించిన <strong>'ఒసేయ్ రాములమ్మ'</strong> సినిమాలోనిది. సమాజంలో వేళ్లూనుకుపోయిన కుల వివక్షను, సామాజిక అసమానతలను ఈ పాట సూటిగా ప్రశ్నించింది. 
+                వందేమాతరం శ్రీనివాస్ గారు రచించిన ఈ పాట 1997(సుమారు 3 దశాబ్దాల క్రితం)లో దాసరి నారాయణరావు గారు దర్శకత్వం వహించి నటించిన <strong>'ఒసేయ్ రాములమ్మ'</strong> సినిమాలోనిది. సమాజంలో నాటుకుపోయిన కుల వివక్షను, సామాజిక అసమానతలను ఈ పాట సూటిగా ప్రశ్నించింది.
               </p>
 
               {/* YOUTUBE VIDEO EMBED SECTION */}
@@ -126,41 +126,27 @@ export default function TelanganaEducationArticle() {
               </div>
 
               <p className="mb-10 p-5 bg-blue-50 border-l-4 border-blue-500 rounded-r-lg text-gray-700">
-                ఇలాంటి సామాజిక దూరాన్ని చెరిపేసి, ఆర్థికంగా, సామాజికంగా వెనుకబడిన వర్గాల పిల్లలకు ప్రపంచస్థాయి విద్యను ఉచితంగా అందించాలనే సదుద్దేశ్యంతోనే తెలుగు రాష్ట్రాల్లో <strong>"గురుకుల విద్యా వ్యవస్థ"</strong> మరియు <strong>"మోడల్ స్కూల్స్"</strong> కు బీజం పడింది. నాడు మొదలైన ఆ ప్రస్థానం నేడు "యంగ్ ఇండియా సమన్వయ గురుకులాల" వరకు ఎలా చేరిందో పూర్తి వివరాలు చూద్దాం.
+                ఒకప్పుడు సమాజంలో కుల వివక్ష విపరీతంగా ఉండేది. అణగారిన వర్గాలకు కూలి పనులు చేసుకోవడం తప్ప వేరే జీవనోపాధి ఉండేది కాదు. సరైన ఆహారం లేక, బతుకు దెరువు కోసం చిన్న పిల్లలను కూడా పనులకు తీసుకెళ్లేవారు. అప్పటి గ్రామాల్లోని బడుల్లో చదువుకునే హక్కు అందరికీ ఉన్నప్పటికీ, ఆచరణలో ఎస్సీ, ఎస్టీ వర్గాల వారిని బడుల్లోకి రానిచ్చేవారు కాదు. వెలివేతలు, బహిష్కరణలు, అవమానాలు ఎదురయ్యేవి. ఇలాంటి చిన్నచూపు ఉన్న సమాజంలో పిల్లలు స్వేచ్ఛగా చదువుకోలేరు, మానసికంగా కృంగిపోతారు. ఆ తారతమ్యాలు, వివక్షలు భవిష్యత్తులో కులాల మధ్య ఘర్షణలకు, విద్వేషాలకు దారితీస్తాయి.
               </p>
-
-              {/* YSR Section (Merged from previous Gurukul article) */}
-              <h3 className={`text-xl md:text-2xl font-bold ${brandClasses.textNavy} mt-12 mb-6 flex items-center gap-2 border-b pb-2`}>
-                <Landmark className="w-6 h-6 text-blue-600" />
-                వై.ఎస్. రాజశేఖర్ రెడ్డి గారి సంస్కరణలు
-              </h3>
-              <p className="mb-6">ఈ సందర్భంగా ఉమ్మడి ఆంధ్రప్రదేశ్ ముఖ్యమంత్రిగా పనిచేసిన కీ.శే. వై.ఎస్. రాజశేఖర్ రెడ్డి గారిని కచ్చితంగా గుర్తుచేసుకోవాలి. విద్యాభివృద్ధిలో భాగంగా ఆయన తెచ్చిన విప్లవాత్మక నిర్ణయం:</p>
-
-              <div className="grid grid-cols-1 mb-12">
-                <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-md hover:shadow-lg transition-shadow">
-                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                    <GraduationCap className="w-6 h-6 text-blue-600" />
-                  </div>
-                  <h4 className="font-bold text-gray-900 mb-2">ఫీజు రీయింబర్స్మెంట్</h4>
-                  <p className="text-sm md:text-base text-gray-600 leading-relaxed">పేద విద్యార్థులు ధనిక విద్యార్థులతో సమానంగా ప్రైవేట్, కార్పొరేట్ కళాశాలల్లో ఇంజనీరింగ్, ఫార్మసీ, ఎంబీఏ (MBA), ఎంసీఏ (MCA) లాంటి కోర్సులు చదువుకునే వెసులుబాటు కల్పించారు. దీనివల్లే ఎంతోమంది మల్టీ నేషనల్ కంపెనీల్లో (MNCs) కొలువులు సాధిస్తున్నారు.</p>
-                </div>
-              </div>
+              <p className="mb-10 p-5 bg-blue-50 border-l-4 border-blue-500 rounded-r-lg text-gray-700">
+                వీటన్నింటినీ పరిగణనలోకి తీసుకున్న ఆనాటి నాయకులు, మేధావులు, అభ్యుదయవాదులు... బడుగు, బలహీన వర్గాల కోసం ప్రత్యేక హాస్టళ్లు, పాఠశాలలు నిర్మించాలని నిర్ణయించారు. ఇది కులాల మధ్య వ్యత్యాసం పెంచడానికి కాదు, ఆ పిల్లలకు సరైన వసతి, భోజనం కల్పించి ఆత్మగౌరవంతో చదువుకునే వాతావరణం సృష్టించడానికి. నాడు వారు తీసుకున్న ఆ నిర్ణయం వల్లే ఈనాడు ఎంతోమంది దళిత, బహుజన బిడ్డలు ఇంజనీర్లుగా, డాక్టర్లుగా, ప్రొఫెసర్లుగా, ఐఏఎస్ (IAS), ఐపీఎస్ (IPS) లుగా ఎదగగలిగారు. చదువుకోవడం వల్ల సమాజంపై అవగాహన వస్తుంది, హక్కుల కోసం నిలబడే ధైర్యం వస్తుంది, తద్వారా దేశం కూడా అభివృద్ధి చెందుతుంది.
+              </p>
 
               {/* Section 1: History */}
               <h3 className={`text-xl md:text-2xl font-bold ${brandClasses.textNavy} mt-12 mb-8 flex items-center gap-2 border-b pb-2`}>
                 <School className="w-6 h-6 text-blue-600" />
-                1. గురుకుల విద్యాసంస్థలు మరియు మోడల్ స్కూల్స్ చరిత్ర, వ్యవస్థ
+                1. గురుకుల విద్యాసంస్థలు
               </h3>
 
               <div className="space-y-8 mb-12">
-                
+
                 {/* 1. TREIS */}
                 <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
                   <h4 className="font-bold text-blue-900 mb-3 text-lg border-b border-gray-100 pb-2">1. TREIS / TGREIS (సాధారణ గురుకులాలు)</h4>
                   <ul className="space-y-2 text-sm md:text-base text-gray-700">
-                    <li><strong>ఎప్పుడు/ఎవరు:</strong> 1972 లో అప్పటి ముఖ్యమంత్రి పి.వి. నరసింహారావు గారు స్థాపించారు (తొలి పాఠశాల 1971 నవంబర్ 23న ప్రారంభమైంది).</li>
+                    <li><strong>ప్రారంభం:</strong> 1972 లో అప్పటి ముఖ్యమంత్రి పి.వి. నరసింహారావు గారు స్థాపించారు (తొలి పాఠశాల 1971 నవంబర్ 23న ప్రారంభమైంది).</li>
                     <li><strong>లక్ష్యం:</strong> కులమతాలతో సంబంధం లేకుండా గ్రామీణ ప్రాంతాల్లోని ప్రతిభావంతులైన పేద విద్యార్థులందరికీ అత్యున్నత నాణ్యతతో కూడిన ఉచిత విద్యను అందించడం.</li>
-                    <li><strong>వ్యవస్థ:</strong> ఇది తెలుగు రాష్ట్రాల్లోని గురుకుల వ్యవస్థకే మాతృ సంస్థ. ప్రసిద్ధ సర్వేల్ (Sarvail) పాఠశాలతో పాటు TGRJC మరియు TGRDC లు నడుస్తున్నాయి.</li>
+                    <li><strong>సంస్థ పరిధి:</strong> ఇది తెలుగు రాష్ట్రాల్లోని గురుకుల వ్యవస్థకే మాతృ సంస్థ. ప్రసిద్ధ సర్వేల్ (Sarvail) పాఠశాలతో పాటు TGRJC మరియు TGRDC లు నడుస్తున్నాయి.</li>
                   </ul>
                 </div>
 
@@ -168,9 +154,9 @@ export default function TelanganaEducationArticle() {
                 <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
                   <h4 className="font-bold text-blue-900 mb-3 text-lg border-b border-gray-100 pb-2">2. APSWREIS (ప్రస్తుతం TGSWREIS - SC గురుకులాలు)</h4>
                   <ul className="space-y-2 text-sm md:text-base text-gray-700">
-                    <li><strong>ఎప్పుడు/ఎవరు:</strong> 1984 లో ముఖ్యమంత్రి నందమూరి తారక రామారావు (NTR) గారు ప్రవేశపెట్టారు.</li>
+                    <li><strong>ప్రారంభం:</strong> 1984 లో ముఖ్యమంత్రి నందమూరి తారక రామారావు (NTR) గారు ప్రవేశపెట్టారు.</li>
                     <li><strong>లక్ష్యం:</strong> షెడ్యూల్డ్ కులాల (SC) మరియు వెనుకబడిన వర్గాల పేద పిల్లలకు నాణ్యమైన ఇంగ్లీష్ మీడియం వసతి విద్యను అందించడం.</li>
-                    <li><strong>వ్యవస్థ:</strong> 5వ తరగతి నుండి డిగ్రీ వరకు ఉచిత భోజనం, వసతితో దేశంలోనే అతిపెద్ద నెట్‌వర్క్‌గా నిలిచింది.</li>
+                    <li><strong>సంస్థ పరిధి:</strong> 5వ తరగతి నుండి డిగ్రీ వరకు ఉచిత భోజనం.</li>
                   </ul>
                 </div>
 
@@ -178,13 +164,13 @@ export default function TelanganaEducationArticle() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
                     <h4 className="font-bold text-green-700 mb-3 text-lg border-b border-gray-100 pb-2">3. TTWREIS (గిరిజన గురుకులం)</h4>
-                    <p className="text-sm md:text-base text-gray-700 mb-2"><strong>ఎప్పుడు/ఎవరు:</strong> 1984లో ప్రారంభమై, 1998లో చంద్రబాబు నాయుడు గారి హయాంలో స్వతంత్ర సొసైటీగా మారింది.</p>
-                    <p className="text-sm md:text-base text-gray-700"><strong>వ్యవస్థ:</strong> ST విద్యార్థుల కోసం ఏజెన్సీ ప్రాంతాల్లో పాఠశాలలు, జూనియర్ కాలేజీలతో పాటు డిఫెన్స్ (సైనిక) మరియు స్పోర్ట్స్ అకాడమీలు నడుస్తున్నాయి.</p>
+                    <p className="text-sm md:text-base text-gray-700 mb-2"><strong>ప్రారంభం:</strong> 1984లో ప్రారంభమై, 1998లో చంద్రబాబు నాయుడు గారి హయాంలో స్వతంత్ర సొసైటీగా మారింది.</p>
+                    <p className="text-sm md:text-base text-gray-700"><strong>సంస్థ పరిధి:</strong> ST విద్యార్థుల కోసం ఏజెన్సీ ప్రాంతాల్లో పాఠశాలలు, జూనియర్ కాలేజీలతో పాటు డిఫెన్స్ (సైనిక) మరియు స్పోర్ట్స్ అకాడమీలు నడుస్తున్నాయి.</p>
                   </div>
-                  
+
                   <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
                     <h4 className="font-bold text-orange-600 mb-3 text-lg border-b border-gray-100 pb-2">4. MJPTBCWREIS (బీసీ గురుకులాలు)</h4>
-                    <p className="text-sm md:text-base text-gray-700 mb-2"><strong>ఎప్పుడు/ఎవరు:</strong> 2012 లో ఉమ్మడి ఏపీ ముఖ్యమంత్రి నల్లారి కిరణ్ కుమార్ రెడ్డి గారు ప్రారంభించారు.</p>
+                    <p className="text-sm md:text-base text-gray-700 mb-2"><strong>ప్రారంభం:</strong> 2012 లో ఉమ్మడి ఏపీ ముఖ్యమంత్రి నల్లారి కిరణ్ కుమార్ రెడ్డి గారు ప్రారంభించారు.</p>
                     <p className="text-sm md:text-base text-gray-700"><strong>లక్ష్యం:</strong> వెనుకబడిన తరగతుల (BC) మరియు EBC పిల్లలను విద్యాపరంగా ఉన్నత శిఖరాలకు చేర్చడం.</p>
                   </div>
                 </div>
@@ -193,28 +179,16 @@ export default function TelanganaEducationArticle() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
                     <h4 className="font-bold text-indigo-700 mb-3 text-lg border-b border-gray-100 pb-2">5. TSWRJC & TSWRDC</h4>
-                    <p className="text-sm md:text-base text-gray-700"><strong>ఎప్పుడు/ఎవరు:</strong> జూనియర్ కాలేజీలు 1990/2000లలో విస్తరించగా, ప్రత్యేక డిగ్రీ కళాశాలలు 2016 లో మాజీ సీఎం KCR గారి హయాంలో ప్రారంభమయ్యాయి. మహిళలకు సైన్స్, కామర్స్ కోర్సుల్లో ఉపాధి కల్పించడం వీటి లక్ష్యం.</p>
+                    <p className="text-sm md:text-base text-gray-700"><strong>ప్రారంభం:</strong> జూనియర్ కాలేజీలు 1990/2000లలో విస్తరించగా, ప్రత్యేక డిగ్రీ కళాశాలలు 2016 లో మాజీ సీఎం KCR గారి హయాంలో ప్రారంభమయ్యాయి. మహిళలకు సైన్స్, కామర్స్ కోర్సుల్లో ఉపాధి కల్పించడం వీటి లక్ష్యం.</p>
                   </div>
-                  
+
                   <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
                     <h4 className="font-bold text-purple-700 mb-3 text-lg border-b border-gray-100 pb-2">6. TMREIS (మైనారిటీ గురుకులాలు)</h4>
-                    <p className="text-sm md:text-base text-gray-700"><strong>ఎప్పుడు/ఎవరు:</strong> 2016 లో సీఎం KCR గారు ప్రతిష్టాత్మకంగా ప్రారంభించారు. మైనారిటీ వర్గాలకు కార్పొరేట్ స్థాయి ఇంగ్లీష్ మీడియం విద్య మరియు NEET, JEE కోచింగ్ అందిస్తున్నారు.</p>
+                    <p className="text-sm md:text-base text-gray-700"><strong>ప్రారంభం:</strong> 2016 లో సీఎం KCR గారు ప్రతిష్టాత్మకంగా ప్రారంభించారు. మైనారిటీ వర్గాలకు కార్పొరేట్ స్థాయి ఇంగ్లీష్ మీడియం విద్య మరియు NEET, JEE కోచింగ్ అందిస్తున్నారు.</p>
                   </div>
                 </div>
 
-                {/* 7. Young India */}
-                <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl border border-blue-100 shadow-sm">
-                  <h4 className="font-bold text-[#0B1B35] mb-3 text-lg flex items-center gap-2">
-                    <Users className="w-5 h-5 text-blue-600" />
-                    7. Young India Integrated Residential Schools (సమన్వయ గురుకులాలు)
-                  </h4>
-                  <ul className="space-y-2 text-sm md:text-base text-gray-700">
-                    <li><strong>ఎప్పుడు/ఎవరు:</strong> 2024 అక్టోబర్ 11న శంకుస్థాపన చేసి, ప్రస్తుత ముఖ్యమంత్రి ఎ. రేవంత్ రెడ్డి గారు ప్రారంభించారు.</li>
-                    <li><strong>లక్ష్యం:</strong> కులాల వారీగా పిల్లలను వేరు చేయకుండా, SC, ST, BC మరియు మైనారిటీ విద్యార్థులందరినీ ఒకే చోట (20-25 ఎకరాల మేగా-క్యాంపస్‌లో) చదివించి సమానత్వాన్ని పెంచడం.</li>
-                  </ul>
-                </div>
-
-                {/* 8. Model Schools */}
+                {/* 7. Model Schools */}
                 <div className="bg-white p-6 rounded-xl border-l-4 border-green-500 shadow-md">
                   <h4 className="font-bold text-green-800 mb-3 text-lg flex items-center gap-2">
                     <BookOpen className="w-5 h-5" />
@@ -235,6 +209,41 @@ export default function TelanganaEducationArticle() {
                   </div>
                 </div>
 
+                {/* 7. Young India (NEWLY ADDED & ENHANCED) */}
+                <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 md:p-8 rounded-xl border border-blue-200 shadow-md">
+                  <h4 className="font-bold text-[#0B1B35] mb-4 text-xl flex items-center gap-2">
+                    <Users className="w-6 h-6 text-blue-600" />
+                    8. యంగ్ ఇండియా ఇంటిగ్రేటెడ్ రెసిడెన్షియల్ స్కూల్స్ (సమన్వయ గురుకులాలు)
+                  </h4>
+                  <p className="text-gray-700 mb-4 text-sm md:text-base leading-relaxed">
+                    తెలంగాణ విద్యావ్యవస్థలో, ముఖ్యంగా గురుకులాల చరిత్రలో ఇదొక సరికొత్త మరియు విప్లవాత్మకమైన అడుగు. ఎస్సీ, ఎస్టీ, బీసీ, మైనారిటీ విద్యార్థులందరినీ ఒకే గొడుగు కిందికి తెస్తూ ప్రస్తుత ముఖ్యమంత్రి <strong>శ్రీ ఎనుముల రేవంత్ రెడ్డి</strong> గారి ప్రభుత్వం 2024 అక్టోబర్ నెలలో ఈ ప్రాజెక్టుకు శ్రీకారం చుట్టింది.
+                  </p>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+                    <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+                      <h5 className="font-bold text-indigo-800 flex items-center gap-2 mb-2"><Target className="w-4 h-4" /> ప్రధాన ఉద్దేశ్యం</h5>
+                      <p className="text-sm text-gray-600">కుల, మత, వర్గ భేదాలు లేకుండా విద్యార్థులందరూ ఒకే ప్రాంగణంలో కలిసి చదువుకోవాలి. కులాల వారీగా క్యాంపస్‌లను ఉంచడం వల్ల ఏర్పడే సామాజిక అగాధాన్ని (Social Divide) రూపుమాపి, విద్యార్థి దశ నుంచే సామాజిక సామరస్యాన్ని పెంపొందించడం.</p>
+                    </div>
+                    <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+                      <h5 className="font-bold text-indigo-800 flex items-center gap-2 mb-2"><Building className="w-4 h-4" /> ఎందుకు అవసరమైంది?</h5>
+                      <p className="text-sm text-gray-600">దాదాపు 1000కి పైగా గురుకులాల్లో సగానికి పైగా అద్దె భవనాల్లోనే ఉన్నాయి. "ఇది ఎస్సీల బడి, ఇది బీసీల బడి" అనే ముద్రను చెరిపేసి, అద్దె భవనాల కష్టాలు తీర్చి ఒకే చోట అత్యుత్తమ సదుపాయాలు కల్పించడమే దీని లక్ష్యం.</p>
+                    </div>
+                  </div>
+
+                  <div className="mt-6 bg-white p-5 rounded-lg border border-blue-100">
+                    <h5 className="font-bold text-[#0B1B35] mb-3 border-b pb-2">ప్రాజెక్టులోని ముఖ్యమైన ఫీచర్లు:</h5>
+                    <ul className="space-y-2 text-sm md:text-base text-gray-700 list-disc ml-5">
+                      <li><strong>విశాలమైన ప్రాంగణాలు:</strong> ఒక్కో క్యాంపస్ సుమారు 20 నుంచి 25 ఎకరాల సువిశాల విస్తీర్ణంలో నిర్మాణం.</li>
+                      <li><strong>భారీ బడ్జెట్:</strong> ప్రతి నియోజకవర్గానికి ఒక స్కూల్. ఒక్కో పాఠశాల నిర్మాణానికి సుమారు రూ. 100 కోట్ల నుంచి రూ. 120 కోట్ల బడ్జెట్.</li>
+                      <li><strong>ఒకే చోట వేలాది మంది:</strong> ఒక్కో క్యాంపస్‌లో 2,500 మందికి పైగా విద్యార్థులు (SC, ST, BC, Minority & EBC) ఒకే ప్రాంగణంలో ఉంటారు.</li>
+                      <li><strong>అంతర్జాతీయ స్థాయి వసతులు:</strong> డిజిటల్ తరగతి గదులు, ఆధునిక ల్యాబ్‌లు, విశాలమైన డైనింగ్ హాళ్లు, క్రీడా మైదానాలు.</li>
+                    </ul>
+                  </div>
+
+                  <p className="mt-5 text-sm md:text-base font-medium text-indigo-900 bg-indigo-100/50 p-4 rounded border border-indigo-200">
+                    ఎన్టీఆర్ గారి హయాంలో పునాదులు పడి, కేసీఆర్ గారి హయాంలో భారీగా విస్తరించిన గురుకుల వ్యవస్థ... ఇప్పుడు రేవంత్ రెడ్డి గారి హయాంలో "యంగ్ ఇండియా ఇంటిగ్రేటెడ్ స్కూల్స్" రూపంలో కుల, మతాలకు అతీతంగా సరికొత్త రూపుదిద్దుకుంటోంది.
+                  </p>
+                </div>
               </div>
 
               {/* Section 2: Entrance Exams */}
@@ -268,38 +277,38 @@ export default function TelanganaEducationArticle() {
                 </div>
               </div>
 
-              {/* Section 3: FAQs (Merged from previous Gurukul article) */}
-              <h3 className={`text-xl md:text-2xl font-bold ${brandClasses.textNavy} mt-12 mb-8 flex items-center gap-2 border-b pb-2`}>
-                <HelpCircle className="w-6 h-6 text-purple-600" />
-                3. ప్రజలకు ఉండే సాధారణ ప్రశ్నలు (FAQs)
+
+              {/* YSR Section */}
+              <h3 className={`text-xl md:text-2xl font-bold ${brandClasses.textNavy} mt-12 mb-6 flex items-center gap-2 border-b pb-2`}>
+                <Landmark className="w-6 h-6 text-blue-600" />
+                వై.ఎస్. రాజశేఖర్ రెడ్డి గారి విప్లవాత్మక విద్యా సంస్కరణ
               </h3>
+              <p className="mb-6">ఉమ్మడి ఆంధ్రప్రదేశ్ ముఖ్యమంత్రిగా పనిచేసిన కీ.శే. వై.ఎస్. రాజశేఖర్ రెడ్డి గారిని ఖచ్చితంగా గుర్తుచేసుకోవాలి. విద్యాభివృద్ధిలో భాగంగా ఆయన తెచ్చిన విప్లవాత్మక నిర్ణయం:</p>
 
-              <div className="space-y-6 mb-12">
-                <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
-                  <h4 className="font-bold text-[#0B1B35] mb-3 text-lg">1. ఒక్కో విద్యార్థికి ప్రభుత్వం ఎంత ఖర్చు చేస్తోంది? సదుపాయాలు ఎలా ఉంటాయి?</h4>
-                  <p className="text-gray-700 text-sm md:text-base leading-relaxed mb-3">ఒక్కో విద్యార్థికి సగటున సంవత్సరానికి <strong>రూ. 1,00,000 నుండి 1,25,000</strong> వరకు ప్రభుత్వం ఖర్చు చేస్తోంది.</p>
-                  <p className="text-gray-700 text-sm md:text-base leading-relaxed"><strong>సదుపాయాలు:</strong> సన్నబియ్యంతో భోజనం, రోజూ గుడ్డు, వారానికి రెండుసార్లు చికెన్/మటన్, ఉచితంగా పాఠ్యపుస్తకాలు, నోట్ బుక్స్, 3 జతల యూనిఫామ్స్, పరుపులు, దుప్పట్లు, ట్రంకు పెట్టెలు, కాస్మోటిక్స్ చార్జీలు ఇస్తారు. డిజిటల్ క్లాస్ రూమ్స్, లైబ్రరీ, ల్యాబ్స్, క్రీడా మైదానాలు ఉంటాయి.</p>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
-                    <h4 className="font-bold text-[#0B1B35] mb-2">2. క్లాస్ కు ఎంతమందిని అనుమతిస్తారు?</h4>
-                    <p className="text-gray-700 text-sm md:text-base">ఒక తరగతికి (సెక్షన్ కి) 40 మంది విద్యార్థులను మాత్రమే అనుమతిస్తారు. 5వ తరగతి నుండి ఇంటర్ వరకు ఉండే ఒక గురుకులంలో మొత్తం 400 నుండి 640 మంది వరకు విద్యార్థులు ఉంటారు.</p>
+              <div className="grid grid-cols-1 mb-12">
+                <div className="bg-white p-6 md:p-8 rounded-xl border border-gray-200 shadow-md hover:shadow-lg transition-shadow">
+                  <div className="flex items-center gap-4 mb-5 border-b border-gray-100 pb-4">
+                    <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <GraduationCap className="w-6 h-6 text-blue-600" />
+                    </div>
+                    <h4 className="font-bold text-xl md:text-2xl text-gray-900">ఫీజు రీయింబర్స్మెంట్ (Fee Reimbursement)</h4>
                   </div>
-                  <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
-                    <h4 className="font-bold text-[#0B1B35] mb-2">3. బోధనా సిబ్బంది ఎంతమంది ఉంటారు?</h4>
-                    <p className="text-gray-700 text-sm md:text-base">ఒక స్కూల్ లో ప్రిన్సిపాల్, పీజీటీ, టీజీటీ టీచర్లు, పీఈటీ, లైబ్రేరియన్, స్టాఫ్ నర్స్, మరియు వంట మనుషులు, స్వీపర్లు, వాచ్ మెన్ కలుపుకుని సగటున 30 నుండి 40 మంది సిబ్బంది ఉంటారు.</p>
+
+                  <div className="space-y-4">
+                    <p className="text-sm md:text-base text-gray-700">
+                      <span className="font-bold text-blue-900 mr-2">➔ ప్రారంభం</span>
+                      డాక్టర్ వై.ఎస్. రాజశేఖర రెడ్డి (YSR) గారు ఈ పథకం ఉమ్మడి ఆంధ్రప్రదేశ్‌లో 2008–2009 విద్యా సంవత్సరంలో అధికారికంగా ప్రారంభించారు.
+                    </p>
+
+                    <div className="bg-blue-50/50 p-5 rounded-lg border border-blue-100 mt-4">
+                      <p className="font-bold text-blue-900 mb-3 text-lg">🎯 పథకం లక్ష్యం:</p>
+                      <ul className="list-disc ml-5 space-y-3 text-sm md:text-base text-gray-700">
+                        <li><strong>ఉచిత ఉన్నత విద్య:</strong> పేద విద్యార్థులకు కూడా ఇంజనీరింగ్, మెడిసిన్, MBA, MCA వంటి ఖరీదైన ప్రొఫెషనల్ కోర్సులను ఉచితంగా అందించడం.</li>
+                        <li><strong>ఆర్థిక భారం తగ్గించడం:</strong> ఫీజులు కట్టలేక ఏ పేద కుటుంబం కూడా అప్పులపాలు కాకూడదనేది దీని ముఖ్య ఉద్దేశం.</li>
+                        <li><strong>సామాజిక సమానత్వం:</strong> ఎస్సీ, ఎస్టీ, బీసీ, ఈబీసీ, మైనారిటీ విద్యార్థులు ఉన్నత ఉద్యోగాలు సాధించి సమాజంలో ఎదిగేలా చేయడం.</li>
+                      </ul>
+                    </div>
                   </div>
-                </div>
-
-                <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
-                  <h4 className="font-bold text-[#0B1B35] mb-3 text-lg">4. ఫుడ్ కాంట్రాక్ట్ ఇస్తారా? బడ్జెట్ ఎలా వస్తుంది?</h4>
-                  <p className="text-gray-700 text-sm md:text-base leading-relaxed">భోజన మెనూ, బడ్జెట్ ప్రభుత్వమే నిర్ణయిస్తుంది. బియ్యాన్ని సివిల్ సప్లైస్ ద్వారా ఇస్తారు. కూరగాయలు, మాంసం వంటివి స్థానిక టెండర్ల ద్వారా కొనుగోలు చేస్తారు. తెలంగాణ ప్రభుత్వం గురుకులాల కోసం ప్రతి ఏటా <strong>సుమారు రూ. 3,500 నుండి 4,000 కోట్లు</strong> కేటాయిస్తోంది. ఎస్సీ, ఎస్టీ సబ్-ప్లాన్, బీసీ, మైనార్టీ సంక్షేమ శాఖల బడ్జెట్ ను దీనికి ఉపయోగిస్తారు.</p>
-                </div>
-
-                <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
-                  <h4 className="font-bold text-[#0B1B35] mb-3 text-lg">5. స్కూల్ లో తప్పులు జరిగితే ఎవరికి కంప్లైంట్ చేయాలి?</h4>
-                  <p className="text-gray-700 text-sm md:text-base leading-relaxed">నాణ్యత లేని భోజనం పెట్టినా, వివక్ష చూపినా విద్యార్థులు ప్రిన్సిపాల్ కు ఫిర్యాదు చేయాలి. అక్కడ న్యాయం జరగకపోతే సొసైటీ RCO కి లేదా కలెక్టరేట్ లో జరిగే ప్రజావాణిలో ఫిర్యాదు చేయవచ్చు. పిల్లల రక్షణ కోసం <strong>పోక్సో చట్టం (POCSO Act - 2012)</strong>, వివక్ష చూపిస్తే <strong>ఎస్సీ, ఎస్టీ అట్రాసిటీ చట్టం</strong> కింద కఠిన చర్యలు తీసుకుంటారు.</p>
                 </div>
               </div>
 
@@ -310,14 +319,38 @@ export default function TelanganaEducationArticle() {
               </h3>
 
               <div className="space-y-6 mb-12">
-                <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
-                  <h4 className="font-bold text-[#0B1B35] mb-4 flex items-center gap-2"><BookOpen className="w-5 h-5 text-gray-500" /> అధికారిక వెబ్‌సైట్లు:</h4>
-                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm md:text-base text-gray-700">
-                    <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-green-500" /> పాఠశాల విద్య: Telangana School Education</li>
-                    <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-green-500" /> ఇంటర్మీడియట్: TG State Board of Intermediate</li>
-                    <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-green-500" /> ఉన్నత విద్య: DOST (Degree Online Services)</li>
-                    <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-green-500" /> మోడల్ స్కూల్స్: TGMS Portal</li>
-                  </ul>
+                <div className="space-y-6 mb-12">
+                  <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+                    <h4 className="font-bold text-[#0B1B35] mb-4 flex items-center gap-2">
+                      <BookOpen className="w-5 h-5 text-gray-500" /> అధికారిక వెబ్‌సైట్లు:
+                    </h4>
+                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm md:text-base text-gray-700">
+                      <li className="flex items-center gap-2">
+                        <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
+                        <a href="https://schooledu.telangana.gov.in/" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline hover:text-blue-800">
+                          పాఠశాల విద్య: Telangana School Education
+                        </a>
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
+                        <a href="https://tgbie.cgg.gov.in/" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline hover:text-blue-800">
+                          ఇంటర్మీడియట్: TG State Board of Intermediate
+                        </a>
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
+                        <a href="https://dost.cgg.gov.in/" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline hover:text-blue-800">
+                          ఉన్నత విద్య: DOST (Degree Online Services)
+                        </a>
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
+                        <a href="https://telanganams.cgg.gov.in/" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline hover:text-blue-800">
+                          మోడల్ స్కూల్స్: TGMS Portal
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
 
                 <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
@@ -332,13 +365,31 @@ export default function TelanganaEducationArticle() {
                   </ul>
                 </div>
 
-                <div className="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-xl border border-purple-100 shadow-sm">
-                  <h4 className="font-bold text-purple-900 mb-3 flex items-center gap-2"><Smartphone className="w-5 h-5" /> మొబైల్ యాప్‌లు (Google Play Store):</h4>
+                <div className="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-xl border border-purple-100 shadow-sm mb-12">
+                  <h4 className="font-bold text-purple-900 mb-3 flex items-center gap-2">
+                    <Smartphone className="w-5 h-5" /> మొబైల్ యాప్‌లు (Google Play Store):
+                  </h4>
                   <ul className="space-y-2 text-sm md:text-base text-gray-700">
-                    <li><strong>T-SAT App:</strong> 1వ తరగతి నుండి పోటీ పరీక్షల వరకు ఉచిత డిజిటల్ తరగతులు.</li>
-                    <li><strong>TELANGANA SCHOOL EDUCATION App:</strong> విద్యార్థుల విద్యా పురోగతి కోసం.</li>
-                    <li><strong>TGBIE m-Services:</strong> ఇంటర్ హాల్ టికెట్లు, ఫలితాల కోసం.</li>
-                    <li><strong>DOST App:</strong> డిగ్రీ ఆన్‌లైన్ అడ్మిషన్ల కోసం.</li>
+                    <li>
+                      <a href="https://play.google.com/store/search?q=t+sat+app&c=apps" target="_blank" rel="noopener noreferrer" className="underline text-purple-700 hover:underline">
+                        <strong>T-SAT App:</strong>
+                      </a> 1వ తరగతి నుండి పోటీ పరీక్షల వరకు ఉచిత డిజిటల్ తరగతులు.
+                    </li>
+                    <li>
+                      <a href="https://play.google.com/store/search?q=Telangana+School+Education&c=apps" target="_blank" rel="noopener noreferrer" className="underline text-purple-700 hover:underline">
+                        <strong>TELANGANA SCHOOL EDUCATION App:</strong>
+                      </a> విద్యార్థుల విద్యా పురోగతి కోసం.
+                    </li>
+                    <li>
+                      <a href="https://play.google.com/store/search?q=tgbie+m+service&c=apps" target="_blank" rel="noopener noreferrer" className="underline text-purple-700 hover:underline">
+                        <strong>TGBIE m-Services:</strong>
+                      </a> ఇంటర్ హాల్ టికెట్లు, ఫలితాల కోసం.
+                    </li>
+                    <li>
+                      <a href="https://play.google.com/store/search?q=dost+app+government&c=apps" target="_blank" rel="noopener noreferrer" className="underline text-purple-700 hover:underline">
+                        <strong>DOST App:</strong>
+                      </a> డిగ్రీ ఆన్‌లైన్ అడ్మిషన్ల కోసం.
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -348,7 +399,7 @@ export default function TelanganaEducationArticle() {
                 <ShieldCheck className="w-6 h-6 text-emerald-600" />
                 ముగింపు
               </h3>
-              
+
               <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-6 md:p-8 rounded-2xl border border-gray-200 text-gray-800 leading-relaxed mb-10">
                 <p className="mb-4">
                   సమాజంలో విద్యావంతులు పెరగడం మూలాన గతంతో పోలిస్తే ఇప్పుడు కుల వివక్ష చాలా వరకు తగ్గింది. ప్రభుత్వాలు కల్పిస్తున్న ఈ అవకాశాలను బడుగు, బలహీన వర్గాలు పూర్తి స్థాయిలో సద్వినియోగం చేసుకోవాలి.
@@ -379,8 +430,7 @@ export default function TelanganaEducationArticle() {
                     <PenTool className="w-5 h-5 text-[#D4AF37]" />
                   </div>
                   <div className="text-left">
-                    <p className="text-xs text-gray-500 font-bold uppercase tracking-wider mb-1">రచన (Author)</p>
-                    <p className={`font-bold ${brandClasses.textNavy} text-base md:text-lg`}>వంశీ బీటెక్ (Vamshi BTech)</p>
+                    <p className={`font-bold ${brandClasses.textNavy} text-base md:text-lg`}>Vamshi BTech</p>
                   </div>
                 </div>
               </div>
@@ -392,7 +442,7 @@ export default function TelanganaEducationArticle() {
                 </div>
                 <div className="relative z-10">
                   <h3 className="text-xl md:text-3xl font-serif font-bold text-[#D4AF37] mb-4">
-                    ఈ సమాచారాన్ని నలుగురికీ పంచుదాం!
+                     ఇంక్ తెలంగాణ (Ink Telangana) కథనం పై మీ అభిప్రాయాన్ని మాకు తెలియజేయండి.
                   </h3>
                   <p className="text-gray-300 mb-8 leading-relaxed text-sm md:text-lg">
                     తెలంగాణలో అందుబాటులో ఉన్న ఉచిత విద్యావకాశాలను పేద విద్యార్థులకు తెలియజేయడానికి ఈ ఆర్టికల్‌ను వాట్సాప్ మరియు సోషల్ మీడియాలో షేర్ చేయండి.
@@ -404,7 +454,7 @@ export default function TelanganaEducationArticle() {
                     >
                       <Share2 className="w-5 h-5" /> Share Article
                     </button>
-                    
+
                     <Link
                       href="/contact"
                       className="inline-flex justify-center items-center px-8 py-3.5 bg-transparent border-2 border-[#D4AF37] text-[#D4AF37] font-bold rounded-full hover:bg-[#D4AF37]/10 transition-colors"
