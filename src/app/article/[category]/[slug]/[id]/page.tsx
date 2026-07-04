@@ -49,28 +49,6 @@ export async function generateMetadata(
     };
   }
 
-  if (id === "10000102") {
-    return {
-      title: "బడుగు, బలహీన వర్గాల అభ్యున్నతికి విద్యే ఆయుధం - తెలంగాణలో గురుకులాల విప్లవం | Ink Telangana",
-      description: "ఒకప్పుడు వివక్షకు గురైన వర్గాలకు నేడు గురుకులాలు ఎలా ఆత్మగౌరవాన్ని పంచుతున్నాయి? అడ్మిషన్లు, వసతులు, మరియు చట్టాల గురించి పూర్తి వివరాలు.",
-      openGraph: {
-        title: "వర్గాల వారిగా స్కూళ్లు, కాలేజీలకు.. ఆనాటి వివక్షే కారణం.",
-        description: "ఒకప్పుడు వివక్షకు గురైన వర్గాలకు, ఆత్మగౌరవంతో కూడిన విద్యను అందించింది.. ఆనాటి 'గురు కులాలే'.",
-        url: `${baseUrl}/article/${category}/${slug}/${id}`,
-        images: [
-          {
-            url: 'https://blogger.googleusercontent.com/img/a/AVvXsEgVU18iIVzPoCKT69tyg0RJJ4Q0pooeHahvUmCkl7B2If6_fPUSu_3Y7NiU5JYdOYkDdVs8BXwjw52E1ghyFWW0nUbU-rUNPklBY3a5gOfzPihqykqIkzHcDlRd4XhjO3R4Vjnv26E-DPAcc1FO6gqZqC3sITNSoR7FHBbSGnHwm5B-OzUQMzbph8czfr_u',
-            width: 1200,
-            height: 630,
-            alt: 'Gurukul Schools in Telangana',
-          },
-        ],
-        locale: 'te_IN',
-        type: 'article',
-      },
-    };
-  }
-
   if (id === "10000201") {
     return {
       title: "హైదరాబాద్‌లో ఫుట్ ఓవర్ బ్రిడ్జిలు: ప్రజల భద్రత కోసం నిర్మిస్తున్నారా? లేక శిక్షించడానికా? | Ink Telangana",
@@ -115,7 +93,29 @@ export async function generateMetadata(
     };
   }
 
-  if (id === "10000404") {
+  if (id === "10000302") {
+    return {
+      title: "బడుగు, బలహీన వర్గాల అభ్యున్నతికి విద్యే ఆయుధం - తెలంగాణలో గురుకులాల విప్లవం | Ink Telangana",
+      description: "ఒకప్పుడు వివక్షకు గురైన వర్గాలకు నేడు గురుకులాలు ఎలా ఆత్మగౌరవాన్ని పంచుతున్నాయి? అడ్మిషన్లు, వసతులు, మరియు చట్టాల గురించి పూర్తి వివరాలు.",
+      openGraph: {
+        title: "వర్గాల వారిగా స్కూళ్లు, కాలేజీలకు.. ఆనాటి వివక్షే కారణం.",
+        description: "ఒకప్పుడు వివక్షకు గురైన వర్గాలకు, ఆత్మగౌరవంతో కూడిన విద్యను అందించింది.. ఆనాటి 'గురు కులాలే'.",
+        url: `${baseUrl}/article/${category}/${slug}/${id}`,
+        images: [
+          {
+            url: 'https://blogger.googleusercontent.com/img/a/AVvXsEgVU18iIVzPoCKT69tyg0RJJ4Q0pooeHahvUmCkl7B2If6_fPUSu_3Y7NiU5JYdOYkDdVs8BXwjw52E1ghyFWW0nUbU-rUNPklBY3a5gOfzPihqykqIkzHcDlRd4XhjO3R4Vjnv26E-DPAcc1FO6gqZqC3sITNSoR7FHBbSGnHwm5B-OzUQMzbph8czfr_u',
+            width: 1200,
+            height: 630,
+            alt: 'Gurukul Schools in Telangana',
+          },
+        ],
+        locale: 'te_IN',
+        type: 'article',
+      },
+    };
+  }
+
+  if (id === "10000303") {
     return {
       title: "ZPTC to CM: తెలంగాణ ఫైర్ బ్రాండ్ సీఎం రేవంత్ రెడ్డి 20 ఏళ్ల రాజకీయ ప్రస్థానం | Ink Telangana",
       description: "మిడ్జిల్ లో ఒక సాధారణ జడ్పీటీసీగా మొదలై.. తెలంగాణ ముఖ్యమంత్రి స్థాయికి ఎదిగిన సీఎం రేవంత్ రెడ్డి గారి 20 ఏళ్ల స్ఫూర్తిదాయక ప్రస్థానం.",
@@ -125,7 +125,7 @@ export async function generateMetadata(
         url: `${baseUrl}/article/${category}/${slug}/${id}`,
         images: [
           {
-            url: 'https://blogger.googleusercontent.com/img/a/AVvXsEiYKS-xZ3HDxFjuSUSwlHsQnx6zA-Uzs4yzVpmd6Ksbh0o3eEcNn9mWZPeiFgaaywR9RE9uiXniI9-UxuJGE1rwMk02eViX7NK6EnUeEic0Rm07xjQQnVzrgCBg4-oY2eh5gQMtlzYEelfCSoF2UCnS44ljbACAUnIAIlJvIPhmgscbZCI0YgqQs5nhqDME', 
+            url: 'https://blogger.googleusercontent.com/img/a/AVvXsEiYKS-xZ3HDxFjuSUSwlHsQnx6zA-Uzs4yzVpmd6Ksbh0o3eEcNn9mWZPeiFgaaywR9RE9uiXniI9-UxuJGE1rwMk02eViX7NK6EnUeEic0Rm07xjQQnVzrgCBg4-oY2eh5gQMtlzYEelfCSoF2UCnS44ljbACAUnIAIlJvIPhmgscbZCI0YgqQs5nhqDME',
             width: 1200,
             height: 630,
             alt: 'CM Revanth Reddy 20 Years Journey',
@@ -179,7 +179,7 @@ export default async function ArticlePage({ params }: Props) {
   if (id === "10000101") {
     return <FreeLaptopArticle />;
   }
-  if (id === "10000102") {
+  if (id === "10000302") {
     return <GurukulArticle />;
   }
   if (id === "10000201") {
@@ -188,7 +188,7 @@ export default async function ArticlePage({ params }: Props) {
   if (id === "10000301") {
     return <SIRArticle />;
   }
-if (id === "10000404") {
+  if (id === "10000303") {
     return <ZPTCtoCMArticle />;
   }
 

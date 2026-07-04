@@ -1,4 +1,4 @@
-import { Info } from 'lucide-react';
+import { Info, PenTool } from 'lucide-react';
 import { brandClasses } from '@/utils/theme';
 
 export default function AboutPage() {
@@ -16,6 +16,18 @@ export default function AboutPage() {
               "Your Voice | Your Story | Our Telangana."
             </p>
           </div>
+          {/* Author Section */}
+          <div className="mt-12 flex justify-end border-t border-gray-100 pt-8">
+            <div className="inline-flex items-center gap-4 bg-gray-50 border border-gray-200 px-6 py-4 rounded-xl shadow-sm">
+              <div className={`p-3 rounded-full ${brandClasses.bgNavy}`}>
+                <PenTool className="w-5 h-5 text-[#D4AF37]" />
+              </div>
+              <div className="text-left">
+                <p className={`font-bold ${brandClasses.textNavy} text-base md:text-lg`}>Vamshi BTech</p>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>

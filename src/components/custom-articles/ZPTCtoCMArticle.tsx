@@ -330,6 +330,14 @@ export default function RevanthReddyArticle() {
                                     <p><strong>🌱 కాంగ్రెస్‌కు పునర్జీవం:</strong> అసలు ఈ రాష్ట్రంలో కాంగ్రెస్ ఉందా? గెలుస్తుందా? అనే సందేహాల నుండి.. పార్టీకి సరికొత్త జీవం పోసి, విజయ తీరాలకు చేర్చిన ఘనత రేవంత్ రెడ్డికే దక్కుతుంది.</p>
                                 </div>
                             </div>
+                            {/* Image 5 - Congress Yatra / Walking */}
+                            <div className="my-10 w-full rounded-xl overflow-hidden shadow-lg border border-gray-200">
+                                <img
+                                    src="https://blogger.googleusercontent.com/img/a/AVvXsEjnLtLMyw1uUPEv_qsDyZkGw7TC50b9Wtl9J7aIl6IjrPTuw2cNaBaeAnwF0037P1MTY-i78eZhekSbXL0PCl6x2ajhSMkj_C3k880Vgr34ivMTxKomTDiio_pBBOO7t9XZUfjuQ2PVXYyxrjWUVJW-oFJLLbIdlkDIM8pK7cvTE-TnJ57BLmgn7NCJXwNp"
+                                    alt="Revanth Reddy Congress Social Media"
+                                    className="w-full h-auto object-cover max-h-[600px]"
+                                />
+                            </div>
 
                             {/* Section 6: Social Media Trend */}
                             <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 md:p-8 rounded-2xl border border-blue-100 mb-12 shadow-sm">
