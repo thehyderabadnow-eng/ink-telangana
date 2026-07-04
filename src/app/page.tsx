@@ -31,9 +31,10 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
     ? (filteredArticles[0].categoryName || categoryFilter)
     : categoryFilter;
 
+    const reversedArticles = [...filteredArticles].reverse();
   // Updated logic: Using isLatestStory directly here
-  const topStories = filteredArticles.filter(a => a.isTopStory);
-  const latestStories = filteredArticles.filter(a => a.isLatestStory);
+  const topStories = reversedArticles .filter(a => a.isTopStory);
+  const latestStories = reversedArticles .filter(a => a.isLatestStory);
 
   // 3. Helper to format the long SEO-friendly URL securely
   const getUrlPath = (article: Article) => {

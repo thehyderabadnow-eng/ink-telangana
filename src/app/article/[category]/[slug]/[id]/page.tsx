@@ -11,6 +11,7 @@ import FootOverBridgeArticle from '@/components/custom-articles/FootOverBridgeAr
 import SIRArticle from '@/components/custom-articles/SIRArticle';
 import ReadOnlyWrapper from '@/components/custom-articles/ReadOnlyWrapper';
 import GurukulArticle from '@/components/custom-articles/GurukulArticle';
+import ZPTCtoCMArticle from '@/components/custom-articles/ZPTCtoCMArticle';
 
 type Props = {
   params: Promise<{ category: string, slug: string, id: string }>
@@ -114,6 +115,28 @@ export async function generateMetadata(
     };
   }
 
+  if (id === "10000404") {
+    return {
+      title: "ZPTC to CM: తెలంగాణ ఫైర్ బ్రాండ్ సీఎం రేవంత్ రెడ్డి 20 ఏళ్ల రాజకీయ ప్రస్థానం | Ink Telangana",
+      description: "మిడ్జిల్ లో ఒక సాధారణ జడ్పీటీసీగా మొదలై.. తెలంగాణ ముఖ్యమంత్రి స్థాయికి ఎదిగిన సీఎం రేవంత్ రెడ్డి గారి 20 ఏళ్ల స్ఫూర్తిదాయక ప్రస్థానం.",
+      openGraph: {
+        title: "ZPTC to CM: తెలంగాణ ఫైర్ బ్రాండ్ రేవంత్ రెడ్డి ఇరవయ్యేళ్ళ రాజకీయ ప్రస్థానం.",
+        description: "పార్టీ సిద్ధాంతాలు ఏవైనా, తాను నమ్మిన సిద్ధాంతాలను, ఆశయాలను ఎన్నడూ వదులుకోలేదు. జెండా ఏదైనా, ప్రజల కోసం తన ఎజెండానే అమలు చేశాడు. కొండారెడ్డిపల్లి గ్రామం నుండి ఒంటరిగా ప్రయాణాన్ని ప్రారంభించి.. తెలంగాణ రాష్ట్రంలో తిరుగులేని రాజకీయ శక్తిగా ఎదిగి, కోట్ల మంది ప్రజల అభిమానాన్ని సొంతం చేసుకున్నాడు సీఎం రేవంత్ రెడ్డి.",
+        url: `${baseUrl}/article/${category}/${slug}/${id}`,
+        images: [
+          {
+            url: 'https://blogger.googleusercontent.com/img/a/AVvXsEiYKS-xZ3HDxFjuSUSwlHsQnx6zA-Uzs4yzVpmd6Ksbh0o3eEcNn9mWZPeiFgaaywR9RE9uiXniI9-UxuJGE1rwMk02eViX7NK6EnUeEic0Rm07xjQQnVzrgCBg4-oY2eh5gQMtlzYEelfCSoF2UCnS44ljbACAUnIAIlJvIPhmgscbZCI0YgqQs5nhqDME', 
+            width: 1200,
+            height: 630,
+            alt: 'CM Revanth Reddy 20 Years Journey',
+          },
+        ],
+        locale: 'te_IN',
+        type: 'article',
+      },
+    };
+  }
+
   // 2. Dynamic Articles Metadata
   const article = getArticleById(parseInt(id));
 
@@ -164,6 +187,9 @@ export default async function ArticlePage({ params }: Props) {
   }
   if (id === "10000301") {
     return <SIRArticle />;
+  }
+if (id === "10000404") {
+    return <ZPTCtoCMArticle />;
   }
 
   // --- 2. COMMON DYNAMIC FALLBACK ---
