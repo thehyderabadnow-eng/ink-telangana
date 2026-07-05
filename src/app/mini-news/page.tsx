@@ -180,7 +180,7 @@ export default function MiniNewsPage() {
               {/* Action Bar (OUTSIDE the capture area) */}
               <div className="flex items-center justify-end gap-3 px-2">
                 <button
-                  onClick={() => handleNativeShare(thought.id, thought.text)}
+                  onClick={() => handleNativeShare(thought.id, thought.title)}
                   disabled={isGenerating === thought.id}
                   className={`flex items-center gap-2 text-xs font-bold ${brandClasses.bgGold} ${brandClasses.textNavy} px-6 py-2.5 rounded-full hover:bg-yellow-500 transition-all shadow-md ${isGenerating === thought.id ? 'opacity-70' : ''}`}
                 >
