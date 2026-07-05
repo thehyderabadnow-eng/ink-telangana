@@ -189,14 +189,14 @@ export default function MiniNewsPage() {
                     <><Share2 className="w-4 h-4" /> Share Update</>
                   )}
                 </button>
-                <button
+                {/* <button
                   onClick={() => downloadAsImage(thought.id)}
                   disabled={isGenerating === thought.id}
                   className="flex items-center gap-2 text-xs font-semibold text-gray-400 bg-gray-800/50 px-4 py-2.5 rounded-full hover:text-white hover:bg-gray-800 transition-colors"
                   title="Download Image"
                 >
                   <Download className="w-4 h-4" />
-                </button>
+                </button> */}
               </div>
             </div>
           ))}
