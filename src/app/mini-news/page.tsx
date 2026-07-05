@@ -132,13 +132,13 @@ export default function MiniNewsPage() {
                 </div>
 
                 {/* 1. Header Section */}
-                <div className={`${brandClasses.bgNavy} px-6 py-4 flex justify-between items-center border-b border-[#D4AF37]/30`}>
+                <div className={`${brandClasses.bgNavy} px-2 py-2 flex justify-between items-center border-b border-[#D4AF37]/30`}>
                   <div className="flex items-center gap-3">
-                    <div className={`${brandClasses.bgGold} p-2 rounded-full shadow-lg`}>
-                      <PenTool className={`w-5 h-5 ${brandClasses.textNavy}`} />
+                    <div className={`${brandClasses.bgGold} p-1 rounded-full shadow-sm`}>
+                      <PenTool className={`w-4 h-4 ${brandClasses.textNavy}`} />
                     </div>
                     <div>
-                      <span className={`block font-serif font-bold ${brandClasses.textGold} tracking-widest leading-none text-lg`}>
+                      <span className={`block font-serif font-bold ${brandClasses.textGold} tracking-widest leading-none text-sm`}>
                         INK TELANGANA
                       </span>
                       <span className="block text-[10px] text-gray-400 mt-1 uppercase tracking-widest font-semibold">
@@ -153,10 +153,10 @@ export default function MiniNewsPage() {
                 </div>
 
                 {/* 3. Content Section */}
-                <div className="p-6 md:p-8 flex-grow relative bg-[#12161E]">
+                <div className="p-4 md:p-8 flex-grow relative bg-[#12161E]">
                   <MessageSquare className="absolute top-4 left-4 w-12 h-12 text-[#D4AF37] opacity-[0.03]" />
                   {/* టైటిల్ కలర్ మార్పు: text-[#FFD700] బ్రైట్ గోల్డ్ */}
-                  <h2 className="text-[#D4AF37] font-bold text-xl leading-snug relative z-10 whitespace-pre-wrap mb-3 drop-shadow-md">
+                  <h2 className="text-[#D4AF37] font-bold text-xl leading-snug relative z-10 whitespace-pre-wrap mb-1 drop-shadow-md">
                     {thought.title}
                   </h2>
                   {/* టెక్స్ట్ కలర్ మార్పు: text-gray-100 */}
@@ -166,14 +166,13 @@ export default function MiniNewsPage() {
                 </div>
 
                 {/* 4. Footer Section */}
-                <div className={`${brandClasses.bgGold} px-6 py-4 flex justify-between items-center`}>
-                  <span className={`${brandClasses.textNavy} font-bold text-[10px] md:text-xs uppercase tracking-widest`}>
-                    Your Voice | Your Story | Our Telangana
-                  </span>
-                  <div className={`flex items-center gap-2 ${brandClasses.bgNavy} ${brandClasses.textGold} px-4 py-1.5 rounded-full text-xs font-bold shadow-md`}>
-                    {/* <Share2 className="w-3.5 h-3.5" /> */}
+                <div className={`${brandClasses.bgGold} px-6 flex flex-col items-center gap-2.5`}>
+                  <div className={`flex items-center gap-2 ${brandClasses.textNavy} px-4 py-1.5 rounded-full text-md font-bold`}>
                     www.inktelangana.com
                   </div>
+                  {/* <span className={`${brandClasses.textNavy} font-bold text-[10px] md:text-xs uppercase tracking-widest text-center`}>
+                    Your Voice | Your Story | Our Telangana
+                  </span> */}
                 </div>
               </div>
 
