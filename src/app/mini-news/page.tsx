@@ -126,79 +126,71 @@ export default function MiniNewsPage() {
                 </button>
               </div>
 
-              {/* Centering Wrapper to keep it Mobile Sized */}
-              <div className="flex justify-center w-full">
+              {/* Way2News Style Card (THIS is what gets captured) */}
+              <div
+                id={`thought-card-${thought.id}`}
+                className="flex flex-col bg-[#12161E] rounded-2xl overflow-hidden shadow-2xl border border-gray-800 relative"
+              >
 
-                {/* Way2News Style Card (THIS is what gets captured) */}
-                <div
-                  id={`thought-card-${thought.id}`}
-                  // ADDED: max-w-[400px] enforces strict mobile dimensions for the downloaded image
-                  className="flex flex-col bg-[#12161E] rounded-2xl overflow-hidden shadow-2xl border border-gray-800 relative w-full max-w-[400px]"
-                >
-
-                  {/* 2. Image Banner Section */}
-                  <div className="w-full h-56 relative bg-[#0B1B35] overflow-hidden border-b border-gray-800">
-                    <img
-                      // Using "any" to bypass TS error if imageUrl isn't formally in the Thought interface yet
-                      src={(thought as any).imageUrl || defaultBrandImage}
-                      alt="News Update"
-                      className="absolute inset-0 w-full h-full object-cover opacity-90"
-                    />
-                    {/* Brand overlay if default image is used */}
-                    {!(thought as any).imageUrl && (
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#0B1B35]/90 to-transparent flex flex-col justify-end p-6">
-                        <span className="text-[#D4AF37] font-serif font-bold text-2xl tracking-widest opacity-90 shadow-black drop-shadow-md">
-                          INK TELANGANA
-                        </span>
-                      </div>
-                    )}
-                  </div>
-
-                  {/* 1. Header Section */}
-                  <div className={`${brandClasses.bgNavy} px-5 py-4 flex justify-between items-center border-b border-[#D4AF37]/30`}>
-                    <div className="flex items-center gap-3">
-                      <div className={`${brandClasses.bgGold} p-1.5 rounded-full shadow-lg`}>
-                        <PenTool className={`w-4 h-4 ${brandClasses.textNavy}`} />
-                      </div>
-                      <div>
-                        <span className={`block font-serif font-bold ${brandClasses.textGold} tracking-widest leading-none text-base`}>
-                          INK TELANGANA
-                        </span>
-                        <span className="block text-[9px] text-gray-400 mt-1 uppercase tracking-widest font-semibold">
-                          Mini News Update
-                        </span>
-                      </div>
+                {/* 2. Image Banner Section */}
+                <div className="w-full h-48 md:h-64 relative bg-[#0B1B35] overflow-hidden border-b border-gray-800">
+                  <img
+                    // Using "any" to bypass TS error if imageUrl isn't formally in the Thought interface yet
+                    src={(thought as any).imageUrl || defaultBrandImage}
+                    alt="News Update"
+                    className="absolute inset-0 w-full h-full object-cover opacity-90"
+                  />
+                  {/* Brand overlay if default image is used */}
+                  {!(thought as any).imageUrl && (
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0B1B35]/90 to-transparent flex flex-col justify-end p-6">
+                      <span className="text-[#D4AF37] font-serif font-bold text-2xl tracking-widest opacity-90 shadow-black drop-shadow-md">
+                        INK TELANGANA
+                      </span>
                     </div>
-                    <div className="text-[10px] text-gray-300 flex items-center gap-1.5 font-medium bg-black/30 px-3 py-1.5 rounded-full border border-gray-700/50">
-                      <Clock className={`w-3 h-3 ${brandClasses.textGold}`} />
-                      {thought.date}
+                  )}
+                </div>
+
+                {/* 1. Header Section */}
+                <div className={`${brandClasses.bgNavy} px-6 py-4 flex justify-between items-center border-b border-[#D4AF37]/30`}>
+                  <div className="flex items-center gap-3">
+                    <div className={`${brandClasses.bgGold} p-2 rounded-full shadow-lg`}>
+                      <PenTool className={`w-5 h-5 ${brandClasses.textNavy}`} />
+                    </div>
+                    <div>
+                      <span className={`block font-serif font-bold ${brandClasses.textGold} tracking-widest leading-none text-lg`}>
+                        INK TELANGANA
+                      </span>
+                      <span className="block text-[10px] text-gray-400 mt-1 uppercase tracking-widest font-semibold">
+                        Mini News Update
+                      </span>
                     </div>
                   </div>
-
-                  {/* 3. Content Section */}
-                  <div className="p-6 flex-grow relative bg-[#12161E]">
-                    <MessageSquare className="absolute top-4 left-4 w-12 h-12 text-[#D4AF37] opacity-[0.03]" />
-
-                    {/* ADDED: Title color changed to Gold and added margin-bottom for better spacing */}
-                    <h2 className="text-[#D4AF37] font-bold text-xl leading-snug relative z-10 whitespace-pre-wrap mb-3 drop-shadow-md">
-                      {thought.title}
-                    </h2>
-
-                    <p className="text-gray-100 text-lg leading-relaxed relative z-10 whitespace-pre-wrap">
-                      {thought.text}
-                    </p>
+                  <div className="text-xs text-gray-300 flex items-center gap-1.5 font-medium bg-black/30 px-3 py-1.5 rounded-full border border-gray-700/50">
+                    <Clock className={`w-3.5 h-3.5 ${brandClasses.textGold}`} />
+                    {thought.date}
                   </div>
+                </div>
 
-                  {/* 4. Footer Section */}
-                  <div className={`${brandClasses.bgGold} px-5 py-4 flex justify-between items-center mt-auto`}>
-                    <span className={`${brandClasses.textNavy} font-bold text-[9px] uppercase tracking-widest`}>
-                      Your Voice | Your Story
-                    </span>
-                    <div className={`flex items-center gap-2 ${brandClasses.bgNavy} ${brandClasses.textGold} px-3 py-1.5 rounded-full text-[10px] font-bold shadow-md`}>
-                      www.inktelangana.com
-                    </div>
+                {/* 3. Content Section */}
+                <div className="p-6 md:p-8 flex-grow relative bg-[#12161E]">
+                  <MessageSquare className="absolute top-4 left-4 w-12 h-12 text-[#D4AF37] opacity-[0.03]" />
+                  <p className="text-white font-bold text-lg md:text-xl leading-relaxed font-medium relative z-10 whitespace-pre-wrap">
+                    {thought.title}
+                  </p>
+                  <p className="text-white text-lg md:text-xl leading-relaxed font-medium relative z-10 whitespace-pre-wrap">
+                    {thought.text}
+                  </p>
+                </div>
+
+                {/* 4. Footer Section */}
+                <div className={`${brandClasses.bgGold} px-6 py-4 flex justify-between items-center`}>
+                  <span className={`${brandClasses.textNavy} font-bold text-[10px] md:text-xs uppercase tracking-widest`}>
+                    Your Voice | Your Story | Our Telangana
+                  </span>
+                  <div className={`flex items-center gap-2 ${brandClasses.bgNavy} ${brandClasses.textGold} px-4 py-1.5 rounded-full text-xs font-bold shadow-md`}>
+                    {/* <Share2 className="w-3.5 h-3.5" /> */}
+                    www.inktelangana.com
                   </div>
-
                 </div>
               </div>
 
