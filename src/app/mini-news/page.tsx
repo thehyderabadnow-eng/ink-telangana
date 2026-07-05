@@ -13,6 +13,12 @@ export default function MiniNewsPage() {
   // Default fallback image for Ink Telangana brand
   const defaultBrandImage = "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhTWreKJ7uGttF360OzhsjdRdj5eJXcbj6GPYj8oPIUBgtyONrfIc2tWFNr8JbHJC3xrpKZNDSfT_S21phvpxg2i5g0W4dyn86alymJTHL2xjIL3e2tpFkX6xwA8aUa1uf_5eMoDmjZPF4wM2blhUp6jgcWvqOY40tvxqihZAPfBL536yKXwA2gke2hUzM8/s320/ink-logo-compressed.png";
 
+  // బ్రౌజర్ సెక్యూరిటీ (CORS) ఎర్రర్‌ని బైపాస్ చేసి ఇమేజ్ డౌన్‌లోడ్ అవ్వడానికి ప్రాక్సీ ఫంక్షన్
+  const getProxiedImageUrl = (url: string) => {
+    if (!url) return '';
+    return `https://wsrv.nl/?url=${encodeURIComponent(url)}&output=png`;
+  };
+
   const downloadAsImage = async (id: number) => {
     setIsGenerating(id);
     const element = document.getElementById(`thought-card-${id}`);
@@ -25,11 +31,7 @@ export default function MiniNewsPage() {
         pixelRatio: 2, // Reduced from 3 to improve stability
         skipFonts: true,
         cacheBust: true, // Force fresh image loading
-        // IMPORTANT: This tells the library to ignore images that might block the capture
-        filter: (node) => {
-          if (node.tagName === 'IMG') return false;
-          return true;
-        },
+        // ఇమేజ్‌ని బ్లాక్ చేసే filter ని ఇక్కడ నుండి తీసేశాను
         style: { fontFamily: 'sans-serif', margin: '0' }
       });
 
@@ -55,7 +57,8 @@ export default function MiniNewsPage() {
       const dataUrl = await htmlToImage.toPng(element, {
         pixelRatio: 2,
         skipFonts: true,
-        filter: (node) => node.tagName !== 'IMG'
+        cacheBust: true, // ఇక్కడ కూడా యాడ్ చేశాను
+        // ఇమేజ్‌ని బ్లాక్ చేసే filter ని ఇక్కడ నుండి తీసేశాను
       });
 
       const blob = await (await fetch(dataUrl)).blob();
@@ -103,29 +106,6 @@ export default function MiniNewsPage() {
           {miniNews.map((thought) => (
             <div key={thought.id} className="flex flex-col gap-3">
 
-              {/* Action Bar (OUTSIDE the capture area) */}
-              <div className="flex items-center justify-end gap-3 px-2">
-                <button
-                  onClick={() => handleNativeShare(thought.id, thought.text)}
-                  disabled={isGenerating === thought.id}
-                  className={`flex items-center gap-2 text-xs font-bold ${brandClasses.bgGold} ${brandClasses.textNavy} px-6 py-2.5 rounded-full hover:bg-yellow-500 transition-all shadow-md ${isGenerating === thought.id ? 'opacity-70' : ''}`}
-                >
-                  {isGenerating === thought.id ? (
-                    <><Loader2 className="w-4 h-4 animate-spin" /> Preparing...</>
-                  ) : (
-                    <><Share2 className="w-4 h-4" /> Share Update</>
-                  )}
-                </button>
-                <button
-                  onClick={() => downloadAsImage(thought.id)}
-                  disabled={isGenerating === thought.id}
-                  className="flex items-center gap-2 text-xs font-semibold text-gray-400 bg-gray-800/50 px-4 py-2.5 rounded-full hover:text-white hover:bg-gray-800 transition-colors"
-                  title="Download Image"
-                >
-                  <Download className="w-4 h-4" />
-                </button>
-              </div>
-
               {/* Way2News Style Card (THIS is what gets captured) */}
               <div
                 id={`thought-card-${thought.id}`}
@@ -135,9 +115,10 @@ export default function MiniNewsPage() {
                 {/* 2. Image Banner Section */}
                 <div className="w-full h-48 md:h-64 relative bg-[#0B1B35] overflow-hidden border-b border-gray-800">
                   <img
-                    // Using "any" to bypass TS error if imageUrl isn't formally in the Thought interface yet
-                    src={(thought as any).imageUrl || defaultBrandImage}
+                    // Proxy ద్వారా ఇమేజ్ రప్పించడం వల్ల సెక్యూరిటీ బ్లాక్ ఉండదు
+                    src={getProxiedImageUrl((thought as any).imageUrl || defaultBrandImage)}
                     alt="News Update"
+                    crossOrigin="anonymous" // ఇప్పుడు ఇది సేఫ్ & వర్క్ అవుతుంది
                     className="absolute inset-0 w-full h-full object-cover opacity-90"
                   />
                   {/* Brand overlay if default image is used */}
@@ -174,10 +155,12 @@ export default function MiniNewsPage() {
                 {/* 3. Content Section */}
                 <div className="p-6 md:p-8 flex-grow relative bg-[#12161E]">
                   <MessageSquare className="absolute top-4 left-4 w-12 h-12 text-[#D4AF37] opacity-[0.03]" />
-                  <p className="text-white font-bold text-lg md:text-xl leading-relaxed font-medium relative z-10 whitespace-pre-wrap">
+                  {/* టైటిల్ కలర్ మార్పు: text-[#FFD700] బ్రైట్ గోల్డ్ */}
+                  <h2 className="text-[#D4AF37] font-bold text-xl leading-snug relative z-10 whitespace-pre-wrap mb-3 drop-shadow-md">
                     {thought.title}
-                  </p>
-                  <p className="text-white text-lg md:text-xl leading-relaxed font-medium relative z-10 whitespace-pre-wrap">
+                  </h2>
+                  {/* టెక్స్ట్ కలర్ మార్పు: text-gray-100 */}
+                  <p className="text-gray-100 text-lg md:text-xl leading-relaxed font-medium relative z-10 whitespace-pre-wrap">
                     {thought.text}
                   </p>
                 </div>
@@ -194,6 +177,28 @@ export default function MiniNewsPage() {
                 </div>
               </div>
 
+              {/* Action Bar (OUTSIDE the capture area) */}
+              <div className="flex items-center justify-end gap-3 px-2">
+                <button
+                  onClick={() => handleNativeShare(thought.id, thought.text)}
+                  disabled={isGenerating === thought.id}
+                  className={`flex items-center gap-2 text-xs font-bold ${brandClasses.bgGold} ${brandClasses.textNavy} px-6 py-2.5 rounded-full hover:bg-yellow-500 transition-all shadow-md ${isGenerating === thought.id ? 'opacity-70' : ''}`}
+                >
+                  {isGenerating === thought.id ? (
+                    <><Loader2 className="w-4 h-4 animate-spin" /> Preparing...</>
+                  ) : (
+                    <><Share2 className="w-4 h-4" /> Share Update</>
+                  )}
+                </button>
+                <button
+                  onClick={() => downloadAsImage(thought.id)}
+                  disabled={isGenerating === thought.id}
+                  className="flex items-center gap-2 text-xs font-semibold text-gray-400 bg-gray-800/50 px-4 py-2.5 rounded-full hover:text-white hover:bg-gray-800 transition-colors"
+                  title="Download Image"
+                >
+                  <Download className="w-4 h-4" />
+                </button>
+              </div>
             </div>
           ))}
         </div>
