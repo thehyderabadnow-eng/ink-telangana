@@ -97,8 +97,8 @@ export default function MiniNewsPage() {
         <div className="flex items-center gap-3 mb-10 border-b border-gray-800 pb-4">
           <MessageSquare className={`w-8 h-8 ${brandClasses.textGold}`} />
           <div>
-            <h2 className="text-3xl font-serif font-bold text-white">Mini News</h2>
-            <p className="text-gray-400 text-sm mt-1">Quick, shareable updates and political commentary.</p>
+            <h2 className="text-3xl font-serif font-bold text-white">Ink Mini News</h2>
+            <p className="text-gray-400 text-sm mt-1">Quick, shareable updates.</p>
           </div>
         </div>
 

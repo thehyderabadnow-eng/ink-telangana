@@ -83,6 +83,12 @@ export default function Navbar() {
                 Home
               </Link>
               <Link
+                href="/mini-news"
+                className={`hover:text-[#D4AF37] ${pathname === '/mini-news' ? 'text-[#D4AF37] border-b-2 border-[#D4AF37]' : 'text-gray-800'} transition-colors font-semibold text-sm shrink-0 h-full flex items-center px-1`}
+              >
+                Mini News
+              </Link>
+              <Link
                 href="/?category=InkThoughts"
                 className={`hover:text-[#D4AF37] ${pathname === '/' && currentCategory === 'InkThoughts' ? 'text-[#D4AF37] border-b-2 border-[#D4AF37]' : 'text-gray-800'} transition-colors font-semibold text-sm shrink-0 h-full flex items-center px-1`}
               >
@@ -111,12 +117,6 @@ export default function Navbar() {
                 className={`hover:text-[#D4AF37] ${pathname === '/' && currentCategory === 'Business' ? 'text-[#D4AF37] border-b-2 border-[#D4AF37]' : 'text-gray-800'} transition-colors font-semibold text-sm shrink-0 h-full flex items-center px-1`}
               >
                 Business
-              </Link> */}
-              {/* <Link
-                href="/short-news"
-                className={`hover:text-[#D4AF37] ${pathname === '/short-news' ? 'text-[#D4AF37] border-b-2 border-[#D4AF37]' : 'text-gray-800'} transition-colors font-semibold text-sm shrink-0 h-full flex items-center px-1`}
-              >
-                Short News
               </Link> */}
               {/* <Link
                 href="/my-comments"
