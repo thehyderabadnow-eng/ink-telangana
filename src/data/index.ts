@@ -1,6 +1,6 @@
 import { politicsArticles } from './politics';
 import { businessArticles } from './business';
-import { shortNews } from './shortnewscomments';
+import { miniNews } from './mininewscomments';
 import { InkThoughtsArticles } from './inkthoughts';
 import { PublicIssuesArticles } from './publicissues';
 import { InkSpecialArticles } from './inkspecial';
@@ -15,5 +15,5 @@ export const getArticleById = (id: number) => {
 };
 
 export const getAllNews = () => {
-  return shortNews;
+  return miniNews;
 };

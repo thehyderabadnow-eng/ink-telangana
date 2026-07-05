@@ -5,13 +5,13 @@ import { MessageSquare, PenTool, Clock, Download, Loader2, Share2, ImageIcon } f
 import { getAllNews } from '@/data';
 import { brandClasses } from '@/utils/theme';
 
-export default function ShortNewsPage() {
-  const shortNews = getAllNews();
+export default function MiniNewsPage() {
+  const miniNews = getAllNews();
   const [isGenerating, setIsGenerating] = useState<number | null>(null);
   const [showShareToast, setShowShareToast] = useState<boolean>(false);
 
   // Default fallback image for Ink Telangana brand
-  const defaultBrandImage = "https://images.unsplash.com/photo-1541872516-681600c326e9?q=80&w=1200&auto=format&fit=crop";
+  const defaultBrandImage = "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhTWreKJ7uGttF360OzhsjdRdj5eJXcbj6GPYj8oPIUBgtyONrfIc2tWFNr8JbHJC3xrpKZNDSfT_S21phvpxg2i5g0W4dyn86alymJTHL2xjIL3e2tpFkX6xwA8aUa1uf_5eMoDmjZPF4wM2blhUp6jgcWvqOY40tvxqihZAPfBL536yKXwA2gke2hUzM8/s320/ink-logo-compressed.png";
 
   const downloadAsImage = async (id: number) => {
     setIsGenerating(id);
@@ -45,29 +45,29 @@ export default function ShortNewsPage() {
     }
   };
 
-const handleNativeShare = async (id: number, text: string) => {
+  const handleNativeShare = async (id: number, text: string) => {
     setIsGenerating(id);
     const element = document.getElementById(`thought-card-${id}`);
     if (!element) { setIsGenerating(null); return; }
 
     try {
       const htmlToImage = await import('html-to-image');
-      const dataUrl = await htmlToImage.toPng(element, { 
-        pixelRatio: 2, 
+      const dataUrl = await htmlToImage.toPng(element, {
+        pixelRatio: 2,
         skipFonts: true,
-        filter: (node) => node.tagName !== 'IMG' 
+        filter: (node) => node.tagName !== 'IMG'
       });
 
       const blob = await (await fetch(dataUrl)).blob();
       const file = new File([blob], `ink-telangana-${id}.png`, { type: 'image/png' });
 
       // Combine text and link for the share message
-      const shareText = `${text}\n\nRead more at: ${window.location.origin}/short-news`;
+      const shareText = `${text}\n\nRead more at: ${window.location.origin}/mini-news`;
 
       if (navigator.share && navigator.canShare && navigator.canShare({ files: [file] })) {
-        await navigator.share({ 
-          files: [file], 
-          title: 'Ink Telangana Update', 
+        await navigator.share({
+          files: [file],
+          title: 'Ink Telangana Update',
           text: shareText // This sends the text AND the link
         });
       } else {
@@ -75,7 +75,7 @@ const handleNativeShare = async (id: number, text: string) => {
         navigator.clipboard.writeText(shareText);
         setShowShareToast(true);
         setTimeout(() => setShowShareToast(false), 3000);
-        
+
         const link = document.createElement('a');
         link.download = `ink-telangana-${id}.png`;
         link.href = dataUrl;
@@ -94,13 +94,13 @@ const handleNativeShare = async (id: number, text: string) => {
         <div className="flex items-center gap-3 mb-10 border-b border-gray-800 pb-4">
           <MessageSquare className={`w-8 h-8 ${brandClasses.textGold}`} />
           <div>
-            <h2 className="text-3xl font-serif font-bold text-white">Short News & shortNews</h2>
+            <h2 className="text-3xl font-serif font-bold text-white">Mini News & MiniNews</h2>
             <p className="text-gray-400 text-sm mt-1">Quick, shareable updates and political commentary.</p>
           </div>
         </div>
 
         <div className="space-y-12">
-          {shortNews.map((thought) => (
+          {miniNews.map((thought) => (
             <div key={thought.id} className="flex flex-col gap-3">
 
               {/* Action Bar (OUTSIDE the capture area) */}
@@ -126,67 +126,79 @@ const handleNativeShare = async (id: number, text: string) => {
                 </button>
               </div>
 
-              {/* Way2News Style Card (THIS is what gets captured) */}
-              <div
-                id={`thought-card-${thought.id}`}
-                className="flex flex-col bg-[#12161E] rounded-2xl overflow-hidden shadow-2xl border border-gray-800 relative"
-              >
-                {/* 1. Header Section */}
-                <div className={`${brandClasses.bgNavy} px-6 py-4 flex justify-between items-center border-b border-[#D4AF37]/30`}>
-                  <div className="flex items-center gap-3">
-                    <div className={`${brandClasses.bgGold} p-2 rounded-full shadow-lg`}>
-                      <PenTool className={`w-5 h-5 ${brandClasses.textNavy}`} />
+              {/* Centering Wrapper to keep it Mobile Sized */}
+              <div className="flex justify-center w-full">
+
+                {/* Way2News Style Card (THIS is what gets captured) */}
+                <div
+                  id={`thought-card-${thought.id}`}
+                  // ADDED: max-w-[400px] enforces strict mobile dimensions for the downloaded image
+                  className="flex flex-col bg-[#12161E] rounded-2xl overflow-hidden shadow-2xl border border-gray-800 relative w-full max-w-[400px]"
+                >
+
+                  {/* 2. Image Banner Section */}
+                  <div className="w-full h-56 relative bg-[#0B1B35] overflow-hidden border-b border-gray-800">
+                    <img
+                      // Using "any" to bypass TS error if imageUrl isn't formally in the Thought interface yet
+                      src={(thought as any).imageUrl || defaultBrandImage}
+                      alt="News Update"
+                      className="absolute inset-0 w-full h-full object-cover opacity-90"
+                    />
+                    {/* Brand overlay if default image is used */}
+                    {!(thought as any).imageUrl && (
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#0B1B35]/90 to-transparent flex flex-col justify-end p-6">
+                        <span className="text-[#D4AF37] font-serif font-bold text-2xl tracking-widest opacity-90 shadow-black drop-shadow-md">
+                          INK TELANGANA
+                        </span>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* 1. Header Section */}
+                  <div className={`${brandClasses.bgNavy} px-5 py-4 flex justify-between items-center border-b border-[#D4AF37]/30`}>
+                    <div className="flex items-center gap-3">
+                      <div className={`${brandClasses.bgGold} p-1.5 rounded-full shadow-lg`}>
+                        <PenTool className={`w-4 h-4 ${brandClasses.textNavy}`} />
+                      </div>
+                      <div>
+                        <span className={`block font-serif font-bold ${brandClasses.textGold} tracking-widest leading-none text-base`}>
+                          INK TELANGANA
+                        </span>
+                        <span className="block text-[9px] text-gray-400 mt-1 uppercase tracking-widest font-semibold">
+                          Mini News Update
+                        </span>
+                      </div>
                     </div>
-                    <div>
-                      <span className={`block font-serif font-bold ${brandClasses.textGold} tracking-widest leading-none text-lg`}>
-                        INK TELANGANA
-                      </span>
-                      <span className="block text-[10px] text-gray-400 mt-1 uppercase tracking-widest font-semibold">
-                        Short News Update
-                      </span>
+                    <div className="text-[10px] text-gray-300 flex items-center gap-1.5 font-medium bg-black/30 px-3 py-1.5 rounded-full border border-gray-700/50">
+                      <Clock className={`w-3 h-3 ${brandClasses.textGold}`} />
+                      {thought.date}
                     </div>
                   </div>
-                  <div className="text-xs text-gray-300 flex items-center gap-1.5 font-medium bg-black/30 px-3 py-1.5 rounded-full border border-gray-700/50">
-                    <Clock className={`w-3.5 h-3.5 ${brandClasses.textGold}`} />
-                    {thought.date}
-                  </div>
-                </div>
 
-                {/* 2. Image Banner Section */}
-                <div className="w-full h-48 md:h-64 relative bg-[#0B1B35] overflow-hidden border-b border-gray-800">
-                  <img
-                    // Using "any" to bypass TS error if imageUrl isn't formally in the Thought interface yet
-                    src={(thought as any).imageUrl || defaultBrandImage}
-                    alt="News Update"
-                    className="absolute inset-0 w-full h-full object-cover opacity-90"
-                  />
-                  {/* Brand overlay if default image is used */}
-                  {!(thought as any).imageUrl && (
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0B1B35]/90 to-transparent flex flex-col justify-end p-6">
-                      <span className="text-[#D4AF37] font-serif font-bold text-2xl tracking-widest opacity-90 shadow-black drop-shadow-md">
-                        INK TELANGANA
-                      </span>
+                  {/* 3. Content Section */}
+                  <div className="p-6 flex-grow relative bg-[#12161E]">
+                    <MessageSquare className="absolute top-4 left-4 w-12 h-12 text-[#D4AF37] opacity-[0.03]" />
+
+                    {/* ADDED: Title color changed to Gold and added margin-bottom for better spacing */}
+                    <h2 className="text-[#D4AF37] font-bold text-xl leading-snug relative z-10 whitespace-pre-wrap mb-3 drop-shadow-md">
+                      {thought.title}
+                    </h2>
+
+                    <p className="text-gray-100 text-lg leading-relaxed relative z-10 whitespace-pre-wrap">
+                      {thought.text}
+                    </p>
+                  </div>
+
+                  {/* 4. Footer Section */}
+                  <div className={`${brandClasses.bgGold} px-5 py-4 flex justify-between items-center mt-auto`}>
+                    <span className={`${brandClasses.textNavy} font-bold text-[9px] uppercase tracking-widest`}>
+                      Your Voice | Your Story
+                    </span>
+                    <div className={`flex items-center gap-2 ${brandClasses.bgNavy} ${brandClasses.textGold} px-3 py-1.5 rounded-full text-[10px] font-bold shadow-md`}>
+                      www.inktelangana.com
                     </div>
-                  )}
-                </div>
-
-                {/* 3. Content Section */}
-                <div className="p-6 md:p-8 flex-grow relative bg-[#12161E]">
-                  <MessageSquare className="absolute top-4 left-4 w-12 h-12 text-[#D4AF37] opacity-[0.03]" />
-                  <p className="text-white text-lg md:text-xl leading-relaxed font-medium relative z-10 whitespace-pre-wrap">
-                    {thought.text}
-                  </p>
-                </div>
-
-                {/* 4. Footer Section */}
-                <div className={`${brandClasses.bgGold} px-6 py-4 flex justify-between items-center`}>
-                  <span className={`${brandClasses.textNavy} font-bold text-[10px] md:text-xs uppercase tracking-widest`}>
-                    Your Voice | Your Story | Our Telangana
-                  </span>
-                  <div className={`flex items-center gap-2 ${brandClasses.bgNavy} ${brandClasses.textGold} px-4 py-1.5 rounded-full text-xs font-bold shadow-md`}>
-                    <Share2 className="w-3.5 h-3.5" />
-                    inktelangana.com
                   </div>
+
                 </div>
               </div>
 

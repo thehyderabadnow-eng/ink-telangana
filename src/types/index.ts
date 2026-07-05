@@ -14,8 +14,10 @@ export interface Article {
 
 export interface Thought {
   id: number;
+  title: string;
   text: string;
   date: string;
+  imageUrl: string;
 }
 
 export interface ContactFormState {
