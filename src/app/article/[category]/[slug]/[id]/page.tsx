@@ -140,18 +140,18 @@ export async function generateMetadata(
 
   if (id === "10000401") {
     return {
-      title: "పసిప్రాణానికి ₹17 కోట్ల సెగ: హైదరాబాద్ బాబు నవీన్ ను కాపాడుకుందాం.. | Ink Telangana",
-      description: "హైదరాబాద్‌కు చెందిన రెండు నెలల పసిబాబు నవీన్ కుమార్ రెడ్డి ప్రాణాంతకమైన 'SMA Type 1' వ్యాధితో పోరాడుతున్నాడు. ₹17 కోట్ల ఇంజెక్షన్ కోసం దాతల సాయం కొరకు నిరీక్షణ.",
+      title: "ఈ వ్యాధికి ఇండియాలో మందు లేదు. ఇంజక్షన్ ఖరీదు 17 కోట్లు. | Ink Telangana",
+      description: "SMA: ప్రపంచంలోనే అత్యంత ఖరీదైన ఇంజెక్షన్ - Zolgensma. భారతదేశంలో ప్రతి సంవత్సరం దాదాపు 2,500 నుండి 3,000 మంది పిల్లలు SMA వ్యాధితో జన్మిస్తున్నారు.",
       openGraph: {
-        title: "బాబు నవీన్ ప్రాణాలను కాపాడుకుందాం..",
-        description: "హైదరాబాద్‌కు చెందిన రెండు నెలల పసిబాబు నవీన్ కుమార్ రెడ్డి ప్రాణాంతకమైన 'SMA Type 1' వ్యాధితో పోరాడుతున్నాడు. ₹17 కోట్ల ఇంజెక్షన్ కోసం దాతల సాయం కొరకు నిరీక్షణ.",
+        title: "ఈ వ్యాధికి ఇండియాలో మందు లేదు. ఇంజక్షన్ ఖరీదు 17 కోట్లు.",
+        description: "SMA: ప్రపంచంలోనే అత్యంత ఖరీదైన ఇంజెక్షన్ - Zolgensma. భారతదేశంలో ప్రతి సంవత్సరం దాదాపు 2,500 నుండి 3,000 మంది పిల్లలు SMA వ్యాధితో జన్మిస్తున్నారు.",
         url: `${baseUrl}/article/${category}/${slug}/${id}`,
         images: [
           {
-            url: 'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=1200&auto=format&fit=crop',
+            url: 'https://blogger.googleusercontent.com/img/a/AVvXsEio5a49bVn_c-Lpp7I_VSjne1UyR16Kn6ikWhabCQwqvFbebvbjcQErgG7QyuXuPul1bosgjW5jEnV0NSeIYhsoQ8oOzyLuANKmSh8gZQ3iBfo3AZBki6uFjd6tNMvXfPN8FEL-n3dwXpytOrMT0LpAQcMXx8wrUQehYq_KLcmXyIU_LcYUiInlIriaJB-0',
             width: 1200,
             height: 630,
-            alt: 'Support Baby Naveen Kumar Reddy',
+            alt: 'SMA Type 1 Medicine - Zolgensma',
           },
         ],
         locale: 'te_IN',
