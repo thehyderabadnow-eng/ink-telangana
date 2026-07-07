@@ -195,7 +195,7 @@ export default function SmaHealthArticle() {
                   <strong>వయస్సు పరిమితి:</strong> ఈ ఇంజెక్షన్‌ను బిడ్డకు 2 సంవత్సరాల వయస్సు వచ్చే లోపే ఇవ్వాలి. ఎంత త్వరగా ఇస్తే అంత అద్భుతమైన ఫలితాలు ఉంటాయి. అప్పటికే దెబ్బతిన్న కండరాల కణాలు పూర్తిగా పూర్వస్థితికి రాకపోవచ్చు, కానీ వ్యాధి మరింత పెరగకుండా అక్కడితో ఆగిపోతుంది.
                 </p>
                 <div className="bg-indigo-50 p-4 rounded-xl border border-indigo-100 space-y-2 text-sm text-gray-700">
-                  <p><strong>తయారీ కంపెనీ మరియు దేశం వివరాలు:</strong> ఈ మందు ప్రాథమికంగా అమెరికా (USA) మరియు యూరప్ దేశాలలో తయారవుతుంది. దీనిని తయారుచేసేది స్విట్జర్లాండ్‌కు చెందిన ప్రపంచ ప్రసిద్ధ ఫార్మాస్యూటికల్ కంపెనీ Novartis (నోవార్టిస్). దీని యూయస్ విభాగమైన AveXis ఈ మందును అభివృద్ధి చేసింది.</p>
+                  <p><strong>తయారీ కంపెనీ మరియు దేశం వివరాలు:</strong> ఈ మందు ప్రాథమికంగా అమెరికా (USA) మరియు యూరప్ దేశాలలో తయారవుతుంది. దీనిని తయారుచేసేది స్విట్జర్లాండ్‌కు చెందిన ప్రపంచ ప్రసిద్ధ ఫార్మాస్యూటికల్ కంపెనీ Novartis (నోవార్టిస్). దీని U.S. విభాగమైన AveXis ఈ మందును అభివృద్ధి చేసింది.</p>
                   <p><strong>పరిశోధన చేసిన వారు:</strong> ఫ్రెంచ్ పరిశోధనా సంస్థ Genethon మరియు అమెరికాకు చెందిన ప్రముఖ సైంటిస్ట్ డాక్టర్ బ్రయాన్ కాస్పర్ (Dr. Brian Kaspar) బృందం ఈ పరిశోధన వెనుక ఉన్నారు. ఆ తర్వాత AveXis క్లినికల్ ట్రయల్స్ పూర్తి చేయగా, నోవార్టిస్ కంపెనీ దీనిని కొనుగోలు చేసి మార్కెట్లోకి తెచ్చింది.</p>
                 </div>
               </div>
@@ -206,7 +206,7 @@ export default function SmaHealthArticle() {
                 ఖర్చు, పన్నులు మరియు దిగుమతి వివరాలు
               </h3>
               <p className="mb-6">
-                ప్రస్తుతం భారతదేశంలో దీనికి సంపూర్ణ అనుమతి ఉన్నప్పటికీ, ఈ మందు ఇక్కడ అందుబాటులో ఉండదు. రోగి అవసరాన్ని బట్టి ప్రత్యేక అనుమతులతో విదేశాల నుండి దిగుమతి (Import) చేసుకోవాల్సి ఉంటుంది.
+                ప్రస్తుతం భారతదేశంలో దీనికి సంపూర్ణ అనుమతి ఉన్నప్పటికీ, ఈ మందు ఇక్కడ అందుబాటులో ఉండదు. పేషెంట్ అవసరాన్ని బట్టి ప్రత్యేక అనుమతులతో విదేశాల నుండి దిగుమతి (Import) చేసుకోవాల్సి ఉంటుంది.
               </p>
 
               <div className="overflow-x-auto mb-10 border border-gray-200 rounded-xl shadow-sm">
@@ -248,7 +248,7 @@ export default function SmaHealthArticle() {
                 </div>
                 <div className="bg-white p-5 rounded-xl border border-gray-200 shadow-sm">
                   <p className="font-bold text-gray-900 mb-1">2. Spinraza (Nusinersen):</p>
-                  <p className="text-gray-700">దీనిని వెన్నుపూసలోకి ఇంజెక్షన్ ద్వారా ఇస్తారు. దీనికి మొదటి సంవత్సరం ₹4 కోట్లు, ఆ తర్వాత ప్రతి ఏటా ₹2 కోట్లు ఖర్చు అవుతుంది. ఇది కూడా విదేశాల నుండి దిగుమతి చేసుకోవాల్సిందే.</p>
+                  <p className="text-gray-700">దీనిని వెన్నుపూసలోకి ఇంజెక్షన్ ద్వారా ఇస్తారు. దీనికి మొదటి సంవత్సరం ₹4 కోట్లు, ఆ తర్వాత ప్రతి ఏటా సుమారు 2 కోట్ల వరకు ఖర్చు అవుతుంది. ఇది కూడా విదేశాల నుండి దిగుమతి చేసుకోవాల్సిందే.</p>
                 </div>
               </div>
 
@@ -259,7 +259,7 @@ export default function SmaHealthArticle() {
                 <ul className="list-disc ml-5 space-y-1 text-sm md:text-base text-gray-700">
                   <li>శ్వాస సపోర్ట్ కోసం BiPAP / Ventilator మిషన్లు (₹1 lakh నుండి ₹3 లక్షలు).</li>
                   <li>కఫం క్లియర్ చేయడానికి Cough Assist మిషన్లు.</li>
-                  <li>రోజువారీ ఫిజియోథెరపీ మరియు ప్రత్యేక న్యూట్రిషన్ ఫుడ్ కోసం నెлку ₹15,000 నుండి ₹30,000 వరకు ఖర్చు అవుతుంది.</li>
+                  <li>రోజువారీ ఫిజియోథెరపీ మరియు ప్రత్యేక న్యూట్రిషన్ ఫుడ్ కోసం నెలకు ₹15,000 నుండి ₹30,000 వరకు ఖర్చు అవుతుంది.</li>
                 </ul>
               </div>
 
@@ -296,8 +296,9 @@ export default function SmaHealthArticle() {
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm md:text-base text-gray-700">
                   <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-teal-600" /> NIMS (నిమ్స్), హైదరాబాద్ (ప్రభుత్వ నోడల్ సెంటర్)</li>
                   <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-teal-600" /> రెయిన్‌బో చిల్డ్రన్స్ హాస్పిటల్, హైదరాబాద్</li>
-                  <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-teal-600" /> యశోద హాస్పిటల్స్ (Yashoda Hospitals)</li>
-                  <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-teal-600" /> అపోలో హాస్పిటల్స్ (Apollo Hospitals), జూబ్లీహిల్స్</li>
+                  <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-teal-600" /> యశోద హాస్పిటల్స్ (Yashoda Hospitals), హైదరాబాద్</li>
+                  <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-teal-600" /> అపోలో హాస్పిటల్స్ (Apollo Hospitals), హైదరాబాద్</li>
+                  <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-teal-600" /> కిమ్స్ హాస్పిటల్స్ (KIMS Hospitals), హైదరాబాద్</li>
                 </ul>
               </div>
 
@@ -324,16 +325,16 @@ export default function SmaHealthArticle() {
                 <ShieldCheck className="w-6 h-6 text-green-600" />
                 ముందస్తు నివారణ పరీక్షలు (Prevention & Genetic Testing)
               </h3>
-              <p className="mb-4">పెళ్ళికి ముందు లేదా గర్భం దాల్చక ముందే ఈ ఘోర వ్యాధిని సంపూర్ణంగా నివారించవచ్చు:</p>
+              <p className="mb-4">ప్రెగ్నెన్సీకి ముందు లేదా ప్రెగ్నెన్సీ సమయంలో ఈ వ్యాధిని కనుగొనవచ్చు:</p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 text-sm md:text-base">
                 <div className="bg-white p-5 rounded-xl border border-gray-200 shadow-sm">
                   <p className="font-bold text-gray-900 mb-2">1. ప్రెగ్నెన్సీకి ముందు (Carrier Screening):</p>
-                  <p className="text-gray-600">భార్యాభర్తలు ఇద్దరూ తమ రక్త నమూనాలను ఇచ్చి "SMA Carrier Testing" ద్వారా తమలో ఆ లోపభూయిష్ట జన్యువు ఉందో లేదో ప్రాథమికంగా తెలుసుకోవచ్చు.</p>
+                  <p className="text-gray-600">భార్యాభర్తలు ఇద్దరూ తమ రక్త నమూనాలను ఇచ్చి 'SMA Carrier Testing' ద్వారా తమలో ఆ జన్యు లోపం ఉందో లేదో ఖచ్చితంగా తెలుసుకోవచ్చు.</p>
                 </div>
                 <div className="bg-white p-5 rounded-xl border border-gray-200 shadow-sm">
                   <p className="font-bold text-gray-900 mb-2">2. ప్రెగ్నెన్సీ సమయంలో (Prenatal Diagnosis):</p>
-                  <p className="text-gray-600">గర్భం దాల్చిన 10 నుండి 14 వారాల సమయంలో గర్భస్థ పిండం చుట్టూ ఉండే నీరు (Amniotic fluid) లేదా కణజాలం (CVS) పరీక్ష ద్వారా పుట్టబోయే బిడ్డకు SMA ఉందో లేదో 100% ఖచ్చితత్వంతో కనుగొనవచ్చు.</p>
+                  <p className="text-gray-600">గర్భం దాల్చిన 11 నుండి 14 వారాల సమయంలో కణజాల (CVS) పరీక్ష ద్వారా, లేదా 15 వారాల తర్వాత గర్భస్థ పిండం చుట్టూ ఉండే నీరు (Amniotic fluid) పరీక్ష ద్వారా పుట్టబోయే బిడ్డకు SMA ఉందో లేదో 100% ఖచ్చితత్వంతో కనుగొనవచ్చు.</p>
                 </div>
               </div>
 
@@ -352,10 +353,10 @@ export default function SmaHealthArticle() {
               <p className="mb-4">ప్రతి కేసుకూ ₹16 కోట్లు క్రౌడ్ ఫండింగ్ ద్వారా వసూలు చేయడం సాధ్యం కాదు కాబట్టి ఈ క్రింది శాశ్వత పరిష్కారాలను ప్రభుత్వం తక్షణమే ఆలోచించాలి:</p>
 
               <div className="space-y-3 mb-10 text-sm md:text-base text-gray-700">
-                <p><strong>• కార్పొరేట్ CSR ఫండ్:</strong> పెద్ద పెద్ద వ్యాపార సంస్థలు మరియు సెలబ్రిటీల CSR నిధులలో 1% మొత్తాన్ని "Rare Diseases Fund" కు కేటాయించేలా చట్టం తేవాలి.</p>
+                <p><strong>• కార్పొరేట్ CSR ఫండ్:</strong> పెద్ద పెద్ద వ్యాపార సంస్థలు మరియు సెలబ్రిటీల CSR నిధులలో 1% లేదా నిర్దిష్ట మొత్తాన్ని తప్పనిసరిగా "Rare Diseases Fund" కు కేటాయించేలా చట్టం తేవాలి.</p>
                 <p><strong>• బల్క్ కొనుగోలు ఒప్పందాలు:</strong> కేంద్ర ప్రభుత్వం నేరుగా నోవార్టిస్ కంపెనీతో మాట్లాడి బల్క్ ఆర్డర్ ఒప్పందం కుదుర్చుకుంటే ఈ ధరను ₹2-3 కోట్లకు తగ్గించవచ్చు.</p>
                 <p><strong>• రేర్ డిసీజ్ సెస్ (Health Cess):</strong> హెల్త్ ఇన్సూరెన్స్ ప్రీమియంలపై లేదా లగ్జరీ వస్తువులపై 0.05% సెస్‌ విధించి ప్రత్యేక నిధిని ఏర్పాటు చేయాలి.</p>
-                <p><strong>• స్వదేశీ పరిశోధన:</strong> ఐఐటీ (IIT), సీసీఎంబీ (CCMB) వంటి భారతీయ పరిశోధనా సంస్థలకు నిధులు ఇచ్చి మన देशంలోనే జీన్ థెరపీ మందులు తయారు చేస్తే ఈ ఖర్చు లక్షల్లోకి తగ్గుతుంది.</p>
+                <p><strong>• స్వదేశీ పరిశోధన:</strong> ఐఐటీ (IIT), సీసీఎంబీ (CCMB) వంటి భారతీయ పరిశోధనా సంస్థలకు నిధులు ఇచ్చి మన దేశంలోనే జీన్ థెరపీ మందులు తయారు చేస్తే ఈ ఖర్చు లక్షల్లోకి తగ్గుతుంది.</p>
               </div>
 
               {/* Cure SMA India Section */}
@@ -384,8 +385,7 @@ export default function SmaHealthArticle() {
                     <PenTool className="w-5 h-5 text-[#D4AF37]" />
                   </div>
                   <div className="text-left">
-                    <p className="text-xs text-gray-500 font-bold uppercase tracking-wider mb-1">రచన (Author)</p>
-                    <p className={`font-bold ${brandClasses.textNavy} text-base md:text-lg`}>వంశీ బీటెక్ (Vamshi BTech)</p>
+                    <p className={`font-bold ${brandClasses.textNavy} text-base md:text-lg`}>Vamshi BTech</p>
                   </div>
                 </div>
               </div>
@@ -397,10 +397,10 @@ export default function SmaHealthArticle() {
                 </div>
                 <div className="relative z-10">
                   <h3 className="text-xl md:text-3xl font-serif font-bold text-[#D4AF37] mb-4">
-                    ఈ ప్రాణాన్ని కాపాడుకోవడానికి చేతులు కలుపుదాం!
+                    ఈ వ్యాధి గురించి అవగాహనా కల్పిద్దాం..
                   </h3>
                   <p className="text-gray-300 mb-8 leading-relaxed text-sm md:text-lg">
-                    చిన్నారి నవీన్ కుమార్ రెడ్డి ప్రాణాలను కాపాడుకోవడానికి ఈ సమాచారాన్ని, విరాళాల లింక్‌ను వాట్సాప్ మరియు సోషల్ మీడియాలో విస్తృతంగా షేర్ చేయండి. మీ ఒక చిన్న షేర్ పసిపాప భవిష్యత్తును మార్చగలదు.
+                    ఈ సమాచారాన్ని వాట్సాప్ మరియు సోషల్ మీడియాలో విస్తృతంగా షేర్ చేయండి. ఈ వ్యాధితో బాధ పడే చిన్నారుల జీవితాలను కాపాడేదుకు ఉపయోగపడుతుంది.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4">
                     <button

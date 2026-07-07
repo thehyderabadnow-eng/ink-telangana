@@ -82,12 +82,12 @@ export default function Navbar() {
               >
                 Home
               </Link>
-              {/* <Link
+              <Link
                 href="/?category=Health"
                 className={`hover:text-[#D4AF37] ${pathname === '/' && currentCategory === 'Health' ? 'text-[#D4AF37] border-b-2 border-[#D4AF37]' : 'text-gray-800'} transition-colors font-semibold text-sm shrink-0 h-full flex items-center px-1`}
               >
                 Health
-              </Link> */}
+              </Link>
               {/* <Link
                 href="/mini-news"
                 className={`hover:text-[#D4AF37] ${pathname === '/mini-news' ? 'text-[#D4AF37] border-b-2 border-[#D4AF37]' : 'text-gray-800'} transition-colors font-semibold text-sm shrink-0 h-full flex items-center px-1`}

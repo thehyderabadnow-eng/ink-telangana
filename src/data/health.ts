@@ -12,6 +12,6 @@ export const InkHealthArticles: Article[] = [
         excerpt: "SMA: ప్రపంచంలోనే అత్యంత ఖరీదైన ఇంజెక్షన్ - Zolgensma. భారతదేశంలో ప్రతి సంవత్సరం దాదాపు 2,500 నుండి 3,000 మంది పిల్లలు SMA వ్యాధితో జన్మిస్తున్నారు.",
         content: ``, 
         isTopStory: false,
-        isLatestStory: false
+        isLatestStory: true
     }
 ];
