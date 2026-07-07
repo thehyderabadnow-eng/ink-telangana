@@ -4,7 +4,7 @@ export const InkHealthArticles: Article[] = [
     {
         id: 10000401,
         slug: "sma-type-1-Zolgensma",
-        title: "ఈ వ్యాధికి ఇండియాలో మందు లేదు. ఇంజక్షన్ ఖరీదు 17 కోట్లు.",
+        title: "ఈ వ్యాధికి మన దేశంలో మెడిసిన్ లేదు. ఇంజక్షన్ ఖరీదు 17 కోట్లు.",
         date: "July 7, 2026",
         category: "Health",
         categoryName: "INK HEALTH",
