@@ -6,7 +6,9 @@ import { getAllNews } from '@/data';
 import { brandClasses } from '@/utils/theme';
 
 export default function MiniNewsPage() {
-  const miniNews = getAllNews();
+// ఇక్కడ డేటాను తెచ్చుకునేటప్పుడే reverse() చేస్తున్నాము.
+  const miniNews = [...getAllNews()].reverse(); 
+
   const [isGenerating, setIsGenerating] = useState<number | null>(null);
   const [showShareToast, setShowShareToast] = useState<boolean>(false);
 
