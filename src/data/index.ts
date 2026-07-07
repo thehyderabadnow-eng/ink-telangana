@@ -4,10 +4,11 @@ import { miniNews } from './mininewscomments';
 import { InkThoughtsArticles } from './inkthoughts';
 import { PublicIssuesArticles } from './publicissues';
 import { InkSpecialArticles } from './inkspecial';
+import { InkHealthArticles } from './health';
 
 export const getAllArticles = () => {
   // Combine all articles and sort them by ID (or you can sort by date)
-  return [...InkThoughtsArticles, ...PublicIssuesArticles, ...InkSpecialArticles, ...politicsArticles, ...businessArticles ].sort((a, b) => a.id - b.id);
+  return [...InkThoughtsArticles, ...InkHealthArticles, ...PublicIssuesArticles, ...InkSpecialArticles, ...politicsArticles, ...businessArticles ].sort((a, b) => a.id - b.id);
 };
 
 export const getArticleById = (id: number) => {

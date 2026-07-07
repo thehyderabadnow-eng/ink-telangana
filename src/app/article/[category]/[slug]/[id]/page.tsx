@@ -12,6 +12,7 @@ import SIRArticle from '@/components/custom-articles/SIRArticle';
 import ReadOnlyWrapper from '@/components/custom-articles/ReadOnlyWrapper';
 import GurukulArticle from '@/components/custom-articles/GurukulArticle';
 import ZPTCtoCMArticle from '@/components/custom-articles/ZPTCtoCMArticle';
+import SmaHealthArticle from '@/components/custom-articles/SmaHealthArticle';
 
 type Props = {
   params: Promise<{ category: string, slug: string, id: string }>
@@ -137,6 +138,28 @@ export async function generateMetadata(
     };
   }
 
+  if (id === "10000401") {
+    return {
+      title: "పసిప్రాణానికి ₹17 కోట్ల సెగ: హైదరాబాద్ బాబు నవీన్ ను కాపాడుకుందాం.. | Ink Telangana",
+      description: "హైదరాబాద్‌కు చెందిన రెండు నెలల పసిబాబు నవీన్ కుమార్ రెడ్డి ప్రాణాంతకమైన 'SMA Type 1' వ్యాధితో పోరాడుతున్నాడు. ₹17 కోట్ల ఇంజెక్షన్ కోసం దాతల సాయం కొరకు నిరీక్షణ.",
+      openGraph: {
+        title: "బాబు నవీన్ ప్రాణాలను కాపాడుకుందాం..",
+        description: "హైదరాబాద్‌కు చెందిన రెండు నెలల పసిబాబు నవీన్ కుమార్ రెడ్డి ప్రాణాంతకమైన 'SMA Type 1' వ్యాధితో పోరాడుతున్నాడు. ₹17 కోట్ల ఇంజెక్షన్ కోసం దాతల సాయం కొరకు నిరీక్షణ.",
+        url: `${baseUrl}/article/${category}/${slug}/${id}`,
+        images: [
+          {
+            url: 'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=1200&auto=format&fit=crop',
+            width: 1200,
+            height: 630,
+            alt: 'Support Baby Naveen Kumar Reddy',
+          },
+        ],
+        locale: 'te_IN',
+        type: 'article',
+      },
+    };
+  }
+
   // 2. Dynamic Articles Metadata
   const article = getArticleById(parseInt(id));
 
@@ -190,6 +213,9 @@ export default async function ArticlePage({ params }: Props) {
   }
   if (id === "10000303") {
     return <ZPTCtoCMArticle />;
+  }
+  if (id === "10000401") {
+    return <SmaHealthArticle />;
   }
 
   // --- 2. COMMON DYNAMIC FALLBACK ---

@@ -21,7 +21,8 @@ export default function Footer() {
         {/* Quick Links */}
         <div className="flex flex-wrap gap-4 md:gap-8 text-sm font-medium">
           <Link href="/" className="hover:text-[#D4AF37] transition-colors">Home</Link>
-          <Link href="/mini-news" className="hover:text-[#D4AF37] transition-colors">Mini News</Link>
+          {/* <Link href="/mini-news" className="hover:text-[#D4AF37] transition-colors">Mini News</Link> */}
+          <Link href="/?category=Health" className="hover:text-[#D4AF37] transition-colors">Health</Link>
           <Link href="/?category=InkThoughts" className="hover:text-[#D4AF37] transition-colors">Ink Thoughts</Link>
           <Link href="/?category=InkSpecial" className="hover:text-[#D4AF37] transition-colors">Ink Special</Link>
           <Link href="/?category=PublicIssues" className="hover:text-[#D4AF37] transition-colors">Public Issues</Link>
