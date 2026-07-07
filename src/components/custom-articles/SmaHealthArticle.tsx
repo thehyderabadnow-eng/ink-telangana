@@ -133,6 +133,7 @@ export default function SmaHealthArticle() {
                     <p><strong>Bank Name:</strong> SBI Bank</p>
                     <p><strong>A/C Number:</strong> 30830783425</p>
                     <p><strong>IFSC Code:</strong> SBIN0011125</p>
+                    <p><strong>Mobile:</strong> 9739940430</p>
                   </div>
                   <div className="bg-white p-4 rounded-xl border border-teal-100 flex flex-col justify-center">
                     <p className="text-gray-700 italic font-medium mb-3">
