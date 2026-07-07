@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { Suspense } from 'react';
 import { Analytics } from '@vercel/analytics/react';
 import { GoogleAnalytics } from '@next/third-parties/google';
@@ -32,6 +33,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        {/* Google AdSense Script */}
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2573014607297645"
+          crossOrigin="anonymous"></script>
+      </head>
       <body className="min-h-screen bg-[#12161E] font-sans text-gray-100 flex flex-col">
 
         {/* Wrapping Navbar in Suspense prevents the _not-found prerender error */}
