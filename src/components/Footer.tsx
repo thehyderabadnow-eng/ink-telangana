@@ -30,6 +30,7 @@ export default function Footer() {
           {/* <Link href="/?category=Business" className="hover:text-[#D4AF37] transition-colors">Business</Link> */}
           <Link href="/about" className="hover:text-[#D4AF37] transition-colors">About</Link>
           <Link href="/contact" className="hover:text-[#D4AF37] transition-colors">Contact Us</Link>
+          <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link><Link href="/terms-and-conditions" className="hover:text-white transition-colors">Terms & Conditions</Link>
         </div>
       </div>
 
