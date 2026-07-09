@@ -13,6 +13,7 @@ import ReadOnlyWrapper from '@/components/custom-articles/ReadOnlyWrapper';
 import GurukulArticle from '@/components/custom-articles/GurukulArticle';
 import ZPTCtoCMArticle from '@/components/custom-articles/ZPTCtoCMArticle';
 import SmaHealthArticle from '@/components/custom-articles/SmaHealthArticle';
+import AllPartyKaryakartaArticle from '@/components/custom-articles/AllPartyKaryakartaArticle';
 
 type Props = {
   params: Promise<{ category: string, slug: string, id: string }>
@@ -160,6 +161,28 @@ export async function generateMetadata(
     };
   }
 
+  if (id === "10000501") {
+    return {
+      title: "ఓ కార్యకర్తా నీకు గుర్తింపేది? | Ink Telangana",
+      description: "పార్టీలు మారని కార్యకర్తలకు విలువ లేదు. నాయకులు మారిల్లు, నాయకులతో పాటు పార్టీల మనస్తత్వం కూడా మారింది. ప్రతి రాజకీయ కార్యకర్త ఖచ్చితంగా చదవాల్సిన కథ ఇది.",
+      openGraph: {
+        title: "ఓ కార్యకర్తా నీకు గుర్తింపేది? పార్టీ జెండా మోసి అలసిన బతుకుల ఆవేదన!",
+        description: "పార్టీలు మారని కార్యకర్తలకు విలువ లేదు. నాయకులు మారిల్లు, నాయకులతో పాటు పార్టీల మనస్తత్వం కూడా మారింది. ప్రతి రాజకీయ కార్యకర్త ఖచ్చితంగా చదవాల్సిన కథ ఇది.",
+        url: `${baseUrl}/article/${category}/${slug}/${id}`,
+        images: [
+          {
+            url: 'https://blogger.googleusercontent.com/img/a/AVvXsEieus3O4ZB4vg2QpD8GJyxDVIIOfJ5fh7oZVdv3aRiMc3Djq84s0fRsyrymm9KzCaHJv2fbVu7kYodjg8355Gdv_19V9srDbmTSGqsWJ9rnEAl1hvSesxjQnS-bCWl5mc78TKWPMvl6f721DWFObxnRiKIJsOwGXEIlCHUi92fF3zZz_9SjZOWavOj3NxxM', 
+            width: 1200,
+            height: 630,
+            alt: 'Political Party Workers Reality',
+          },
+        ],
+        locale: 'te_IN',
+        type: 'article',
+      },
+    };
+  }
+
   // 2. Dynamic Articles Metadata
   const article = getArticleById(parseInt(id));
 
@@ -216,6 +239,9 @@ export default async function ArticlePage({ params }: Props) {
   }
   if (id === "10000401") {
     return <SmaHealthArticle />;
+  }
+if (id === "10000501") {
+    return <AllPartyKaryakartaArticle />;
   }
 
   // --- 2. COMMON DYNAMIC FALLBACK ---

@@ -112,12 +112,12 @@ export default function Navbar() {
               >
                 Public Issues
               </Link>
-              {/* <Link
+              <Link
                 href="/?category=Politics"
                 className={`hover:text-[#D4AF37] ${pathname === '/' && currentCategory === 'Politics' ? 'text-[#D4AF37] border-b-2 border-[#D4AF37]' : 'text-gray-800'} transition-colors font-semibold text-sm shrink-0 h-full flex items-center px-1`}
               >
                 Politics
-              </Link> */}
+              </Link>
               {/* <Link
                 href="/?category=Business"
                 className={`hover:text-[#D4AF37] ${pathname === '/' && currentCategory === 'Business' ? 'text-[#D4AF37] border-b-2 border-[#D4AF37]' : 'text-gray-800'} transition-colors font-semibold text-sm shrink-0 h-full flex items-center px-1`}
