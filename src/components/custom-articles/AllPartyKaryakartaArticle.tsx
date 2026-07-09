@@ -240,14 +240,14 @@ export default function AllPartyKaryakartaArticle() {
                                 </p>
                             </div>
 
-                            <blockquote className="bg-gray-900 text-blue-900 p-6 rounded-xl font-serif text-lg mb-10 shadow-lg border-l-4 border-red-600">
+                            <blockquote className="bg-gray-900 text-white-900 p-6 rounded-xl font-serif text-lg mb-10 shadow-lg border-l-4 border-red-600">
                                 "సమయం వచ్చినప్పుడు కార్యకర్తల సత్తా ఏంటో చూపిస్తాం, మీ అధికార గర్వాన్ని, అహంకారాన్ని అణగదొక్కుతాం. ఎలాగూ నష్టపోయాం, ఇంకా నష్టపోయేదేం లేదు. నిఖార్సైన కార్యకర్తలను దూరం పెట్టి, వలసవాదులతో కలిసి ఎలా గెలుస్తారో చూస్తాం. మీకు అధికారం దూరమైతే, ఓటమితో ఒంటరైతే అప్పుడైనా కార్యకర్తల విలువ తెలుస్తుంది."
                             </blockquote>
 
                             <p className="mb-10">
                                 చివరి వరకు పార్టీలో ఉండేదెవరు, మీరు ఓడిపోయిన వెంటనే పార్టీ మారేది ఎవరో తెలుస్తుందని వారి అభిప్రాయం వ్యక్తపరుస్తున్నారు. పార్టీని గెలిపించి తాను ఓడిపోతూ కూడా, ఇంకా ఆ జెండానే పట్టుకుంటూ తన గుర్తింపు కోసం ఎదురుచూస్తున్నాడు అవమానపడ్డ ప్రతీ కార్యకర్త. అధికార పార్టీ అసంతృప్త కార్యకర్తలను అక్కున చేర్చుకుని బలం పెంచుకునేందుకు  ప్రతిపక్ష పార్టీలకు మంచి అవకాశంగా మారుతుంది.
                             </p>
-                            <blockquote className="bg-gray-900 text-black-900 p-6 rounded-xl font-serif text-lg mb-10 shadow-lg border-l-4 border-red-600">
+                            <blockquote className="bg-gray-900 text-white-900 p-6 rounded-xl font-serif text-lg mb-10 shadow-lg border-l-4 border-red-600">
                                 " కసితో పనిచేసే కార్యకర్తలు.. పార్టీని గెలిపించే వరకు శ్రమిస్తూనే ఉంటారు."
                             </blockquote>
 
