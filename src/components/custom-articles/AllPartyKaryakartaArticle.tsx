@@ -94,7 +94,7 @@ export default function AllPartyKaryakartaArticle() {
                         <img
                             src="https://blogger.googleusercontent.com/img/a/AVvXsEieus3O4ZB4vg2QpD8GJyxDVIIOfJ5fh7oZVdv3aRiMc3Djq84s0fRsyrymm9KzCaHJv2fbVu7kYodjg8355Gdv_19V9srDbmTSGqsWJ9rnEAl1hvSesxjQnS-bCWl5mc78TKWPMvl6f721DWFObxnRiKIJsOwGXEIlCHUi92fF3zZz_9SjZOWavOj3NxxM"
                             alt="Political Rally and Workers"
-                            className="w-full h-full object-cover opacity-80 mix-blend-overlay"
+                            className="w-full h-full mix-blend-overlay"
                         />
                     </div>
 
