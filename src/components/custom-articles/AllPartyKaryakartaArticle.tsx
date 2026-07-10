@@ -92,7 +92,7 @@ export default function AllPartyKaryakartaArticle() {
                     {/* Featured Image */}
                     <div className="w-full h-64 sm:h-80 md:h-[32rem] relative bg-gray-900 overflow-hidden">
                         <img
-                            src="https://blogger.googleusercontent.com/img/a/AVvXsEieus3O4ZB4vg2QpD8GJyxDVIIOfJ5fh7oZVdv3aRiMc3Djq84s0fRsyrymm9KzCaHJv2fbVu7kYodjg8355Gdv_19V9srDbmTSGqsWJ9rnEAl1hvSesxjQnS-bCWl5mc78TKWPMvl6f721DWFObxnRiKIJsOwGXEIlCHUi92fF3zZz_9SjZOWavOj3NxxM"
+                            src="https://blogger.googleusercontent.com/img/a/AVvXsEiwGBKeZYY44-cbf8qbLqqNHP2ISsEIVZdoeVLpQrAo2Q9qJAfmeXEDdf-3AH8EJe3FQEAI0efamnhjegY7yAIXrpXG9C_oh9N_uTn7oG6-8tzBE75qcVsUwZ8g9gqkoyo8hSyyWG6i6qPbdrxNd6RmxxfmGk4DAr-ZTcOQoCIWhkkiOPLtPeeDOSiLG2xe"
                             alt="Political Rally and Workers"
                             className="w-full h-full"
                         />

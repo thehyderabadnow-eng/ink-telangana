@@ -8,7 +8,7 @@ export const politicsArticles: Article[] = [
         date: "July 9, 2026",
         category: "Politics",
         categoryName: "Ink Politics",
-        imageUrl: "https://blogger.googleusercontent.com/img/a/AVvXsEieus3O4ZB4vg2QpD8GJyxDVIIOfJ5fh7oZVdv3aRiMc3Djq84s0fRsyrymm9KzCaHJv2fbVu7kYodjg8355Gdv_19V9srDbmTSGqsWJ9rnEAl1hvSesxjQnS-bCWl5mc78TKWPMvl6f721DWFObxnRiKIJsOwGXEIlCHUi92fF3zZz_9SjZOWavOj3NxxM", 
+        imageUrl: "https://blogger.googleusercontent.com/img/a/AVvXsEiwGBKeZYY44-cbf8qbLqqNHP2ISsEIVZdoeVLpQrAo2Q9qJAfmeXEDdf-3AH8EJe3FQEAI0efamnhjegY7yAIXrpXG9C_oh9N_uTn7oG6-8tzBE75qcVsUwZ8g9gqkoyo8hSyyWG6i6qPbdrxNd6RmxxfmGk4DAr-ZTcOQoCIWhkkiOPLtPeeDOSiLG2xe", 
         excerpt: "పార్టీలు మారని కార్యకర్తలకు విలువ లేదు. నాయకులు మారిల్లు, నాయకులతో పాటు పార్టీల మనస్తత్వం కూడా మారింది. ప్రతి రాజకీయ కార్యకర్త ఖచ్చితంగా చదవాల్సిన కథ ఇది.",
         content: ``, 
         isTopStory: true,
