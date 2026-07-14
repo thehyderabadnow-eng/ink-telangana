@@ -26,7 +26,7 @@ export const InkSpecialArticles: Article[] = [
         excerpt: "బలహీన వర్గాల బిడ్డల భవిష్యత్ కు బంగారు బాట వేసింది.. ఆనాటి వర్గాల గురుకులాలే.",
         content: ``,
         isTopStory: true,
-        isLatestStory: true
+        isLatestStory: false
     },
     {
         id: 10000303,
@@ -39,6 +39,6 @@ export const InkSpecialArticles: Article[] = [
         excerpt: "ఒక సాధారణ జడ్పీటీసీగా మొదలై.. దొరల గడీలను బద్దలు కొట్టి తెలంగాణ ముఖ్యమంత్రి స్థాయికి ఎదిగిన శ్రీ అనుముల రేవంత్ రెడ్డి గారి 20 ఏళ్ల స్ఫూర్తిదాయక రాజకీయ ప్రస్థానం.",
         content: ``,
         isTopStory: true,
-        isLatestStory: true
+        isLatestStory: false
     }
 ];

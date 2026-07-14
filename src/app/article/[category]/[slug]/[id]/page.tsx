@@ -1,9 +1,10 @@
 import React from 'react';
 import type { Metadata, ResolvingMetadata } from 'next';
-import { ArrowLeft, Clock } from 'lucide-react';
+import { ArrowLeft, Clock, MessageCircle, PenTool, Share2 } from 'lucide-react';
 import { getArticleById } from '../../../../../data';
 import ShareButton from '../../../../../components/ShareButton';
 import { brandClasses } from '../../../../../utils/theme';
+import BigShareButton from '@/components/BigShareButton'; // మీ పాత్ కి తగ్గట్టు మార్చుకోండి
 
 // Import your custom hardcoded articles here
 import FreeLaptopArticle from '../../../../../components/custom-articles/FreeLaptopArticle';
@@ -171,10 +172,31 @@ export async function generateMetadata(
         url: `${baseUrl}/article/${category}/${slug}/${id}`,
         images: [
           {
-            url: 'https://blogger.googleusercontent.com/img/a/AVvXsEiwGBKeZYY44-cbf8qbLqqNHP2ISsEIVZdoeVLpQrAo2Q9qJAfmeXEDdf-3AH8EJe3FQEAI0efamnhjegY7yAIXrpXG9C_oh9N_uTn7oG6-8tzBE75qcVsUwZ8g9gqkoyo8hSyyWG6i6qPbdrxNd6RmxxfmGk4DAr-ZTcOQoCIWhkkiOPLtPeeDOSiLG2xe', 
+            url: 'https://blogger.googleusercontent.com/img/a/AVvXsEiwGBKeZYY44-cbf8qbLqqNHP2ISsEIVZdoeVLpQrAo2Q9qJAfmeXEDdf-3AH8EJe3FQEAI0efamnhjegY7yAIXrpXG9C_oh9N_uTn7oG6-8tzBE75qcVsUwZ8g9gqkoyo8hSyyWG6i6qPbdrxNd6RmxxfmGk4DAr-ZTcOQoCIWhkkiOPLtPeeDOSiLG2xe',
             width: 1200,
             height: 630,
             alt: 'Political Party Workers Reality',
+          },
+        ],
+        locale: 'te_IN',
+        type: 'article',
+      },
+    };
+  }
+  if (id === "10000502") {
+    return {
+      title: "కాళేశ్వరం ప్రాజెక్టు చుట్టూ రాజకీయం: బిఆర్ఎస్ vs కాంగ్రెస్, అసలు ఏం జరగబోతోంది? | Ink Telangana",
+      description: "కాళేశ్వరం మోటర్లు ఆన్ చేయకపోవడంపై బిఆర్ఎస్ తీవ్ర విమర్శలు గుప్పిస్తుండగా, ఎన్‌డీఎస్ఏ రిపోర్టుతో కాంగ్రెస్ ఎదురుదాడి చేస్తోంది!",
+      openGraph: {
+        title: "కాళేశ్వరం ప్రాజెక్టు చుట్టూ రాజకీయం: బిఆర్ఎస్ vs కాంగ్రెస్, అసలు ఏం జరగబోతోంది?",
+        description: "కాళేశ్వరం మోటర్లు ఆన్ చేయకపోవడంపై బిఆర్ఎస్ తీవ్ర విమర్శలు గుప్పిస్తుండగా, ఎన్‌డీఎస్ఏ రిపోర్టుతో కాంగ్రెస్ ఎదురుదాడి చేస్తోంది!",
+        url: `${baseUrl}/article/${category}/${slug}/${id}`,
+        images: [
+          {
+            url: 'https://blogger.googleusercontent.com/img/a/AVvXsEiG9X9gOjSDJCuiJLw_1ZkYLE8Z0eilre1u0xvanB2SQGeR9ijbA3JfYyyRep8wMiBKDzTXKGGO7q7uDjbU65vPaBcbJRKEWAif8WJfNt-cNAhriRahZQr9lI2qEGgstBdZBT5FP5Y898FH6EBxRdU4KbMIw_APGXkYQYAH2genjd1F3_ao0pgTlQWsQWxs',
+            width: 1200,
+            height: 630,
+            alt: 'Kaleshwaram Politics BRS vs Congress-2026',
           },
         ],
         locale: 'te_IN',
@@ -240,7 +262,7 @@ export default async function ArticlePage({ params }: Props) {
   if (id === "10000401") {
     return <SmaHealthArticle />;
   }
-if (id === "10000501") {
+  if (id === "10000501") {
     return <AllPartyKaryakartaArticle />;
   }
 
@@ -282,7 +304,7 @@ if (id === "10000501") {
 
           <div className="mb-4">
             <span className={`${brandClasses.bgGold} ${brandClasses.textNavy} text-xs font-bold px-3 py-1 rounded shadow-sm uppercase tracking-wide inline-block mb-5`}>
-              {article.category}
+              {article.categoryName}
             </span>
             <h1 className={`text-3xl md:text-5xl font-serif font-bold ${brandClasses.textNavy} leading-tight mb-6`}>
               {article.title}
@@ -305,7 +327,42 @@ if (id === "10000501") {
             <p className="text-xl text-gray-600 font-medium italic mb-10 border-l-4 border-[#D4AF37] pl-5">
               {article.excerpt}
             </p>
+
+            {/* Main Article Content */}
             <div dangerouslySetInnerHTML={{ __html: article.content }} />
+
+            {/* 1. Author Section */}
+            <div className="mt-12 flex justify-end border-t border-gray-100 pt-8 not-prose">
+              <div className="inline-flex items-center gap-4 bg-gray-50 border border-gray-200 px-6 py-4 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                <div className={`p-3 rounded-full ${brandClasses.bgNavy}`}>
+                  <PenTool className="w-5 h-5 text-[#D4AF37]" />
+                </div>
+                <div className="text-left">
+                  <p className={`font-bold ${brandClasses.textNavy} text-base md:text-lg`}>Vamshi BTech</p>
+                </div>
+              </div>
+            </div>
+
+            {/* 2. Share CTA Section */}
+            <div className={`mt-12 bg-gradient-to-br from-[#0B1B35] to-[#12161E] rounded-2xl p-6 md:p-10 text-white shadow-xl relative overflow-hidden not-prose`}>
+              <div className="absolute top-0 right-0 p-6 opacity-5 pointer-events-none">
+                <MessageCircle className="w-32 h-32 md:w-40 md:h-40 text-[#D4AF37]" />
+              </div>
+
+              <div className="relative z-10">
+                <h3 className="text-xl md:text-3xl font-serif font-bold text-[#D4AF37] mb-4">
+                  ఈ వార్తను మీ మిత్రులతో పంచుకోండి!
+                </h3>
+                <p className="text-gray-300 mb-8 leading-relaxed text-sm md:text-lg max-w-2xl">
+                  ఇలాంటి మరిన్ని వార్తలు, రాజకీయ విశ్లేషణల కోసం ఇన్క్ తెలంగాణను ఫాలో అవ్వండి. ఈ ఆర్టికల్‌ని సోషల్ మీడియాలో షేర్ చేసి మాకు మద్దతు తెలపండి.
+                </p>
+
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <BigShareButton title={article.title} excerpt={article.excerpt} />
+                </div>
+              </div>
+            </div>
+
           </div>
         </ReadOnlyWrapper>
       </article>

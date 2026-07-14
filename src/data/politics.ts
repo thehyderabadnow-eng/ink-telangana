@@ -8,9 +8,40 @@ export const politicsArticles: Article[] = [
         date: "July 9, 2026",
         category: "Politics",
         categoryName: "Ink Politics",
-        imageUrl: "https://blogger.googleusercontent.com/img/a/AVvXsEiwGBKeZYY44-cbf8qbLqqNHP2ISsEIVZdoeVLpQrAo2Q9qJAfmeXEDdf-3AH8EJe3FQEAI0efamnhjegY7yAIXrpXG9C_oh9N_uTn7oG6-8tzBE75qcVsUwZ8g9gqkoyo8hSyyWG6i6qPbdrxNd6RmxxfmGk4DAr-ZTcOQoCIWhkkiOPLtPeeDOSiLG2xe", 
+        imageUrl: "https://blogger.googleusercontent.com/img/a/AVvXsEiwGBKeZYY44-cbf8qbLqqNHP2ISsEIVZdoeVLpQrAo2Q9qJAfmeXEDdf-3AH8EJe3FQEAI0efamnhjegY7yAIXrpXG9C_oh9N_uTn7oG6-8tzBE75qcVsUwZ8g9gqkoyo8hSyyWG6i6qPbdrxNd6RmxxfmGk4DAr-ZTcOQoCIWhkkiOPLtPeeDOSiLG2xe",
         excerpt: "పార్టీలు మారని కార్యకర్తలకు విలువ లేదు. నాయకులు మారిల్లు, నాయకులతో పాటు పార్టీల మనస్తత్వం కూడా మారింది. ప్రతి రాజకీయ కార్యకర్త ఖచ్చితంగా చదవాల్సిన కథ ఇది.",
-        content: ``, 
+        content: ``,
+        isTopStory: true,
+        isLatestStory: true
+    },
+    {
+        id: 10000502,
+        slug: "kaleshwaram-politics-brs-vs-congress-2026",
+        title: "కాళేశ్వరం ప్రాజెక్టు చుట్టూ రాజకీయం: బిఆర్ఎస్ vs కాంగ్రెస్, అసలు ఏం జరగబోతోంది?",
+        date: "July 14, 2026",
+        category: "Politics",
+        categoryName: "Ink Politics",
+        imageUrl: "https://blogger.googleusercontent.com/img/a/AVvXsEiG9X9gOjSDJCuiJLw_1ZkYLE8Z0eilre1u0xvanB2SQGeR9ijbA3JfYyyRep8wMiBKDzTXKGGO7q7uDjbU65vPaBcbJRKEWAif8WJfNt-cNAhriRahZQr9lI2qEGgstBdZBT5FP5Y898FH6EBxRdU4KbMIw_APGXkYQYAH2genjd1F3_ao0pgTlQWsQWxs",
+        excerpt: "కాళేశ్వరం మోటర్లు ఆన్ చేయకపోవడంపై బిఆర్ఎస్ తీవ్ర విమర్శలు గుప్పిస్తుండగా, ఎన్‌డీఎస్ఏ రిపోర్టుతో కాంగ్రెస్ ఎదురుదాడి చేస్తోంది!",
+        content: `కాళేశ్వరం ప్రాజెక్టు పంపులు ఆన్ చేసి ఎత్తిపోయడం ద్వారా సాగుకు, తాగడానికి నీళ్లు ఇవ్వచ్చని, రేవంత్ రెడ్డి అహంకారానికి పోయి, పంపులు ఆన్ చేయక పోవడంతో లక్ష క్యూసెక్కుల నీళ్లు వృథాగా కిందికి పోతున్నాయని బిఆర్ఎస్ ఆరోపిస్తోంది.
+
+తెలంగాణ రాష్ట్రంపై ఎల్‌నినో ప్రభావం ఉన్న మాట వాస్తవం. ఒకవేళ పంటలు ఎండిపోయి,  రైతులకు నష్టం జరిగితే, ఆ కరువును కాంగ్రెస్ పైకి నెట్టేందుకు బిఆర్ఎస్ వ్యూహం రచిస్తున్నట్లుగా తెలుస్తోంది.
+
+అందుకే "కాలం తెచ్చిన కరువు కాదు.. కాంగ్రెస్ తెచ్చిన కరువు" అని కేటీఆర్ విమర్శించారు.
+
+మరోవైపు సీఎం రేవంత్ రెడ్డి.. 
+నా చేతిలో ఏం లేదు, అంతా నేషనల్ డ్యామ్ సేఫ్టీ అథారిటీ(NDSA) దగ్గరే ఉంది. కాళేశ్వరం ప్రాజెక్ట్‌ను ముట్టుకునే పరిస్థితి లేదు. ఏదైనా ఉంటే ఎన్‌డీఎస్ఏ దగ్గర మొర పెట్టుకోండిని చెప్తున్నారు.
+
+గేట్లు మూయకుండా కూడా ఎత్తిపోయవచ్చన్న రిటైర్డ్ ఇంజనీర్ల వాదనను కూడా సీఎం కొట్టిపారేశారు. నీళ్లు నిల్వ చేయకుండా ఎత్తిపోయలేమని, ఒకవేళ నీళ్లు నిల్వ చేస్తే ఆ బ్యారేజీలు కొట్టుకుపోతాయని NDSA చెప్పిందని రేవంత్ రెడ్డి వాదన.
+
+కాళేశ్వరం ప్రాజెక్టు నీళ్లు లేకున్నా పంటలు పండితే, కాళేశ్వరం ప్రాజెక్టు ఫెయిల్యూర్ అని చూపించవచ్చు. కాళేశ్వరం మోటర్లు నడవకుండా తెలంగాణలో రైతులు పంటలు పండించగలిగారని, ఇన్ని రోజులు బిఆర్ఎస్, కేసీఆర్ మనల్ని మోసం చేశారని కాంగ్రెస్ నిరూపించవచ్చు.
+
+ఈ రెండు పార్టీలలో ఎవరు నెగ్గుతారో.. ఎవరు ఓడుతారో రాబోయే రోజుల్లో తేలిపోనుంది.
+
+ఏది ఏమైనా నీళ్ల విషయంలో ప్లాన్ బి లేకపోవడం కాంగ్రెస్ పార్టీకి కొంత ప్రతికూలంగా మారనుంది. ఒకవేళ తాగునీటి సమస్యలు వచ్చినా, సాగునీరు లేక పంటలు ఎండినా, అది కాంగ్రెస్ ప్రభుత్వానికి వ్యతిరేకంగా మారుతుంది.
+
+దీని ప్రభావం ఎలా ఉంటుందో రాజకీయ పార్టీలకు, రాష్ట్ర ప్రజలకు 2027 ఫిబ్రవరి తరువాత తెలుస్తుంది.
+`,
         isTopStory: true,
         isLatestStory: true
     }
