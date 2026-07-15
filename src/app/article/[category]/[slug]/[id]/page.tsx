@@ -140,20 +140,20 @@ export async function generateMetadata(
       },
     };
   }
-if (id === "10000304") {
+  if (id === "10000304") {
     return {
-      title: "ఇంక్ స్పెషల్ సిరీస్: 'కోటా కథనం'.. భారతీయ రిజర్వేషన్ల పై సమగ్ర మథనం!",
-      description: "రిజర్వేషన్ల పుట్టుపూర్వోత్తరాలు, సాంకేతిక నిబంధనలు, తెలంగాణ జోనల్ వ్యవస్థ మరియు నేటి సామాజిక వాస్తవాలపై ఒక నిఖార్సయిన పరిశోధనాత్మక వెబ్ సిరీస్.",
+      title: "ఇంక్ స్పెషల్ సిరీస్: 'చాప్టర్ 1: భారతీయ రిజర్వేషన్ల పై సమగ్ర ప్రశ్నావళి!'",
+      description: "రిజర్వేషన్ల సాంకేతిక నిబంధనలు, తెలంగాణ జోనల్ వ్యవస్థ మరియు నేటి సామాజిక వాస్తవాలపై ఒక పరిశోధనాత్మక వెబ్ స్టోరీ.",
       openGraph: {
-        title: "ఇంక్ స్పెషల్ సిరీస్: 'కోటా కథనం'.. రిజర్వేషన్ల పై సమగ్ర మథనం!",
-        description: "రిజర్వేషన్ల పుట్టుపూర్వోత్తరాలు, సాంకేతిక నిబంధనలు, తెలంగాణ జోనల్ వ్యవస్థలపై వంశీ బీటెక్ ప్రత్యేక వెబ్ సిరీస్ రోడ్‌మ్యాప్.",
+        title: "ఇంక్ స్పెషల్ సిరీస్: 'చాప్టర్ 1: భారతీయ రిజర్వేషన్ల పై సమగ్ర ప్రశ్నావళి!'",
+        description: "రిజర్వేషన్ల సాంకేతిక నిబంధనలు, తెలంగాణ జోనల్ వ్యవస్థలపై ప్రత్యేక వెబ్ సిరీస్.",
         url: `${baseUrl}/article/${category}/${slug}/${id}`,
         images: [
           {
-            url: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1200&auto=format&fit=crop', 
+            url: 'https://blogger.googleusercontent.com/img/a/AVvXsEgFQRHr1EiR63gPpFBY8QZpKm8yrOD4Zm1eoK4Ix4-u4gf6m6IM0ta6eORdOSWFrDcJNDZycdfKqe8EIX5PQNkjB8tt1RELsQvwu1YZ4Csyrov6YH8VTsDwhHDbZ_lK5tmoEhwqrJC45IlWRvnWNZmCO5kMci1xhtLQyu1A-kmNTHVHs9OQD4fEvBHVaD2j',
             width: 1200,
             height: 630,
-            alt: 'The Quota Chronicles Ink Special',
+            alt: 'Ink Special Series The Quota Chronicles Reservations',
           },
         ],
         locale: 'te_IN',

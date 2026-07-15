@@ -49,7 +49,7 @@ export const InkSpecialArticles: Article[] = [
         category: "InkSpecial",
         categoryName: "Ink Special",
         imageUrl: "https://blogger.googleusercontent.com/img/a/AVvXsEgFQRHr1EiR63gPpFBY8QZpKm8yrOD4Zm1eoK4Ix4-u4gf6m6IM0ta6eORdOSWFrDcJNDZycdfKqe8EIX5PQNkjB8tt1RELsQvwu1YZ4Csyrov6YH8VTsDwhHDbZ_lK5tmoEhwqrJC45IlWRvnWNZmCO5kMci1xhtLQyu1A-kmNTHVHs9OQD4fEvBHVaD2j", 
-        excerpt: "రిజర్వేషన్ల పుట్టుపూర్వోత్తరాలు, సాంకేతిక నిబంధనలు, తెలంగాణ జోనల్ వ్యవస్థ మరియు నేటి సామాజిక వాస్తవాలపై ఒక నిఖార్సయిన పరిశోధనాత్మక వెబ్ సిరీస్.",
+        excerpt: "రిజర్వేషన్ల సాంకేతిక నిబంధనలు, తెలంగాణ జోనల్ వ్యవస్థ మరియు నేటి సామాజిక వాస్తవాలపై ఒక పరిశోధనాత్మక వెబ్ స్టోరీ.",
         content: ``, 
         isTopStory: true,
         isLatestStory: true
