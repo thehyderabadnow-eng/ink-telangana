@@ -6,8 +6,8 @@ import { getAllNews } from '@/data';
 import { brandClasses } from '@/utils/theme';
 
 export default function MiniNewsPage() {
-// ఇక్కడ డేటాను తెచ్చుకునేటప్పుడే reverse() చేస్తున్నాము.
-  const miniNews = [...getAllNews()].reverse(); 
+  // ఇక్కడ డేటాను తెచ్చుకునేటప్పుడే reverse() చేస్తున్నాము.
+  const miniNews = [...getAllNews()].reverse();
 
   const [isGenerating, setIsGenerating] = useState<number | null>(null);
   const [showShareToast, setShowShareToast] = useState<boolean>(false);
@@ -30,10 +30,9 @@ export default function MiniNewsPage() {
       const htmlToImage = await import('html-to-image');
 
       const dataUrl = await htmlToImage.toPng(element, {
-        pixelRatio: 2, // Reduced from 3 to improve stability
+        pixelRatio: 2,
         skipFonts: true,
-        cacheBust: true, // Force fresh image loading
-        // ఇమేజ్‌ని బ్లాక్ చేసే filter ని ఇక్కడ నుండి తీసేశాను
+        cacheBust: true,
         style: { fontFamily: 'sans-serif', margin: '0' }
       });
 
@@ -59,8 +58,7 @@ export default function MiniNewsPage() {
       const dataUrl = await htmlToImage.toPng(element, {
         pixelRatio: 2,
         skipFonts: true,
-        cacheBust: true, // ఇక్కడ కూడా యాడ్ చేశాను
-        // ఇమేజ్‌ని బ్లాక్ చేసే filter ని ఇక్కడ నుండి తీసేశాను
+        cacheBust: true,
       });
 
       const blob = await (await fetch(dataUrl)).blob();
@@ -73,10 +71,9 @@ export default function MiniNewsPage() {
         await navigator.share({
           files: [file],
           title: 'Ink Telangana Update',
-          text: shareText // This sends the text AND the link
+          text: shareText
         });
       } else {
-        // Fallback for desktop/unsupported browsers
         navigator.clipboard.writeText(shareText);
         setShowShareToast(true);
         setTimeout(() => setShowShareToast(false), 3000);
@@ -109,21 +106,20 @@ export default function MiniNewsPage() {
             <div key={thought.id} className="flex flex-col gap-3">
 
               {/* Way2News Style Card (THIS is what gets captured) */}
+              {/* Way2News Style Card (THIS is what gets captured) */}
               <div
                 id={`thought-card-${thought.id}`}
-                className="flex flex-col bg-[#12161E] rounded-2xl overflow-hidden shadow-2xl border border-gray-800 relative"
+                className="flex flex-col bg-[#12161E] rounded-2xl overflow-hidden shadow-2xl border border-gray-800 relative w-full max-w-[360px] mx-auto"
               >
 
                 {/* 2. Image Banner Section */}
-                <div className="w-full h-48 md:h-64 relative bg-[#0B1B35] overflow-hidden border-b border-gray-800">
+                <div className="w-full h-48 relative bg-[#0B1B35] overflow-hidden border-b border-gray-800">
                   <img
-                    // Proxy ద్వారా ఇమేజ్ రప్పించడం వల్ల సెక్యూరిటీ బ్లాక్ ఉండదు
                     src={getProxiedImageUrl((thought as any).imageUrl || defaultBrandImage)}
                     alt="News Update"
-                    crossOrigin="anonymous" // ఇప్పుడు ఇది సేఫ్ & వర్క్ అవుతుంది
+                    crossOrigin="anonymous"
                     className="absolute inset-0 w-full h-full object-cover opacity-90"
                   />
-                  {/* Brand overlay if default image is used */}
                   {!(thought as any).imageUrl && (
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0B1B35]/90 to-transparent flex flex-col justify-end p-6">
                       <span className="text-[#D4AF37] font-serif font-bold text-2xl tracking-widest opacity-90 shadow-black drop-shadow-md">
@@ -134,7 +130,7 @@ export default function MiniNewsPage() {
                 </div>
 
                 {/* 1. Header Section */}
-                <div className={`${brandClasses.bgNavy} px-2 py-2 flex justify-between items-center border-b border-[#D4AF37]/30`}>
+                <div className={`${brandClasses.bgNavy} px-4 py-3 flex justify-between items-center border-b border-[#D4AF37]/30`}>
                   <div className="flex items-center gap-3">
                     <div className={`${brandClasses.bgGold} p-1 rounded-full shadow-sm`}>
                       <PenTool className={`w-4 h-4 ${brandClasses.textNavy}`} />
@@ -155,26 +151,29 @@ export default function MiniNewsPage() {
                 </div>
 
                 {/* 3. Content Section */}
-                <div className="p-4 md:p-8 flex-grow relative bg-[#12161E]">
+                <div className="p-5 flex-grow relative bg-[#12161E]">
                   <MessageSquare className="absolute top-4 left-4 w-12 h-12 text-[#D4AF37] opacity-[0.03]" />
-                  {/* టైటిల్ కలర్ మార్పు: text-[#FFD700] బ్రైట్ గోల్డ్ */}
-                  <h2 className="text-[#D4AF37] font-bold text-xl leading-snug relative z-10 whitespace-pre-wrap mb-1 drop-shadow-md">
+                  <h2 className="text-[#D4AF37] font-bold text-xl leading-snug relative z-10 mb-3 drop-shadow-md">
                     {thought.title}
                   </h2>
-                  {/* టెక్స్ట్ కలర్ మార్పు: text-gray-100 */}
-                  <p className="text-gray-100 text-lg md:text-xl leading-relaxed font-medium relative z-10 whitespace-pre-wrap">
+
+                  {/* whitespace-normal and inter-word configuration */}
+                  <p
+                    className="text-gray-100 text-[15px] leading-relaxed font-medium relative z-10 text-justify whitespace-normal"
+                    style={{
+                      textJustify: 'inter-word',
+                      wordBreak: 'normal',
+                    }}
+                  >
                     {thought.text}
                   </p>
                 </div>
 
                 {/* 4. Footer Section */}
-                <div className={`${brandClasses.bgGold} px-6 flex flex-col items-center gap-2.5`}>
-                  <div className={`flex items-center gap-2 ${brandClasses.textNavy} px-4 py-1.5 rounded-full text-md font-bold`}>
+                <div className={`${brandClasses.bgGold} px-5 py-2.5 flex flex-col items-center justify-center`}>
+                  <div className={`flex items-center gap-2 ${brandClasses.textNavy} px-4 py-0.5 text-sm font-bold tracking-wider`}>
                     www.inktelangana.com
                   </div>
-                  {/* <span className={`${brandClasses.textNavy} font-bold text-[10px] md:text-xs uppercase tracking-widest text-center`}>
-                    Your Voice | Your Story | Our Telangana
-                  </span> */}
                 </div>
               </div>
 
@@ -191,14 +190,6 @@ export default function MiniNewsPage() {
                     <><Share2 className="w-4 h-4" /> Share Update</>
                   )}
                 </button>
-                {/* <button
-                  onClick={() => downloadAsImage(thought.id)}
-                  disabled={isGenerating === thought.id}
-                  className="flex items-center gap-2 text-xs font-semibold text-gray-400 bg-gray-800/50 px-4 py-2.5 rounded-full hover:text-white hover:bg-gray-800 transition-colors"
-                  title="Download Image"
-                >
-                  <Download className="w-4 h-4" />
-                </button> */}
               </div>
             </div>
           ))}
