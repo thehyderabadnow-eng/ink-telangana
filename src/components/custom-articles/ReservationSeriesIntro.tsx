@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import {
     ArrowLeft, Clock, MessageCircle, PenTool,
-    Sparkles, Send, FileQuestion, BookOpen, ArrowRight
+    Sparkles, Send, FileQuestion, BookOpen, ArrowRight, Share2
 } from 'lucide-react';
 import ReadOnlyWrapper from './ReadOnlyWrapper';
 import BigShareButton from '@/components/BigShareButton';
@@ -40,6 +40,24 @@ export default function ReservationSeriesIntro() {
                 setIsSubmitted(false);
                 setUserQuestion('');
             }, 4000);
+        }
+    };
+
+    // టాప్ షేర్ బటన్ కోసం ఫంక్షన్
+    const handleTopShare = async () => {
+        if (navigator.share) {
+            try {
+                await navigator.share({
+                    title: articleDetails.title,
+                    text: articleDetails.excerpt,
+                    url: window.location.href
+                });
+            } catch (err) {
+                console.error('Error sharing:', err);
+            }
+        } else {
+            navigator.clipboard.writeText(`${articleDetails.title}\n\n${window.location.href}`);
+            alert("లింక్ కాపీ చేయబడింది! (Link Copied!)");
         }
     };
 
@@ -91,9 +109,13 @@ export default function ReservationSeriesIntro() {
                             <Link href="/" className="flex items-center gap-2 text-sm text-gray-500 hover:text-[#0B1B35] transition-colors group font-semibold">
                                 <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Back
                             </Link>
-                            <span className="bg-[#0B1B35] text-[#D4AF37] text-xs font-bold px-3 py-1.5 rounded-full border border-[#D4AF37]/30 tracking-widest uppercase font-serif">
-                                INK WEBISODE SERIES
-                            </span>
+                            {/* ఇక్కడ "INK WEBISODE SERIES" తీసేసి షేర్ బటన్ యాడ్ చేశాను */}
+                            <button
+                                onClick={handleTopShare}
+                                className="flex items-center gap-2 text-xs md:text-sm font-bold bg-[#0B1B35] text-[#D4AF37] border border-[#D4AF37]/30 px-4 py-2 rounded-full hover:bg-[#D4AF37] hover:text-[#0B1B35] transition-all shadow-sm"
+                            >
+                                <Share2 className="w-4 h-4" /> Share
+                            </button>
                         </div>
 
                         <div className="mb-4">
@@ -120,7 +142,6 @@ export default function ReservationSeriesIntro() {
                             alt="Reservation concept"
                             className="w-full h-full object-cover opacity-90"
                         />
-                        {/* from-black కి బదులు from-white/90 వాడాను */}
                         <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-white/40 to-transparent flex flex-col justify-end p-6 md:p-8">
                             <span className="text-[#0B1B35] font-serif font-bold text-2xl md:text-3xl tracking-wide drop-shadow-sm">
                                 రిజర్వేషన్ల పై నిన్నటి పునాది.. నేటి వాస్తవికత.. రేపటి భవిష్యత్తు
