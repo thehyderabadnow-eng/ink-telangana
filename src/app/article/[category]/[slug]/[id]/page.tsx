@@ -15,6 +15,7 @@ import GurukulArticle from '@/components/custom-articles/GurukulArticle';
 import ZPTCtoCMArticle from '@/components/custom-articles/ZPTCtoCMArticle';
 import SmaHealthArticle from '@/components/custom-articles/SmaHealthArticle';
 import AllPartyKaryakartaArticle from '@/components/custom-articles/AllPartyKaryakartaArticle';
+import ReservationSeriesIntro from '@/components/custom-articles/ReservationSeriesIntro';
 
 type Props = {
   params: Promise<{ category: string, slug: string, id: string }>
@@ -132,6 +133,27 @@ export async function generateMetadata(
             width: 1200,
             height: 630,
             alt: 'CM Revanth Reddy 20 Years Journey',
+          },
+        ],
+        locale: 'te_IN',
+        type: 'article',
+      },
+    };
+  }
+if (id === "10000304") {
+    return {
+      title: "ఇంక్ స్పెషల్ సిరీస్: 'కోటా కథనం'.. భారతీయ రిజర్వేషన్ల పై సమగ్ర మథనం!",
+      description: "రిజర్వేషన్ల పుట్టుపూర్వోత్తరాలు, సాంకేతిక నిబంధనలు, తెలంగాణ జోనల్ వ్యవస్థ మరియు నేటి సామాజిక వాస్తవాలపై ఒక నిఖార్సయిన పరిశోధనాత్మక వెబ్ సిరీస్.",
+      openGraph: {
+        title: "ఇంక్ స్పెషల్ సిరీస్: 'కోటా కథనం'.. రిజర్వేషన్ల పై సమగ్ర మథనం!",
+        description: "రిజర్వేషన్ల పుట్టుపూర్వోత్తరాలు, సాంకేతిక నిబంధనలు, తెలంగాణ జోనల్ వ్యవస్థలపై వంశీ బీటెక్ ప్రత్యేక వెబ్ సిరీస్ రోడ్‌మ్యాప్.",
+        url: `${baseUrl}/article/${category}/${slug}/${id}`,
+        images: [
+          {
+            url: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1200&auto=format&fit=crop', 
+            width: 1200,
+            height: 630,
+            alt: 'The Quota Chronicles Ink Special',
           },
         ],
         locale: 'te_IN',
@@ -258,6 +280,9 @@ export default async function ArticlePage({ params }: Props) {
   }
   if (id === "10000303") {
     return <ZPTCtoCMArticle />;
+  }
+  if (id === "10000304") {
+    return <ReservationSeriesIntro />;
   }
   if (id === "10000401") {
     return <SmaHealthArticle />;

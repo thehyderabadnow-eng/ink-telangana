@@ -40,5 +40,18 @@ export const InkSpecialArticles: Article[] = [
         content: ``,
         isTopStory: true,
         isLatestStory: false
+    },
+    {
+        id: 10000304,
+        slug: "ink-special-series-the-quota-chronicles-reservations",
+        title: "Chapter 1: 'భారతీయ రిజర్వేషన్ల పై సమగ్ర ప్రశ్నావళి!",
+        date: "July 15, 2026",
+        category: "InkSpecial",
+        categoryName: "Ink Special",
+        imageUrl: "https://blogger.googleusercontent.com/img/a/AVvXsEgFQRHr1EiR63gPpFBY8QZpKm8yrOD4Zm1eoK4Ix4-u4gf6m6IM0ta6eORdOSWFrDcJNDZycdfKqe8EIX5PQNkjB8tt1RELsQvwu1YZ4Csyrov6YH8VTsDwhHDbZ_lK5tmoEhwqrJC45IlWRvnWNZmCO5kMci1xhtLQyu1A-kmNTHVHs9OQD4fEvBHVaD2j", 
+        excerpt: "రిజర్వేషన్ల పుట్టుపూర్వోత్తరాలు, సాంకేతిక నిబంధనలు, తెలంగాణ జోనల్ వ్యవస్థ మరియు నేటి సామాజిక వాస్తవాలపై ఒక నిఖార్సయిన పరిశోధనాత్మక వెబ్ సిరీస్.",
+        content: ``, 
+        isTopStory: true,
+        isLatestStory: true
     }
 ];

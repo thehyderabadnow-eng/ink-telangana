@@ -31,10 +31,10 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
     ? (filteredArticles[0].categoryName || categoryFilter)
     : categoryFilter;
 
-    const reversedArticles = [...filteredArticles].reverse();
+  const reversedArticles = [...filteredArticles].reverse();
   // Updated logic: Using isLatestStory directly here
-  const topStories = reversedArticles .filter(a => a.isTopStory);
-  const latestStories = reversedArticles .filter(a => a.isLatestStory);
+  const topStories = reversedArticles.filter(a => a.isTopStory);
+  const latestStories = reversedArticles.filter(a => a.isLatestStory);
 
   // 3. Helper to format the long SEO-friendly URL securely
   const getUrlPath = (article: Article) => {
@@ -66,31 +66,35 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
             {searchQuery ? 'Search Results' : (categoryFilter === 'All' ? 'Latest Stories' : `Latest ${displayCategoryName} Stories`)}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {latestStories.map((article) => (
-              <Link key={article.id} href={getUrlPath(article)}>
-                <article className="relative rounded-xl overflow-hidden cursor-pointer group h-[22rem] shadow-xl shadow-black/50 bg-slate-900">
-                  <img
-                    src={article.imageUrl}
-                    alt={article.title}
-                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B1B35] via-[#0B1B35]/60 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-                  <div className="absolute bottom-0 left-0 p-5 w-full z-10 flex flex-col justify-end h-full">
-                    <span className={`${brandClasses.bgGold} ${brandClasses.textNavy} text-[10px] font-bold px-2 py-1 rounded shadow-sm uppercase tracking-wider self-start mb-3`}>
-                      {article.categoryName || article.category}
-                    </span>
-                    <h3 className="text-xl font-bold font-serif text-white leading-snug group-hover:text-[#D4AF37] transition-colors line-clamp-3">
-                      {article.title}
-                    </h3>
-                    <div className="flex items-center gap-2 text-xs text-gray-300 mt-4 font-medium opacity-80 group-hover:opacity-100 transition-opacity">
-                      <Clock className="w-3.5 h-3.5" />
-                      <span>{article.date}</span>
+            {/* ఇక్కడ Array ని కాపీ చేసి, Date ఆధారంగా లేటెస్ట్ ఫస్ట్ వచ్చేలా Sort చేశాము */}
+            {[...latestStories]
+              .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+              .map((article) => (
+                <Link key={article.id} href={getUrlPath(article)}>
+                  <article className="relative rounded-xl overflow-hidden cursor-pointer group h-[22rem] shadow-xl shadow-black/50 bg-slate-900">
+                    <img
+                      src={article.imageUrl}
+                      alt={article.title}
+                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0B1B35] via-[#0B1B35]/60 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                    <div className="absolute bottom-0 left-0 p-5 w-full z-10 flex flex-col justify-end h-full">
+                      <span className={`${brandClasses.bgGold} ${brandClasses.textNavy} text-[10px] font-bold px-2 py-1 rounded shadow-sm uppercase tracking-wider self-start mb-3`}>
+                        {article.categoryName || article.category}
+                      </span>
+                      <h3 className="text-xl font-bold font-serif text-white leading-snug group-hover:text-[#D4AF37] transition-colors line-clamp-3">
+                        {article.title}
+                      </h3>
+                      <div className="flex items-center gap-2 text-xs text-gray-300 mt-4 font-medium opacity-80 group-hover:opacity-100 transition-opacity">
+                        <Clock className="w-3.5 h-3.5" />
+                        <span>{article.date}</span>
+                      </div>
                     </div>
-                  </div>
-                </article>
-              </Link>
-            ))}
+                  </article>
+                </Link>
+              ))}
           </div>
         </section>
       )}
