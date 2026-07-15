@@ -141,10 +141,10 @@ export default function MiniNewsPage() {
                     </div>
                     <div>
                       <span className={`block font-serif font-bold ${brandClasses.textGold} tracking-widest leading-none text-sm`}>
-                        INK TELANGANA
+                        Ink Mini
                       </span>
                       <span className="block text-[10px] text-gray-400 mt-1 uppercase tracking-widest font-semibold">
-                        Mini News Update
+                        News Update
                       </span>
                     </div>
                   </div>
