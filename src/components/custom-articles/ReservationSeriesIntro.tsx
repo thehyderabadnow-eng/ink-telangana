@@ -109,7 +109,6 @@ export default function ReservationSeriesIntro() {
                             <Link href="/" className="flex items-center gap-2 text-sm text-gray-500 hover:text-[#0B1B35] transition-colors group font-semibold">
                                 <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Back
                             </Link>
-                            {/* ఇక్కడ "INK WEBISODE SERIES" తీసేసి షేర్ బటన్ యాడ్ చేశాను */}
                             <button
                                 onClick={handleTopShare}
                                 className="flex items-center gap-2 text-xs md:text-sm font-bold bg-[#0B1B35] text-[#D4AF37] border border-[#D4AF37]/30 px-4 py-2 rounded-full hover:bg-[#D4AF37] hover:text-[#0B1B35] transition-all shadow-sm"
@@ -179,7 +178,7 @@ export default function ReservationSeriesIntro() {
                                 ))}
                             </div>
 
-                            {/* Chapter 2 Announcement / Teaser */}
+                            {/* Chapter 2 Announcement / Teaser with Link */}
                             <div className="mt-12 bg-blue-50 border-l-4 border-blue-600 p-6 md:p-8 rounded-r-2xl shadow-sm">
                                 <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-6">
                                     <div className="bg-blue-100 p-3 rounded-xl shrink-0 self-start">
@@ -190,9 +189,17 @@ export default function ReservationSeriesIntro() {
                                             <ArrowRight className="w-5 h-5 text-blue-600" />
                                             తర్వాతి అధ్యాయం (Chapter 2) లో...
                                         </h3>
-                                        <p className="text-blue-800 md:text-lg font-medium leading-relaxed">
+                                        <p className="text-blue-800 md:text-lg font-medium leading-relaxed mb-6">
                                             పైన పేర్కొన్న ఈ ప్రశ్నలన్నింటికీ సవివరమైన సమాధానాలను మన <strong>చాప్టర్ 2</strong> లో అందించబోతున్నాం. ఆ తర్వాతి అధ్యాయంలో (Chapter 3) రిజర్వేషన్లకు సంబంధించి ప్రస్తుతం సమాజంలో జరుగుతున్న మరొక విభిన్నమైన చర్చను విశ్లేషిద్దాం.
                                         </p>
+
+                                        {/* ఇక్కడ చాప్టర్ 2కి వెళ్లడానికి బటన్ యాడ్ చేశాను */}
+                                        <Link
+                                            href="/article/InkSpecial/ink-special-series-the-quota-chronicles-chapter-2-answers/10000305"
+                                            className="inline-flex items-center gap-2 bg-blue-600 text-white border-2 border-blue-300 font-bold px-6 py-3 rounded-full hover:bg-blue-700 hover:border-blue-400 hover:-translate-y-1 transition-all shadow-md text-sm md:text-base"
+                                        >
+                                            చాప్టర్ 2 చదవండి <ArrowRight className="w-4 h-4" />
+                                        </Link>
                                     </div>
                                 </div>
                             </div>

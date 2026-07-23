@@ -57,7 +57,7 @@ export const InkSpecialArticles: Article[] = [
     {
         id: 10000305,
         slug: "ink-special-series-the-quota-chronicles-chapter-2-answers",
-        title: "చాప్టర్ 2: 'భారతీయ రిజర్వేషన్ల సమగ్ర విశ్లేషణ!",
+        title: "Chapter 2: 'భారతీయ రిజర్వేషన్ల సమగ్ర విశ్లేషణ!",
         date: "July 23, 2026",
         category: "InkSpecial",
         categoryName: "Ink Special",
