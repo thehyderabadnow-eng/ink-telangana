@@ -196,7 +196,7 @@ export default function ReservationSeriesIntro() {
                                         {/* ఇక్కడ చాప్టర్ 2కి వెళ్లడానికి బటన్ యాడ్ చేశాను */}
                                         <Link
                                             href="/article/InkSpecial/ink-special-series-the-quota-chronicles-chapter-2-answers/10000305"
-                                            className="inline-flex items-center gap-2 bg-blue-600 border-2 border-blue-300 font-bold px-6 py-3 rounded-full hover:bg-blue-700 hover:border-blue-400 hover:-translate-y-1 transition-all shadow-md text-sm md:text-base"
+                                            className="inline-flex items-center gap-2 bg-blue-600 text-white border-2 border-blue-300 font-bold px-6 py-3 rounded-full hover:bg-blue-700 hover:border-blue-400 hover:-translate-y-1 transition-all shadow-md text-sm md:text-base"
                                         >
                                             చాప్టర్ 2 చదవండి <ArrowRight className="w-4 h-4" />
                                         </Link>
