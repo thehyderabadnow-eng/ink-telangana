@@ -16,6 +16,7 @@ import ZPTCtoCMArticle from '@/components/custom-articles/ZPTCtoCMArticle';
 import SmaHealthArticle from '@/components/custom-articles/SmaHealthArticle';
 import AllPartyKaryakartaArticle from '@/components/custom-articles/AllPartyKaryakartaArticle';
 import ReservationSeriesIntro from '@/components/custom-articles/ReservationSeriesIntro';
+import ReservationSeriesChapter2 from '@/components/custom-articles/ReservationSeriesChapter2';
 
 type Props = {
   params: Promise<{ category: string, slug: string, id: string }>
@@ -161,6 +162,27 @@ export async function generateMetadata(
       },
     };
   }
+  if (id === "10000305") {
+    return {
+      title: "ఇంక్ స్పెషల్ సిరీస్: 'చాప్టర్ 2: భారతీయ రిజర్వేషన్ల సమగ్ర విశ్లేషణ'",
+      description: "మొదటి అధ్యాయంలో 32 కీలక ప్రశ్నలకు చారిత్రక ఆధారాలు, రాజ్యాంగ నిబంధనలు మరియు వాస్తవాలతో కూడిన సమాధానాలు.",
+      openGraph: {
+        title: "ఇంక్ స్పెషల్ సిరీస్: 'చాప్టర్ 2: భారతీయ రిజర్వేషన్ల సమగ్ర విశ్లేషణ!'",
+        description: "32 కీలక ప్రశ్నలకు చారిత్రక ఆధారాలు, రాజ్యాంగ నిబంధనలు మరియు వాస్తవాలతో కూడిన నిఖార్సయిన సమాధానాలు.",
+        url: `${baseUrl}/article/${category}/${slug}/${id}`,
+        images: [
+          {
+            url: 'https://blogger.googleusercontent.com/img/a/AVvXsEgFQRHr1EiR63gPpFBY8QZpKm8yrOD4Zm1eoK4Ix4-u4gf6m6IM0ta6eORdOSWFrDcJNDZycdfKqe8EIX5PQNkjB8tt1RELsQvwu1YZ4Csyrov6YH8VTsDwhHDbZ_lK5tmoEhwqrJC45IlWRvnWNZmCO5kMci1xhtLQyu1A-kmNTHVHs9OQD4fEvBHVaD2j',
+            width: 1200,
+            height: 630,
+            alt: 'Reservation Answers Ink Special',
+          },
+        ],
+        locale: 'te_IN',
+        type: 'article',
+      },
+    };
+  }
 
   if (id === "10000401") {
     return {
@@ -283,6 +305,9 @@ export default async function ArticlePage({ params }: Props) {
   }
   if (id === "10000304") {
     return <ReservationSeriesIntro />;
+  }
+  if (id === "10000305") {
+    return <ReservationSeriesChapter2 />;
   }
   if (id === "10000401") {
     return <SmaHealthArticle />;

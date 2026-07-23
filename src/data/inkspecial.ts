@@ -53,5 +53,18 @@ export const InkSpecialArticles: Article[] = [
         content: ``, 
         isTopStory: true,
         isLatestStory: true
+    },
+    {
+        id: 10000305,
+        slug: "ink-special-series-the-quota-chronicles-chapter-2-answers",
+        title: "చాప్టర్ 2: 'భారతీయ రిజర్వేషన్ల సమగ్ర విశ్లేషణ!",
+        date: "July 23, 2026",
+        category: "InkSpecial",
+        categoryName: "Ink Special",
+        imageUrl: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1200&auto=format&fit=crop", 
+        excerpt: "మొదటి అధ్యాయంలో మనం వేసుకున్న 32 కీలక ప్రశ్నలకు చారిత్రక ఆధారాలు, రాజ్యాంగ నిబంధనలు మరియు వాస్తవాలతో కూడిన నిఖార్సయిన సమాధానాలు.",
+        content: ``, 
+        isTopStory: true,
+        isLatestStory: true
     }
 ];
