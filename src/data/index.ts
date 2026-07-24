@@ -1,6 +1,6 @@
 import { politicsArticles } from './politics';
 import { businessArticles } from './business';
-import { miniNews } from './mininewscomments';
+import { miniNews } from './mininews';
 import { InkThoughtsArticles } from './inkthoughts';
 import { PublicIssuesArticles } from './publicissues';
 import { InkSpecialArticles } from './inkspecial';
