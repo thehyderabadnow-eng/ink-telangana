@@ -61,7 +61,7 @@ export const InkSpecialArticles: Article[] = [
         date: "July 23, 2026",
         category: "InkSpecial",
         categoryName: "Ink Special",
-        imageUrl: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1200&auto=format&fit=crop", 
+        imageUrl: "https://blogger.googleusercontent.com/img/a/AVvXsEgFQRHr1EiR63gPpFBY8QZpKm8yrOD4Zm1eoK4Ix4-u4gf6m6IM0ta6eORdOSWFrDcJNDZycdfKqe8EIX5PQNkjB8tt1RELsQvwu1YZ4Csyrov6YH8VTsDwhHDbZ_lK5tmoEhwqrJC45IlWRvnWNZmCO5kMci1xhtLQyu1A-kmNTHVHs9OQD4fEvBHVaD2j", 
         excerpt: "మొదటి అధ్యాయంలో మనం వేసుకున్న 32 కీలక ప్రశ్నలకు చారిత్రక ఆధారాలు, రాజ్యాంగ నిబంధనలు మరియు వాస్తవాలతో కూడిన నిఖార్సయిన సమాధానాలు.",
         content: ``, 
         isTopStory: true,

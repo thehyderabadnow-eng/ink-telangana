@@ -28,10 +28,10 @@ export const miniNews: Thought[] = [
   },
   {
     id: 4,
-    title: "ఇందిరమ్మ కమిటీలు రద్దు చేయండి.!",
+    title: "ఇందిరమ్మ కమిటీలు రద్దు చేయండి!?",
     text: "ఇందిరమ్మ కమిటీలలో అత్యధికంగా ఉన్నది కాంగ్రెస్ వాళ్లే! పారదర్శకత లోపిస్తోంది. ప్రజల్లో వ్యతిరేకత పెరుగుతుంది. ఇంటి కోసం కమిటీ సభ్యుల చుట్టూ ప్రదక్షిణలు, తాయిలాలు సమర్పణ. అసలైన అర్హులకు తీవ్ర అన్యాయం. గ్రామంలో ప్రజాప్రతినిధులు ఎన్నికయ్యాక కమిటీలు ఎందుకు, గ్రామ సభ నిర్వహించి ఎంపిక చేయాలని ప్రజల డిమాండ్. కమిటీలు వేయాల్సి వస్తే, ఏ రాజకీయ పార్టీతో సంబంధం లేని తటస్థులతో లేదా అన్ని రాజకీయ పార్టీలకు సమాన ప్రాతినిధ్యం ఇవ్వాలని డిమాండ్ చేస్తున్నారు.",
     date: "July 24, 2026",
-    imageUrl: ""
+    imageUrl: "https://blogger.googleusercontent.com/img/a/AVvXsEhFol-xGVNWjXnnEY7qyhYLZqbxpcgLHovNgBIZFsEjWO1S7j_IOpIp056nKmas4rz_t81bDFnzVjYd2Szv59QTHSoFfcWLs3W8a_hY6K_ggT5lXl_dyvYuAA4OJVpAOoTPM4jEdkP6bBJTl0U8RRr-UppSGWqK_YOfXkpbjimNC71uLpaPj95XSZz0xidO"
   }
 ];
 
